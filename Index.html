@@ -4,16 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reputação Mercado Livre | Sua Chance de Recuperar Vendas</title>
-    
-    <!-- Google tag (gtag.js) --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-16846412441');
-        
-    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -148,6 +138,23 @@
             height: 30px;
         }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16846412441');
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16846412441',
+            'event_callback': function() {
+                console.log('Conversion event fired');
+            }
+        });
+    </script>
+
 </head>
 <body>
     <header>
@@ -182,7 +189,7 @@
     <div class="cta">
         <h2>Quer Recuperar Sua Reputação?</h2>
         <p>Entre em contato com a <strong>Innove Tecnologia</strong> e descubra como podemos te ajudar!</p>
-        <a href="https://wa.me/5517997511127" class="whatsapp-button">Fale Conosco no WhatsApp</a>
+        <a href="https://wa.me/5517997511127" class="whatsapp-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">Fale Conosco no WhatsApp</a>
     </div>
 
     <section class="steps">
@@ -207,9 +214,5 @@
     </footer>
 
     <!-- Botão flutuante de WhatsApp -->
-    <a href="https://wa.me/5517997511127" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5517997511127" class="whatsapp-float" target="_blank" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-
-</body>
-</html>
