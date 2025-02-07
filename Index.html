@@ -51,11 +51,23 @@
     }
     /* Cabeçalho */
     header {
-      background-color: var(--ml-blue);
+      background: linear-gradient(45deg, #6a1b9a, #3483fa, #ff8f00);
       color: #fff;
       padding: 40px 20px;
       text-align: center;
       border-bottom: 5px solid var(--ml-yellow);
+      position: relative;
+    }
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Logotipo do cabeçalho */
+    .logo {
+      position: absolute;
+      top: calc(20px + 2cm); /* Ajustado para subir 2cm em relação à versão anterior */
+      left: 20px;
+      max-width: 200px;
     }
     header h1 {
       font-size: 2.5rem;
@@ -251,6 +263,12 @@
       margin-top: 20px;
       font-size: 0.9rem;
     }
+    /* Logotipo do rodapé */
+    footer .footer-logo {
+      max-width: 100px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
     /* Responsividade */
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
@@ -261,6 +279,8 @@
 <body>
   <!-- Cabeçalho -->
   <header>
+    <!-- Logotipo do cabeçalho -->
+    <img src="https://i.imgur.com/B9oE0vN.png" alt="Logo Innove Tecnologia" class="logo">
     <div class="container">
       <h1>Recupere Sua Reputação no Mercado Livre e Aumente Suas Vendas!</h1>
       <p>Você está perdendo vendas por causa de avaliações negativas? Nós temos a solução.</p>
@@ -349,6 +369,8 @@
 
   <!-- Rodapé -->
   <footer>
+    <!-- Logotipo inserido no rodapé -->
+    <img src="https://i.imgur.com/B9oE0vN.png" alt="Logo Innove Tecnologia" class="footer-logo">
     <p>&copy; 2025 Innove Tecnologia. Todos os direitos reservados.</p>
     <p>Garantimos a privacidade e segurança dos seus dados.</p>
   </footer>
