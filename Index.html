@@ -9,7 +9,7 @@
   <meta name="description" content="Transforme sua reputação no Mercado Livre e impulsione suas vendas com a consultoria especializada da Innove Tecnologia. Aproveite nossa consultoria com preço especial agora mesmo!">
   <meta name="keywords" content="Mercado Livre, Reputação, Consultoria, Vendas, Recuperação de Reputação, Innove Tecnologia, Preço Especial">
   <meta property="og:title" content="Recupere Sua Reputação no Mercado Livre | Consultoria Especializada">
-  <meta property="og:description" content="Transforme sua reputação e aumente suas vendas com nossa consultoria especializada. Aproveite nossa oferta especial por tempo limitado!">
+  <meta property="og:description" content="Transforme sua reputação e aumente suas vendas com nossa consultoria especializada.">
   <meta property="og:image" content="link-para-sua-imagem.png">
   <meta property="og:url" content="https://www.seusite.com/landingpage">
   <meta name="robots" content="index, follow">
@@ -18,7 +18,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'AW-16846412441');
   </script>
@@ -62,13 +62,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    /* Logotipo do cabeçalho */
-    .logo {
-      position: absolute;
-      top: calc(20px + 2cm); /* Posicionado 2cm abaixo do valor base */
-      left: 20px;
-      max-width: 200px;
-    }
+    /* (Logo Superior removida do cabeçalho) */
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
@@ -90,7 +84,7 @@
       background-color: var(--ml-yellow);
       color: var(--ml-dark-blue);
     }
-    /* Oferta Limitada e Countdown */
+    /* Oferta Limitada com Countdown */
     .highlight {
       background-color: var(--ml-yellow);
       color: var(--ml-dark-blue);
@@ -225,6 +219,43 @@
     .lead-form button:hover {
       background-color: var(--ml-blue);
     }
+    /* Rodapé */
+    footer {
+      background-color: var(--ml-dark-blue);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    /* Container para o conteúdo do rodapé */
+    footer .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    footer .footer-logo {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+    footer .footer-text {
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .btn-primary { font-size: 1rem; padding: 10px 20px; }
+      footer .footer-content {
+        flex-direction: column;
+      }
+      footer .footer-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      footer .footer-text {
+        text-align: center;
+      }
+    }
     /* Botão Flutuante de WhatsApp */
     .whatsapp-float {
       position: fixed;
@@ -254,51 +285,11 @@
       width: 30px;
       height: 30px;
     }
-    /* Rodapé */
-    footer {
-      background-color: var(--ml-dark-blue);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-    /* Container para o conteúdo do rodapé */
-    footer .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    footer .footer-logo {
-      max-width: 100px;
-      margin-right: 10px;
-    }
-    footer .footer-text {
-      text-align: left;
-    }
-    /* Responsividade */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .btn-primary { font-size: 1rem; padding: 10px 20px; }
-      footer .footer-content {
-        flex-direction: column;
-      }
-      footer .footer-logo {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      footer .footer-text {
-        text-align: center;
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Cabeçalho -->
   <header>
-    <!-- Logotipo do cabeçalho com o novo link -->
-    <img src="https://i.imgur.com/B450h12.png" alt="Logo Innove Tecnologia" class="logo">
     <div class="container">
       <h1>Recupere Sua Reputação no Mercado Livre e Aumente Suas Vendas!</h1>
       <p>Você está perdendo vendas por causa de avaliações negativas? Nós temos a solução.</p>
@@ -367,7 +358,7 @@
     </div>
   </section>
 
-  <!-- Formulário de Captação com Redirecionamento para WhatsApp -->
+  <!-- Formulário de Captação -->
   <section id="formulario" class="lead-form">
     <h2>Adquira Sua Consultoria com Preço Especial</h2>
     <p>Preencha seus dados e, ao enviar, você será direcionado para o WhatsApp com sua mensagem pré-preenchida.</p>
@@ -385,10 +376,21 @@
     </form>
   </section>
 
-  <!-- Rodapé -->
+  <!-- Nossa História -->
+  <section class="our-story">
+    <h2>Nossa História</h2>
+    <p>
+      Na Innove Tecnologia, nossa paixão pela inovação nos impulsiona a transformar desafios em oportunidades.  
+      Desde o início, temos oferecido soluções personalizadas que impulsionam o sucesso dos nossos clientes.
+    </p>
+    <p>
+      Cada projeto é uma nova história de crescimento e superação. Junte-se a nós e faça parte dessa trajetória de transformação!
+    </p>
+  </section>
+
+  <!-- Rodapé com Logotipo Integrado -->
   <footer>
     <div class="footer-content">
-      <!-- Logotipo do rodapé com o novo link, posicionado à esquerda -->
       <img src="https://i.imgur.com/B450h12.png" alt="Logo Innove Tecnologia" class="footer-logo">
       <div class="footer-text">
         <p>&copy; 2025 Innove Tecnologia. Todos os direitos reservados.</p>
@@ -404,22 +406,6 @@
 
   <!-- Scripts -->
   <script>
-    // Countdown Timer (Oferta Limitada)
-    var countDownDate = new Date();
-    countDownDate.setHours(countDownDate.getHours() + 24);
-    var countdownFunction = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "Oferta Expirada";
-      }
-    }, 1000);
-
     // Smooth Scrolling para links âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
