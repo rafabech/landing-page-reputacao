@@ -1,233 +1,420 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reputação Mercado Livre | Sua Chance de Recuperar Vendas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recupere Sua Reputação no Mercado Livre | Consultoria Especializada</title>
+  
+  <!-- Meta Tags para SEO e Redes Sociais -->
+  <meta name="description" content="Transforme sua reputação no Mercado Livre e impulsione suas vendas com a consultoria especializada da Innove Tecnologia. Aproveite nossa consultoria com preço especial agora mesmo!">
+  <meta name="keywords" content="Mercado Livre, Reputação, Consultoria, Vendas, Recuperação de Reputação, Innove Tecnologia, Preço Especial">
+  <meta property="og:title" content="Recupere Sua Reputação no Mercado Livre | Consultoria Especializada">
+  <meta property="og:description" content="Transforme sua reputação e aumente suas vendas com nossa consultoria especializada. Aproveite nossa oferta especial por tempo limitado!">
+  <meta property="og:image" content="link-para-sua-imagem.png">
+  <meta property="og:url" content="https://www.seusite.com/landingpage">
+  <meta name="robots" content="index, follow">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google Tag Manager / Gtag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16846412441');
+  </script>
 
-      gtag('config', 'AW-16846412441');
-    </script>
-
-    <style>
-        /* Cores oficiais do Mercado Livre */
-        :root {
-            --ml-yellow: #ffe600;
-            --ml-blue: #3483fa;
-            --ml-dark-blue: #2d3277;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--ml-blue);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--ml-yellow);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        .highlight {
-            background-color: var(--ml-yellow);
-            color: var(--ml-dark-blue);
-            padding: 20px;
-            text-align: center;
-            margin: 20px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .benefits, .negative-impacts {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .benefits ul, .negative-impacts ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .benefits li {
-            background-color: #f0f8ff;
-            border-left: 4px solid var(--ml-blue);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: left;
-        }
-        .negative-impacts li {
-            background-color: #fff0f0;
-            border-left: 4px solid #ff4444;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: left;
-        }
-        .benefits li::before {
-            content: "✅";
-            margin-right: 10px;
-        }
-        .negative-impacts li::before {
-            content: "❌";
-            margin-right: 10px;
-        }
-        .cta {
-            background-color: var(--ml-dark-blue);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .whatsapp-button {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 30px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(18, 140, 126, 0.4);
-        }
-        .whatsapp-button:hover {
-            transform: scale(1.05);
-        }
-        .steps {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .testimonials {
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: var(--ml-dark-blue);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        /* Botão flutuante de WhatsApp melhorado */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {transform: scale(1);}
-            50% {transform: scale(1.1);}
-            100% {transform: scale(1);}
-        }
-
-        .whatsapp-float:hover {
-            background: #128C7E;
-            transform: rotate(10deg);
-        }
-
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
-        }
-    </style>
+  <style>
+    /* Variáveis de Cores */
+    :root {
+      --ml-yellow: #ffe600;
+      --ml-blue: #3483fa;
+      --ml-dark-blue: #2d3277;
+      --success-green: #25D366;
+      --hover-green: #128C7E;
+      --bg-light: #f4f4f4;
+    }
+    /* Reset e Estilos Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Cabeçalho */
+    header {
+      background-color: var(--ml-blue);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 5px solid var(--ml-yellow);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background-color: var(--ml-dark-blue);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 30px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: var(--ml-yellow);
+      color: var(--ml-dark-blue);
+    }
+    /* Oferta Limitada e Countdown */
+    .highlight {
+      background-color: var(--ml-yellow);
+      color: var(--ml-dark-blue);
+      padding: 20px;
+      text-align: center;
+      margin: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    #countdown {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    /* Seções de Conteúdo */
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section ul, section ol {
+      list-style: none;
+      padding: 0;
+    }
+    section ul li, section ol li {
+      background-color: #f0f8ff;
+      border-left: 4px solid var(--ml-blue);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: left;
+      position: relative;
+      padding-left: 40px;
+    }
+    /* Ícones dos Itens */
+    .benefits li::before {
+      content: "✅";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .negative-impacts li::before {
+      content: "❌";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* Depoimentos */
+    .testimonials .testimonial {
+      background-color: #eef;
+      border-left: 4px solid var(--ml-blue);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      font-style: italic;
+    }
+    .testimonials .testimonial span {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    /* CTA - Consultoria */
+    .cta {
+      background-color: var(--ml-dark-blue);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .cta .whatsapp-button {
+      background: linear-gradient(135deg, var(--success-green) 0%, var(--hover-green) 100%);
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(18,140,126,0.4);
+      margin-top: 20px;
+    }
+    .cta .whatsapp-button:hover {
+      transform: scale(1.05);
+    }
+    /* Formulário de Captação */
+    .lead-form {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .lead-form h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .lead-form p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lead-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .lead-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .lead-form button {
+      background-color: var(--ml-dark-blue);
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      width: 100%;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    .lead-form button:hover {
+      background-color: var(--ml-blue);
+    }
+    /* Botão Flutuante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--success-green);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.1);}
+      100% {transform: scale(1);}
+    }
+    .whatsapp-float:hover {
+      background: var(--hover-green);
+      transform: rotate(10deg);
+    }
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+    /* Rodapé */
+    footer {
+      background-color: var(--ml-dark-blue);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .btn-primary { font-size: 1rem; padding: 10px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Sua Reputação no Mercado Livre Define Seu Sucesso!</h1>
-        <p>Descubra como uma boa reputação impulsiona vendas e uma ruim pode destruir seu negócio</p>
-    </header>
-
-    <div class="highlight">
-        <p>⚠️ Atenção Vendedores: Cada avaliação negativa pode reduzir suas vendas em até 35%!</p>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>Recupere Sua Reputação no Mercado Livre e Aumente Suas Vendas!</h1>
+      <p>Você está perdendo vendas por causa de avaliações negativas? Nós temos a solução.</p>
+      <a href="#formulario" class="btn-primary">Garanta sua Consultoria com Preço Especial</a>
     </div>
+  </header>
 
-    <section class="benefits">
-        <h2>Benefícios da Boa Reputação 🌟</h2>
-        <ul>
-            <li><strong>Prioridade Absoluta:</strong> Seus produtos aparecem nas primeiras posições (até 73% mais visibilidade)</li>
-            <li><strong>Frete Grátis:</strong> Acesso ao programa de fretes subsidiados pelo Mercado Livre</li>
-            <li><strong>Taxas Reduzidas:</strong> Comissões até 30% menores que concorrentes com reputação ruim</li>
-            <li><strong>Mais Confiança:</strong> Aumento na confiança dos compradores, resultando em mais vendas</li>
-        </ul>
-    </section>
+  <!-- Oferta Limitada com Countdown -->
+  <div class="highlight">
+    <p><strong>Oferta Limitada:</strong> Consultoria com preço especial por tempo limitado! Garanta já a sua!</p>
+    <div id="countdown"></div>
+  </div>
 
-    <section class="negative-impacts">
-        <h2>Impactos Negativos da Reputação Ruim 🚨</h2>
-        <ul>
-            <li><strong>Vendas em Queda:</strong> Seus produtos aparecem no final da lista, reduzindo a visibilidade</li>
-            <li><strong>Custos Maiores:</strong> Comissões mais altas e exclusão de benefícios como frete grátis</li>
-            <li><strong>Desconfiança dos Clientes:</strong> Potenciais clientes evitam comprar de vendedores com baixa reputação</li>
-            <li><strong>Suspensão de Conta:</strong> Risco de perder sua conta no Mercado Livre em casos extremos</li>
-        </ul>
-    </section>
+  <!-- Benefícios -->
+  <section class="benefits">
+    <h2>Por Que Uma Boa Reputação é Essencial?</h2>
+    <ul>
+      <li><strong>Visibilidade Máxima:</strong> Seus produtos aparecem em destaque, aumentando até 73% sua visibilidade.</li>
+      <li><strong>Economia de Taxas:</strong> Aproveite comissões até 30% menores.</li>
+      <li><strong>Frete Grátis:</strong> Tenha acesso aos programas de frete subsidiado pelo Mercado Livre.</li>
+      <li><strong>Confiança dos Clientes:</strong> Conquiste a confiança que gera mais vendas.</li>
+    </ul>
+  </section>
 
-    <div class="cta">
-        <h2>Quer Recuperar Sua Reputação?</h2>
-        <p>Entre em contato com a <strong>Innove Tecnologia</strong> e descubra como podemos te ajudar!</p>
-        <a href="https://wa.me/5517997511127" class="whatsapp-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">Fale Conosco no WhatsApp</a>
-    </div>
+  <!-- Impactos de uma Reputação Ruim -->
+  <section class="negative-impacts">
+    <h2>O Impacto de Uma Reputação Ruim</h2>
+    <ul>
+      <li><strong>Vendas em Queda:</strong> Avaliações negativas fazem seus produtos caírem no ranking.</li>
+      <li><strong>Custos Elevados:</strong> Pague taxas mais altas e perca benefícios exclusivos.</li>
+      <li><strong>Desconfiança:</strong> Clientes evitam vendedores com baixa reputação.</li>
+      <li><strong>Risco de Suspensão:</strong> Em casos extremos, sua conta pode ser bloqueada.</li>
+    </ul>
+  </section>
 
-    <section class="steps">
-        <h2>Como Funciona Nosso Processo?</h2>
-        <p>Veja os passos simples para recuperar sua reputação no Mercado Livre:</p>
-        <ol>
-            <li>Diagnóstico inicial: Analisamos sua reputação e identificamos os problemas</li>
-            <li>Plano de recuperação: Criamos um plano personalizado para melhorar sua reputação</li>
-            <li>Implementação: Colocamos as ações em prática para aumentar suas vendas</li>
-            <li>Acompanhamento: Monitoramos seu progresso e ajustamos conforme necessário</li>
-        </ol>
-    </section>
-
-    <section class="testimonials">
-        <h2>Depoimentos de Clientes Satisfeitos</h2>
-        <p>"A Innove Tecnologia salvou meu negócio! Em poucas semanas, minha reputação melhorou e minhas vendas dispararam." — João Silva</p>
-        <p>"Estava quase desistindo de vender no Mercado Livre, mas graças à Innove Tecnologia, consegui recuperar minha loja!" — Maria Souza</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Innove Tecnologia. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Botão flutuante de WhatsApp -->
-    <a href="https://wa.me/5517997511127" class="whatsapp-float" target="_blank" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  <!-- CTA: Consultoria Personalizada -->
+  <section class="cta">
+    <h2>Consultoria Personalizada Para Recuperar Sua Reputação com Preço Especial!</h2>
+    <p>Entre em contato agora com a <strong>Innove Tecnologia</strong> e descubra como podemos transformar seu negócio.</p>
+    <a href="https://wa.me/5517997511127" target="_blank" class="whatsapp-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
+      Fale Conosco no WhatsApp
     </a>
+  </section>
+
+  <!-- Processo de Consultoria -->
+  <section class="steps">
+    <h2>Como Funciona Nossa Consultoria</h2>
+    <ol>
+      <li><strong>Diagnóstico Inicial:</strong> Avaliamos sua situação e identificamos os pontos críticos.</li>
+      <li><strong>Plano Personalizado:</strong> Desenvolvemos uma estratégia sob medida para sua recuperação.</li>
+      <li><strong>Implementação Ágil:</strong> Colocamos em prática as ações que geram resultados.</li>
+      <li><strong>Acompanhamento Constante:</strong> Monitoramos e ajustamos a estratégia conforme necessário.</li>
+    </ol>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials">
+    <h2>O Que Nossos Clientes Dizem</h2>
+    <div class="testimonial">
+      <p>"A Innove Tecnologia salvou meu negócio! Minha reputação melhorou e minhas vendas dispararam em poucas semanas."</p>
+      <span>— João Silva</span>
+    </div>
+    <div class="testimonial">
+      <p>"Graças à consultoria, consegui recuperar a confiança dos meus clientes e aumentar significativamente meu faturamento."</p>
+      <span>— Maria Souza</span>
+    </div>
+  </section>
+
+  <!-- Formulário de Captação com Redirecionamento para WhatsApp -->
+  <section id="formulario" class="lead-form">
+    <h2>Adquira Sua Consultoria com Preço Especial</h2>
+    <p>Preencha seus dados e, ao enviar, você será direcionado para o WhatsApp com sua mensagem pré-preenchida.</p>
+    <form id="leadForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+      
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+      
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="Seu telefone">
+      
+      <button type="submit">Enviar Agora</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Innove Tecnologia. Todos os direitos reservados.</p>
+    <p>Garantimos a privacidade e segurança dos seus dados.</p>
+  </footer>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://wa.me/5517997511127" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // Countdown Timer (Oferta Limitada)
+    var countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours() + 24);
+    var countdownFunction = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "Oferta Expirada";
+      }
+    }, 1000);
+
+    // Smooth Scrolling para links âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Redirecionamento do Formulário para o WhatsApp com Dados Pré-Preenchidos e Tag do Google
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede o envio tradicional do formulário
+
+      // Captura os valores dos campos
+      var nome = document.getElementById('nome').value;
+      var email = document.getElementById('email').value;
+      var telefone = document.getElementById('telefone').value;
+
+      // Cria a mensagem com quebras de linha codificadas (%0A)
+      var mensagem = "Olá, gostaria de saber mais sobre a consultoria com preço especial.%0A";
+      mensagem += "Nome: " + nome + "%0A";
+      mensagem += "E-mail: " + email + "%0A";
+      mensagem += "Telefone: " + telefone;
+
+      // Número do WhatsApp (no formato internacional, sem espaços ou símbolos)
+      var whatsappNumber = "5517997511127"; // Altere se necessário
+
+      // URL do WhatsApp com a mensagem pré-preenchida
+      var whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + mensagem;
+
+      // Aciona a tag de conversão do Google
+      gtag('event', 'conversion', {'send_to': 'AW-16846412441'});
+
+      // Redireciona para o WhatsApp após um pequeno atraso para garantir o disparo da tag
+      setTimeout(function() {
+        window.location.href = whatsappURL;
+      }, 300);
+    });
+  </script>
 </body>
 </html>
