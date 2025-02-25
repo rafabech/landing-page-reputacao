@@ -1,450 +1,225 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recupere Sua Reputação no Mercado Livre | Consultoria Especializada</title>
-  
-  <!-- Meta Tags para SEO e Redes Sociais -->
-  <meta name="description" content="Transforme sua reputação no Mercado Livre e impulsione suas vendas com a consultoria especializada da Innove Tecnologia. Aproveite nossa consultoria com preço especial agora mesmo!">
-  <meta name="keywords" content="Mercado Livre, Reputação, Consultoria, Vendas, Recuperação de Reputação, Innove Tecnologia, Preço Especial">
-  <meta property="og:title" content="Recupere Sua Reputação no Mercado Livre | Consultoria Especializada">
-  <meta property="og:description" content="Transforme sua reputação e aumente suas vendas com nossa consultoria especializada.">
-  <meta property="og:image" content="link-para-sua-imagem.png">
-  <meta property="og:url" content="https://www.seusite.com/landingpage">
-  <meta name="robots" content="index, follow">
-
-  <!-- Google Tag Manager / Gtag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846412441"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-16846412441');
-  </script>
-
-  <style>
-    /* Variáveis de Cores */
-    :root {
-      --ml-yellow: #ffe600;
-      --ml-blue: #3483fa;
-      --ml-dark-blue: #2d3277;
-      --success-green: #25D366;
-      --hover-green: #128C7E;
-      --bg-light: #f4f4f4;
-    }
-    /* Reset e Estilos Base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-light);
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Cabeçalho */
-    header {
-      background: linear-gradient(45deg, #6a1b9a, #3483fa, #ff8f00);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 5px solid var(--ml-yellow);
-      position: relative;
-    }
-    header .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    /* Logo Superior removida – o cabeçalho agora contém apenas o texto */
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .btn-primary {
-      background-color: var(--ml-dark-blue);
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 30px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-    }
-    .btn-primary:hover {
-      background-color: var(--ml-yellow);
-      color: var(--ml-dark-blue);
-    }
-    /* Oferta Limitada com Countdown */
-    .highlight {
-      background-color: var(--ml-yellow);
-      color: var(--ml-dark-blue);
-      padding: 20px;
-      text-align: center;
-      margin: 20px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    #countdown {
-      font-size: 1.5rem;
-      margin-top: 10px;
-    }
-    /* Seções de Conteúdo */
-    section {
-      padding: 20px;
-      margin: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    section ul, section ol {
-      list-style: none;
-      padding: 0;
-    }
-    section ul li, section ol li {
-      background-color: #f0f8ff;
-      border-left: 4px solid var(--ml-blue);
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-      text-align: left;
-      position: relative;
-      padding-left: 40px;
-    }
-    /* Ícones dos Itens */
-    .benefits li::before {
-      content: "✅";
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .negative-impacts li::before {
-      content: "❌";
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    /* Depoimentos */
-    .testimonials .testimonial {
-      background-color: #eef;
-      border-left: 4px solid var(--ml-blue);
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-      font-style: italic;
-    }
-    .testimonials .testimonial span {
-      display: block;
-      text-align: right;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    /* CTA - Consultoria */
-    .cta {
-      background-color: var(--ml-dark-blue);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .cta .whatsapp-button {
-      background: linear-gradient(135deg, var(--success-green) 0%, var(--hover-green) 100%);
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      display: inline-block;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 15px rgba(18,140,126,0.4);
-      margin-top: 20px;
-    }
-    .cta .whatsapp-button:hover {
-      transform: scale(1.05);
-    }
-    /* Formulário de Captação */
-    .lead-form {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .lead-form h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .lead-form p {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .lead-form label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    .lead-form input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .lead-form button {
-      background-color: var(--ml-dark-blue);
-      color: #fff;
-      padding: 15px;
-      border: none;
-      border-radius: 30px;
-      width: 100%;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: background-color 0.3s ease;
-    }
-    .lead-form button:hover {
-      background-color: var(--ml-blue);
-    }
-    /* Rodapé */
-    footer {
-      background-color: var(--ml-dark-blue);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-    /* Container para o conteúdo do rodapé */
-    footer .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    footer .footer-logo {
-      max-width: 100px;
-      margin-right: 10px;
-    }
-    footer .footer-text {
-      text-align: left;
-    }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .btn-primary { font-size: 1rem; padding: 10px 20px; }
-      footer .footer-content {
-        flex-direction: column;
-      }
-      footer .footer-logo {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      footer .footer-text {
-        text-align: center;
-      }
-    }
-    /* Botão Flutuante de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--success-green);
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% {transform: scale(1);}
-      50% {transform: scale(1.1);}
-      100% {transform: scale(1);}
-    }
-    .whatsapp-float:hover {
-      background: var(--hover-green);
-      transform: rotate(10deg);
-    }
-    .whatsapp-float img {
-      width: 30px;
-      height: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Água Já Itupeva - Pensou, chegou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="container">
-      <h1>Recupere Sua Reputação no Mercado Livre e Aumente Suas Vendas!</h1>
-      <p>Você está perdendo vendas por causa de avaliações negativas? Nós temos a solução.</p>
-      <a href="#formulario" class="btn-primary">Garanta sua Consultoria com Preço Especial</a>
-    </div>
-  </header>
+<body class="bg-blue-100 font-sans">
+    <header class="bg-blue-600 text-white text-center p-4">
+        <div class="flex items-center justify-center">
+            <img src="https://toptotal.com.br/media/com_jbusinessdirectory/pictures/categories/disk_agua-1592488087.png" alt="Logo Água Já Itupeva" class="h-20 mr-3">
+            <h1 class="text-2xl font-bold">Água Já Itupeva</h1>
+        </div>
+        <p id="boasVindas" class="text-sm"></p>
+    </header>
 
-  <!-- Oferta Limitada com Countdown -->
-  <div class="highlight">
-    <p><strong>Oferta Limitada:</strong> Consultoria com preço especial por tempo limitado! Garanta já a sua!</p>
-    <div id="countdown"></div>
-  </div>
+    <main class="p-6 flex justify-center">
+        <div class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
+            <!-- Login do Cliente -->
+            <div id="loginSection">
+                <h2 class="text-xl font-semibold text-center mb-4">Login do Cliente</h2>
+                <form id="loginForm" class="mb-6">
+                    <label for="telefoneLogin" class="block text-sm font-medium text-gray-700">Telefone:</label>
+                    <input type="tel" id="telefoneLogin" name="telefoneLogin" class="mt-1 p-2 w-full border rounded" required>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Entrar</button>
+                </form>
+                <p class="text-center mt-2">
+                    <a href="#" onclick="esqueceuSenha()" class="text-blue-500 underline">Esqueceu a senha?</a>
+                </p>
+            </div>
 
-  <!-- Benefícios -->
-  <section class="benefits">
-    <h2>Por Que Uma Boa Reputação é Essencial?</h2>
-    <ul>
-      <li><strong>Visibilidade Máxima:</strong> Seus produtos aparecem em destaque, aumentando até 73% sua visibilidade.</li>
-      <li><strong>Economia de Taxas:</strong> Aproveite comissões até 30% menores.</li>
-      <li><strong>Frete Grátis:</strong> Tenha acesso aos programas de frete subsidiado pelo Mercado Livre.</li>
-      <li><strong>Confiança dos Clientes:</strong> Conquiste a confiança que gera mais vendas.</li>
-    </ul>
-  </section>
+            <!-- Cadastro do Cliente -->
+            <div id="cadastroSection" class="hidden">
+                <h2 class="text-xl font-semibold text-center mb-4">Cadastro do Cliente</h2>
+                <form id="cadastroForm" class="mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-gray-700">Nome:</label>
+                            <input type="text" id="nome" name="nome" class="mt-1 p-2 w-full border rounded" required>
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" class="mt-1 p-2 w-full border rounded" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-mail:</label>
+                            <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded" required>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label for="endereco" class="block text-sm font-medium text-gray-700">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" class="mt-1 p-2 w-full border rounded" required>
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Salvar Cadastro</button>
+                </form>
+            </div>
 
-  <!-- Impactos de uma Reputação Ruim -->
-  <section class="negative-impacts">
-    <h2>O Impacto de Uma Reputação Ruim</h2>
-    <ul>
-      <li><strong>Vendas em Queda:</strong> Avaliações negativas fazem seus produtos caírem no ranking.</li>
-      <li><strong>Custos Elevados:</strong> Pague taxas mais altas e perca benefícios exclusivos.</li>
-      <li><strong>Desconfiança:</strong> Clientes evitam vendedores com baixa reputação.</li>
-      <li><strong>Risco de Suspensão:</strong> Em casos extremos, sua conta pode ser bloqueada.</li>
-    </ul>
-  </section>
+            <!-- Página de Compras -->
+            <div id="compraSection" class="hidden">
+                <h2 class="text-xl font-semibold text-center mb-4">Escolha seus galões</h2>
 
-  <!-- CTA: Consultoria Personalizada -->
-  <section class="cta">
-    <h2>Consultoria Personalizada Para Recuperar Sua Reputação com Preço Especial!</h2>
-    <p>Entre em contato agora com a <strong>Innove Tecnologia</strong> e descubra como podemos transformar seu negócio.</p>
-    <a href="https://wa.me/5517997511127" target="_blank" class="whatsapp-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
-      Fale Conosco no WhatsApp
-    </a>
-  </section>
+                <div class="mt-4">
+                    <h4 class="font-semibold">Entrega ou Retirada?</h4>
+                    <div class="mt-2">
+                        <label><input type="radio" name="retirada" value="entrega" checked onchange="atualizarDesconto()"> Entrega</label><br>
+                        <label><input type="radio" name="retirada" value="retirada" onchange="atualizarDesconto()"> Retirada (Desconto de 15%)</label>
+                    </div>
+                </div>
 
-  <!-- Processo de Consultoria -->
-  <section class="steps">
-    <h2>Como Funciona Nossa Consultoria</h2>
-    <ol>
-      <li><strong>Diagnóstico Inicial:</strong> Avaliamos sua situação e identificamos os pontos críticos.</li>
-      <li><strong>Plano Personalizado:</strong> Desenvolvemos uma estratégia sob medida para sua recuperação.</li>
-      <li><strong>Implementação Ágil:</strong> Colocamos em prática as ações que geram resultados.</li>
-      <li><strong>Acompanhamento Constante:</strong> Monitoramos e ajustamos a estratégia conforme necessário.</li>
-    </ol>
-  </section>
+                <div class="overflow-x-auto mt-4">
+                    <table class="table-auto w-full bg-white rounded-lg shadow">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2">Produto</th>
+                                <th class="px-4 py-2">Preço Unitário</th>
+                                <th class="px-4 py-2">Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2">Galão Ibirá - 20L</td>
+                                <td class="px-4 py-2">R$ 15,00</td>
+                                <td class="px-4 py-2"><input type="number" id="ibiraQty" value="0" min="0" class="w-16 border rounded" onchange="atualizarDesconto()"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">Galão Água Minagem - 20L</td>
+                                <td class="px-4 py-2">R$ 18,00</td>
+                                <td class="px-4 py-2"><input type="number" id="minagemQty" value="0" min="0" class="w-16 border rounded" onchange="atualizarDesconto()"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-  <!-- Depoimentos -->
-  <section class="testimonials">
-    <h2>O Que Nossos Clientes Dizem</h2>
-    <div class="testimonial">
-      <p>"A Innove Tecnologia salvou meu negócio! Minha reputação melhorou e minhas vendas dispararam em poucas semanas."</p>
-      <span>— João Silva</span>
-    </div>
-    <div class="testimonial">
-      <p>"Graças à consultoria, consegui recuperar a confiança dos meus clientes e aumentar significativamente meu faturamento."</p>
-      <span>— Maria Souza</span>
-    </div>
-  </section>
+                <div class="mt-6 text-center">
+                    <button onclick="fecharPedido()" class="bg-blue-500 text-white px-6 py-2 rounded">Fechar Pedido</button>
+                </div>
 
-  <!-- Formulário de Captação -->
-  <section id="formulario" class="lead-form">
-    <h2>Adquira Sua Consultoria com Preço Especial</h2>
-    <p>Preencha seus dados e, ao enviar, você será direcionado para o WhatsApp com sua mensagem pré-preenchida.</p>
-    <form id="leadForm">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-      
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required placeholder="Seu e-mail">
-      
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required placeholder="Seu telefone">
-      
-      <button type="submit">Enviar Agora</button>
-    </form>
-  </section>
+                <!-- Resumo do Pedido -->
+                <div id="resumoPedido" class="mt-6 hidden bg-white p-4 rounded-lg shadow">
+                    <h3 class="text-lg font-bold mb-2">Resumo do Pedido</h3>
+                    <p id="resumoTexto" class="text-gray-700"></p>
+                    <h4 class="font-semibold mt-2">Forma de Pagamento</h4>
+                    <div class="mt-2">
+                        <label><input type="radio" name="pagamento" value="pix"> Pix (CNPJ: 41823685000153)</label><br>
+                        <a href="https://wa.me/5517991255999?text=Envie%20o%20comprovante%20de%20pagamento%20para%20este%20n%C3%BAmero." target="_blank" class="text-blue-500 underline">Enviar comprovante pelo WhatsApp</a><br>
+                        <label><input type="radio" name="pagamento" value="dinheiro"> Dinheiro</label><br>
+                        <label><input type="radio" name="pagamento" value="cartao"> Cartão na entrega</label>
+                    </div>
 
-  <!-- Nossa História -->
-  <section class="our-story">
-    <h2>Nossa História</h2>
-    <p>
-      Na Innove Tecnologia, nossa paixão pela inovação nos impulsiona a transformar desafios em oportunidades.  
-      Desde o início, temos oferecido soluções personalizadas que impulsionam o sucesso dos nossos clientes.
-    </p>
-    <p>
-      Cada projeto é uma nova história de crescimento e superação. Junte-se a nós e faça parte dessa trajetória de transformação!
-    </p>
-  </section>
+                    <button onclick="finalizarPedido()" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  <!-- Rodapé com Logotipo Integrado -->
-  <footer>
-    <div class="footer-content">
-      <img src="https://i.imgur.com/B450h12.png" alt="Logo Innove Tecnologia" class="footer-logo">
-      <div class="footer-text">
-        <p>&copy; 2025 Innove Tecnologia. Todos os direitos reservados.</p>
-        <p>Garantimos a privacidade e segurança dos seus dados.</p>
-      </div>
-    </div>
-  </footer>
+    <footer class="bg-blue-600 text-white text-center p-4 mt-6">
+        <p>&copy; 2025 Água Já Itupeva. Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- Botão Flutuante de WhatsApp -->
-  <a href="https://wa.me/5517997511127" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp" onclick="gtag('event', 'conversion', {'send_to': 'AW-16846412441'});">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
-  </a>
+    <script>
+        let clientes = JSON.parse(localStorage.getItem('clientes')) || {};
+        let clienteAtual = null;
 
-  <!-- Scripts -->
-  <script>
-    // Smooth Scrolling para links âncora
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const telefone = document.getElementById('telefoneLogin').value;
+            if (clientes[telefone]) {
+                clienteAtual = clientes[telefone];
+                mostrarBoasVindas(clienteAtual.nome);
+                mostrarCompra();
+            } else {
+                alert('Cliente não cadastrado. Faça o cadastro.');
+                document.getElementById('loginSection').classList.add('hidden');
+                document.getElementById('cadastroSection').classList.remove('hidden');
+                document.getElementById('telefone').value = telefone;
+            }
         });
-      });
-    });
 
-    // Redirecionamento do Formulário para o WhatsApp com Dados Pré-Preenchidos e Tag do Google
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Impede o envio tradicional do formulário
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const endereco = document.getElementById('endereco').value;
 
-      // Captura os valores dos campos
-      var nome = document.getElementById('nome').value;
-      var email = document.getElementById('email').value;
-      var telefone = document.getElementById('telefone').value;
+            clientes[telefone] = { nome, telefone, email, endereco, compras: 0 };
+            localStorage.setItem('clientes', JSON.stringify(clientes));
+            clienteAtual = clientes[telefone];
 
-      // Cria a mensagem com quebras de linha codificadas (%0A)
-      var mensagem = "Olá, gostaria de saber mais sobre a consultoria com preço especial.%0A";
-      mensagem += "Nome: " + nome + "%0A";
-      mensagem += "E-mail: " + email + "%0A";
-      mensagem += "Telefone: " + telefone;
+            mostrarBoasVindas(nome);
+            mostrarCompra();
+        });
 
-      // Número do WhatsApp (no formato internacional, sem espaços ou símbolos)
-      var whatsappNumber = "5517997511127"; // Altere se necessário
+        function esqueceuSenha() {
+            const telefone = prompt('Digite seu telefone cadastrado:');
+            if (clientes[telefone]) {
+                const email = clientes[telefone].email;
+                const novaSenha = Math.random().toString(36).slice(-8);
+                alert(`Uma nova senha foi enviada para o e-mail cadastrado: ${email}\nSua nova senha é: ${novaSenha}`);
+            } else {
+                alert('Telefone não cadastrado.');
+            }
+        }
 
-      // URL do WhatsApp com a mensagem pré-preenchida
-      var whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + mensagem;
+        function mostrarBoasVindas(nome) {
+            document.getElementById('boasVindas').innerText = `Bem-vindo, ${nome}!`;
+        }
 
-      // Aciona a tag de conversão do Google
-      gtag('event', 'conversion', {'send_to': 'AW-16846412441'});
+        function mostrarCompra() {
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('cadastroSection').classList.add('hidden');
+            document.getElementById('compraSection').classList.remove('hidden');
+        }
 
-      // Redireciona para o WhatsApp após um pequeno atraso para garantir o disparo da tag
-      setTimeout(function() {
-        window.location.href = whatsappURL;
-      }, 300);
-    });
-  </script>
+        function atualizarDesconto() {
+            const retirada = document.querySelector('input[name="retirada"]:checked').value;
+            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
+            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
+
+            let total = (ibiraQty * 15) + (minagemQty * 18);
+
+            if (retirada === 'retirada') {
+                total *= 0.85;
+            }
+
+            document.getElementById('resumoTexto').innerText = `Galão Ibirá: ${ibiraQty} x R$ 15,00 = R$ ${(ibiraQty * 15).toFixed(2)}\nGalão Minagem: ${minagemQty} x R$ 18,00 = R$ ${(minagemQty * 18).toFixed(2)}\nTotal: R$ ${total.toFixed(2)}`;
+        }
+
+        function fecharPedido() {
+            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
+            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
+
+            if (!clienteAtual) {
+                alert('Por favor, faça login ou cadastro antes de fechar o pedido.');
+                return;
+            }
+
+            clienteAtual.compras += ibiraQty + minagemQty;
+            if (clienteAtual.compras >= 10) {
+                alert('Parabéns! Você ganhou 1 galão grátis!');
+                clienteAtual.compras -= 10;
+            }
+
+            localStorage.setItem('clientes', JSON.stringify(clientes));
+            document.getElementById('resumoPedido').classList.remove('hidden');
+            atualizarDesconto();
+        }
+
+        function finalizarPedido() {
+            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
+            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
+            const retirada = document.querySelector('input[name="retirada"]:checked').value;
+            const total = document.getElementById('resumoTexto').innerText;
+
+            const mensagem = `Pedido de ${clienteAtual.nome} - Telefone: ${clienteAtual.telefone}\nEndereço: ${clienteAtual.endereco}\n\n${total}\nForma de Retirada: ${retirada}\nPagamento: ${document.querySelector('input[name="pagamento"]:checked').value}`;
+
+            const url = `https://wa.me/5517991255999?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+
+            alert('Pedido finalizado e enviado para o WhatsApp!');
+        }
+    </script>
 </body>
 </html>
