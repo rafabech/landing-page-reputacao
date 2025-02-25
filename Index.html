@@ -123,6 +123,13 @@
       margin-top: 15px;
       color: #d32f2f; /* Vermelho para destaque */
     }
+    /* Seção de como chegar */
+    #mapSection iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -276,6 +283,20 @@
     </p>
   </div>
 
+  <!-- Seção de Como Chegar (Google Maps) -->
+  <div class="container" id="mapSection">
+    <h3>Como chegar até nós</h3>
+    <p>Retire seu pedido em: Avenida Italia, 636, Sala A - Jardim São Vicente,<br/>
+       Itupeva - SP, 13.295-114
+    </p>
+    <iframe
+      src="https://www.google.com/maps?q=Avenida+Italia+636+Jardim+Sao+Vicente+Itupeva+SP+13295-114&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <script>
     let order = [];
 
@@ -299,7 +320,6 @@
         }
       });
       updateOrderSummary();
-      alert("Itens adicionados ao resumo do pedido!");
     }
 
     // Exibe o resumo do pedido
