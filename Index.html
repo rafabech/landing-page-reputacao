@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Água Já – Itupeva – Disk água mineral</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e0f7fa;
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa; /* Fundo azul clarinho */
     }
     .container {
       max-width: 600px;
@@ -21,7 +25,7 @@
     }
     h1, h2, h3 {
       text-align: center;
-      color: #0277bd;
+      color: #0277bd; /* Azul que remete à água */
       margin-top: 0;
       margin-bottom: 20px;
     }
@@ -43,19 +47,9 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    button {
-      background-color: #0277bd;
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 1.1em;
-      border-radius: 4px;
-      width: 100%;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #01579b;
+    /* Estilo de erro: borda vermelha */
+    .error {
+      border: 2px solid red !important;
     }
     .radio-group {
       display: flex;
@@ -73,16 +67,22 @@
       height: 20px;
       margin-right: 8px;
     }
-    .product-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 10px;
-    }
-    .product-table th,
-    .product-table td {
-      padding: 8px;
-      text-align: left;
+    .product {
+      display: flex;
+      align-items: center;
       border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product-controls {
+      text-align: right;
+    }
+    .product-controls input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 5px;
     }
     .order-summary ul {
       list-style: none;
@@ -92,73 +92,46 @@
     .order-summary li {
       margin-bottom: 5px;
     }
-    #changeSection {
-      display: none;
+    button {
+      background-color: #0277bd;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      width: 100%;
+      cursor: pointer;
       margin-top: 10px;
     }
-    #changeValueContainer {
-      display: none;
-      margin-top: 5px;
+    button:hover {
+      background-color: #01579b;
     }
-    .info-text {
-      font-size: 0.9em;
-      color: #555;
+    #trocoSection, #trocoValueContainer {
+      display: none;
+    }
+    #summarySection {
+      margin-top: 20px;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      padding: 10px;
+      border-radius: 4px;
+      display: none; /* Mostra após clicar "Adicionar Itens" */
+    }
+    #finalText {
       text-align: center;
-      margin-top: 5px;
+      font-style: italic;
+      margin-top: 15px;
+      color: #d32f2f; /* Vermelho para destaque */
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <h1>Água Já – Itupeva</h1>
     <h2>Disk água mineral</h2>
 
-    <!-- Seleção de produtos com UM botão final para adicionar -->
-    <div class="section">
-      <h3>Selecione os Produtos</h3>
-      <table class="product-table">
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Preço</th>
-            <th style="width: 80px;">Qtd</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Água Mineral 500ml</td>
-            <td>R$2,50</td>
-            <td><input type="number" id="qty1" min="0" max="20" value="0" /></td>
-          </tr>
-          <tr>
-            <td>Água Mineral 1L</td>
-            <td>R$4,50</td>
-            <td><input type="number" id="qty2" min="0" max="20" value="0" /></td>
-          </tr>
-          <tr>
-            <td>Água Mineral 2L</td>
-            <td>R$7,50</td>
-            <td><input type="number" id="qty3" min="0" max="20" value="0" /></td>
-          </tr>
-          <tr>
-            <td>Galão de 20L</td>
-            <td>R$15,00</td>
-            <td><input type="number" id="qty4" min="0" max="20" value="0" /></td>
-          </tr>
-        </tbody>
-      </table>
-      <button onclick="addProductsToOrder()">Adicionar ao Pedido</button>
-
-      <hr />
-      <h3>Seu Pedido</h3>
-      <div class="order-summary">
-        <ul id="orderList"></ul>
-      </div>
-    </div>
-
-    <!-- Entrega ou Retirada -->
-    <div class="section">
+    <!-- Seção Entrega ou Retirada -->
+    <div class="section" id="deliverySection">
       <h3>Entrega ou Retirada?</h3>
       <div class="radio-group" id="deliveryGroup">
         <div class="radio-option">
@@ -172,7 +145,48 @@
       </div>
     </div>
 
-    <!-- Forma de pagamento -->
+    <!-- Lista de Produtos (quantidades) -->
+    <div class="section">
+      <h3>Selecione os Produtos</h3>
+      <div id="productCatalog">
+        <div class="product">
+          <div class="product-details">
+            <p><strong>Água Mineral 500ml</strong> – R$2,50</p>
+          </div>
+          <div class="product-controls">
+            <input type="number" id="qty1" min="0" max="20" value="0" />
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-details">
+            <p><strong>Água Mineral 1L</strong> – R$4,50</p>
+          </div>
+          <div class="product-controls">
+            <input type="number" id="qty2" min="0" max="20" value="0" />
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-details">
+            <p><strong>Água Mineral 2L</strong> – R$7,50</p>
+          </div>
+          <div class="product-controls">
+            <input type="number" id="qty3" min="0" max="20" value="0" />
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-details">
+            <p><strong>Galão de 20L</strong> – R$15,00</p>
+          </div>
+          <div class="product-controls">
+            <input type="number" id="qty4" min="0" max="20" value="0" />
+          </div>
+        </div>
+      </div>
+      <!-- Botão para adicionar os itens ao resumo -->
+      <button onclick="addAllItems()">Adicionar Itens</button>
+    </div>
+
+    <!-- Seção de Pagamento -->
     <div class="section">
       <h3>Forma de Pagamento</h3>
       <div class="radio-group" id="paymentGroup">
@@ -189,8 +203,8 @@
           <label>Dinheiro</label>
         </div>
       </div>
-      <!-- Troco (se dinheiro) -->
-      <div id="changeSection">
+      <!-- Pergunta sobre troco (apenas se escolher Dinheiro) -->
+      <div id="trocoSection">
         <label>Precisa de troco?</label>
         <div class="radio-group" style="flex-direction: row; gap:15px;">
           <div class="radio-option">
@@ -202,18 +216,17 @@
             <label>Não</label>
           </div>
         </div>
-        <div id="changeValueContainer">
+        <div id="trocoValueContainer">
           <label for="changeValue">Valor do Troco:</label>
           <input type="number" id="changeValue" min="0" step="1" value="0" />
         </div>
       </div>
     </div>
 
-    <!-- Precisa de comprovante e Observação -->
-    <div class="section">
-      <h3>Detalhes Extras</h3>
-      <label>Precisa de comprovante?</label>
-      <div class="radio-group" style="flex-direction: row; gap:15px;">
+    <!-- Precisa de Comprovante? -->
+    <div class="section" id="comprovanteSection">
+      <h3>Precisa de Comprovante?</h3>
+      <div class="radio-group" id="comprovanteGroup">
         <div class="radio-option">
           <input type="radio" name="comprovanteNeeded" value="Sim" />
           <label>Sim</label>
@@ -223,184 +236,207 @@
           <label>Não</label>
         </div>
       </div>
-      <label for="obs">Observação (opcional):</label>
+    </div>
+
+    <!-- Observação -->
+    <div class="section">
+      <label for="obs">Observação:</label>
       <textarea id="obs" rows="3" placeholder="Algum detalhe extra?"></textarea>
     </div>
 
     <!-- Dados do Cliente -->
     <div class="section">
       <h3>Seus Dados</h3>
-      <div class="form-group">
+      <div>
         <label for="clientName">Nome:</label>
         <input type="text" id="clientName" />
       </div>
-      <div class="form-group">
+      <div>
         <label for="clientPhone">Celular:</label>
         <input type="tel" id="clientPhone" />
       </div>
-      <div class="form-group">
+      <div>
         <label for="clientAddress">Endereço:</label>
         <textarea id="clientAddress" rows="2"></textarea>
       </div>
     </div>
 
-    <!-- Botão único para confirmar (enviar) -->
-    <button id="btnConfirm" onclick="confirmOrder()">
-      Confirme seu pedido
-    </button>
-    <p class="info-text">
-      Ao clicar em “Confirme seu pedido”, seu pedido será enviado via WhatsApp. 
-      <br />
-      Só após essa confirmação seu pedido será efetivado.
+    <!-- Resumo do Pedido -->
+    <div id="summarySection">
+      <h3>Resumo do Pedido</h3>
+      <div class="order-summary">
+        <ul id="orderList"></ul>
+      </div>
+    </div>
+
+    <!-- Botão Final -->
+    <button onclick="confirmarPedido()">Confirmar seu pedido</button>
+    <p id="finalText">
+      Só após essa confirmação seu pedido será enviado pelo WhatsApp.
     </p>
   </div>
 
   <script>
     let order = [];
 
-    // Adiciona produtos ao pedido (um único botão ao final da lista)
-    function addProductsToOrder() {
-      // Lê as quantidades de cada produto
-      const qty1 = parseInt(document.getElementById("qty1").value);
-      const qty2 = parseInt(document.getElementById("qty2").value);
-      const qty3 = parseInt(document.getElementById("qty3").value);
-      const qty4 = parseInt(document.getElementById("qty4").value);
-
-      // Reseta o array para evitar duplicar
-      order = [];
-
-      if (qty1 > 0) {
-        order.push({ product: "Água Mineral 500ml", price: 2.50, quantity: qty1 });
-      }
-      if (qty2 > 0) {
-        order.push({ product: "Água Mineral 1L", price: 4.50, quantity: qty2 });
-      }
-      if (qty3 > 0) {
-        order.push({ product: "Água Mineral 2L", price: 7.50, quantity: qty3 });
-      }
-      if (qty4 > 0) {
-        order.push({ product: "Galão de 20L", price: 15.00, quantity: qty4 });
-      }
-
+    // Adiciona todos os itens (quantidades > 0) ao array "order"
+    function addAllItems() {
+      order = []; // limpa antes de adicionar
+      const products = [
+        { name: 'Água Mineral 500ml', price: 2.50, qtyId: 'qty1' },
+        { name: 'Água Mineral 1L',    price: 4.50, qtyId: 'qty2' },
+        { name: 'Água Mineral 2L',    price: 7.50, qtyId: 'qty3' },
+        { name: 'Galão de 20L',       price: 15.00, qtyId: 'qty4' },
+      ];
+      products.forEach((prod) => {
+        const quantity = parseInt(document.getElementById(prod.qtyId).value) || 0;
+        if (quantity > 0) {
+          order.push({
+            product: prod.name,
+            price: prod.price,
+            quantity: quantity
+          });
+        }
+      });
       updateOrderSummary();
-      alert("Produtos adicionados ao pedido!");
+      alert("Itens adicionados ao resumo do pedido!");
     }
 
-    // Atualiza o resumo do pedido
+    // Exibe o resumo do pedido
     function updateOrderSummary() {
       const orderList = document.getElementById("orderList");
       orderList.innerHTML = "";
-      order.forEach((item) => {
-        const li = document.createElement("li");
-        const subtotal = (item.price * item.quantity).toFixed(2);
-        li.textContent = `${item.quantity} x ${item.product} - R$${subtotal}`;
-        orderList.appendChild(li);
-      });
+      if (order.length > 0) {
+        document.getElementById("summarySection").style.display = "block";
+        order.forEach((item) => {
+          const li = document.createElement("li");
+          const subtotal = (item.price * item.quantity).toFixed(2);
+          li.textContent = `${item.quantity} x ${item.product} - R$${subtotal}`;
+          orderList.appendChild(li);
+        });
+      } else {
+        document.getElementById("summarySection").style.display = "none";
+      }
     }
 
-    // Exibe/oculta campo de troco se pagamento = dinheiro
+    // Observa mudanças no pagamento para exibir troco
     document.getElementById("paymentGroup").addEventListener("change", function() {
       const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
-      const changeSection = document.getElementById("changeSection");
       if (paymentMethod === "Dinheiro") {
-        changeSection.style.display = "block";
+        document.getElementById("trocoSection").style.display = "block";
       } else {
-        changeSection.style.display = "none";
+        document.getElementById("trocoSection").style.display = "none";
       }
     });
 
-    // Exibe/oculta valor de troco se “Sim”
+    // Se "Sim" troco, exibe campo do valor
     function handleChangeOption() {
       const changeNeeded = document.querySelector('input[name="changeNeeded"]:checked')?.value;
-      const container = document.getElementById("changeValueContainer");
       if (changeNeeded === "Sim") {
-        container.style.display = "block";
+        document.getElementById("trocoValueContainer").style.display = "block";
       } else {
-        container.style.display = "none";
+        document.getElementById("trocoValueContainer").style.display = "none";
       }
     }
 
-    // Ao clicar em "Confirme seu pedido"
-    function confirmOrder() {
-      // 1. Verifica se há produtos no pedido
+    // Verifica campos obrigatórios e, se ok, envia via WhatsApp
+    function confirmarPedido() {
+      // 1) Verificar se existe algum item no order
       if (order.length === 0) {
-        alert("Por favor, selecione a quantidade de produtos e clique em 'Adicionar ao Pedido'.");
+        alert("Nenhum produto foi adicionado. Selecione as quantidades e clique em 'Adicionar Itens'.");
         return;
       }
 
-      // 2. Verifica entrega ou retirada
-      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked')?.value;
-      if (!deliveryMethod) {
-        alert("Por favor, selecione Entrega ou Retirada.");
-        return;
-      }
+      // 2) Validar Entrega/Retirada
+      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+      highlightError(deliveryGroup, !deliveryMethod);
 
-      // 3. Verifica forma de pagamento
-      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
-      if (!paymentMethod) {
-        alert("Por favor, selecione a forma de pagamento.");
-        return;
-      }
+      // 3) Validar Forma de Pagamento
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+      highlightError(paymentGroup, !paymentMethod);
 
-      // 4. Se pagamento = Dinheiro, verifica troco
+      // Se pagamento = Dinheiro, validar troco
       let trocoNeeded = "";
       let trocoValue = "";
-      if (paymentMethod === "Dinheiro") {
-        const changeNeeded = document.querySelector('input[name="changeNeeded"]:checked')?.value;
-        if (!changeNeeded) {
-          alert("Por favor, informe se precisa de troco (Sim ou Não).");
+      if (paymentMethod && paymentMethod.value === "Dinheiro") {
+        const trocoNeededElement = document.querySelector('input[name="changeNeeded"]:checked');
+        highlightError(trocoSection, !trocoNeededElement);
+        if (trocoNeededElement && trocoNeededElement.value === "Sim") {
+          const trocoVal = document.getElementById("changeValue").value;
+          highlightError(changeValue, !trocoVal || parseInt(trocoVal) < 1);
+          trocoNeeded = trocoNeededElement.value;
+          trocoValue = trocoVal;
+          if (!trocoVal || parseInt(trocoVal) < 1) {
+            alert("Informe um valor de troco válido.");
+            return;
+          }
+        } else if (!trocoNeededElement) {
+          alert("Selecione se precisa de troco ou não.");
           return;
-        }
-        trocoNeeded = changeNeeded;
-        if (trocoNeeded === "Sim") {
-          trocoValue = document.getElementById("changeValue").value;
+        } else {
+          trocoNeeded = trocoNeededElement.value;
         }
       }
 
-      // 5. Precisa de comprovante?
-      const comprovanteOption = document.querySelector('input[name="comprovanteNeeded"]:checked')?.value;
-      const comprovanteText = comprovanteOption ? comprovanteOption : "Não especificado";
+      // 4) Precisa de Comprovante
+      const comprovante = document.querySelector('input[name="comprovanteNeeded"]:checked');
+      highlightError(comprovanteSection, !comprovante);
 
-      // 6. Observação
-      const obsText = document.getElementById("obs").value.trim();
+      // 5) Dados do Cliente
+      const clientName = document.getElementById("clientName");
+      const clientPhone = document.getElementById("clientPhone");
+      const clientAddress = document.getElementById("clientAddress");
 
-      // 7. Dados do cliente
-      const clientName = document.getElementById("clientName").value.trim();
-      const clientPhone = document.getElementById("clientPhone").value.trim();
-      const clientAddress = document.getElementById("clientAddress").value.trim();
+      highlightError(clientName, !clientName.value.trim());
+      highlightError(clientPhone, !clientPhone.value.trim());
+      highlightError(clientAddress, !clientAddress.value.trim());
 
-      if (!clientName || !clientPhone || !clientAddress) {
-        alert("Por favor, preencha Nome, Celular e Endereço.");
+      // Se algum campo obrigatório estiver vazio, interrompe
+      if (
+        !deliveryMethod ||
+        !paymentMethod ||
+        !comprovante ||
+        !clientName.value.trim() ||
+        !clientPhone.value.trim() ||
+        !clientAddress.value.trim()
+      ) {
+        alert("Por favor, preencha todos os campos obrigatórios (destacados em vermelho).");
         return;
       }
 
-      // 8. Calcula total
+      // 6) Observação
+      const obsText = document.getElementById("obs").value.trim();
+
+      // 7) Calcula o total
       let total = 0;
       order.forEach((item) => {
         total += item.price * item.quantity;
       });
 
-      // 9. Monta mensagem
-      let message = `Nome: ${clientName}\n`;
-      message += `Celular: ${clientPhone}\n`;
-      message += `Endereço: ${clientAddress}\n\n`;
-      message += `Entrega/Retirada: ${deliveryMethod}\n`;
-      message += `Forma de Pagamento: ${paymentMethod}\n`;
-      if (paymentMethod === "Dinheiro") {
+      // 8) Monta a mensagem final
+      let message = `Nome: ${clientName.value}\n`;
+      message += `Celular: ${clientPhone.value}\n`;
+      message += `Endereço: ${clientAddress.value}\n\n`;
+      message += `Entrega/Retirada: ${deliveryMethod.value}\n`;
+      message += `Forma de Pagamento: ${paymentMethod.value}\n`;
+
+      // Se for dinheiro, troco
+      if (paymentMethod.value === "Dinheiro") {
         message += `Precisa de troco? ${trocoNeeded}\n`;
         if (trocoNeeded === "Sim") {
           message += `Valor do Troco: R$${trocoValue}\n`;
         }
       }
-      message += `Precisa de comprovante? ${comprovanteText}\n\n`;
+
+      message += `Precisa de Comprovante? ${comprovante.value}\n\n`;
       message += `Produtos:\n`;
       order.forEach((item) => {
         const subtotal = item.price * item.quantity;
         message += `${item.quantity} x ${item.product} - R$${subtotal.toFixed(2)}\n`;
       });
 
-      // Desconto se retirada
-      if (deliveryMethod === "Retirada") {
+      // Desconto se for retirada
+      if (deliveryMethod.value === "Retirada") {
         const discount = total * 0.15;
         const discountedTotal = total - discount;
         message += `\nTotal sem desconto: R$${total.toFixed(2)}\n`;
@@ -414,13 +450,26 @@
         message += `\nObservação: ${obsText}\n`;
       }
 
-      // 10. Abre WhatsApp
+      // 9) Envia via WhatsApp
       const encodedMsg = encodeURIComponent(message);
-      const whatsappNumber = "5511999999999"; // Seu número no formato internacional
+      const whatsappNumber = "5511999999999"; // Substitua pelo seu número
       const url = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
       window.open(url, "_blank");
 
-      alert("Seu pedido foi enviado via WhatsApp!");
+      // 10) Limpa a lista e campos, se quiser
+      order = [];
+      updateOrderSummary();
+      alert("Pedido enviado via WhatsApp com sucesso!");
+    }
+
+    // Função para aplicar/remover classe de erro em elementos
+    function highlightError(element, condition) {
+      if (!element) return;
+      if (condition) {
+        element.classList.add("error");
+      } else {
+        element.classList.remove("error");
+      }
     }
   </script>
 </body>
