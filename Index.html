@@ -5,81 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Água Já – Itupeva – Disk água mineral</title>
   <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
       margin: 0;
       padding: 0;
     }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e0f7fa; /* Fundo azul clarinho */
-    }
-
-    /* Botão flutuante de WhatsApp com ícone oficial */
-    .floating-whatsapp {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      background: #25d366;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 50px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      text-decoration: none;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      z-index: 1000;
-    }
-    .floating-whatsapp img {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-    }
-
-    /* Hero (topo da página) */
-    .hero {
-      background: linear-gradient(135deg, #0277bd, #81d4fa);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.2em;
-    }
-
-    /* Container principal */
     .container {
       max-width: 600px;
-      margin: 0 auto 40px auto;
+      margin: 20px auto;
       background: #fff;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h2, h3 {
+    h1, h2, h3 {
       text-align: center;
-      color: #0277bd; /* Azul que remete à água */
+      color: #0277bd;
       margin-top: 0;
       margin-bottom: 20px;
     }
-
-    /* Formulários e campos */
-    .form-group {
-      margin-bottom: 15px;
+    .section {
+      margin-bottom: 20px;
+      background: #f1f8e9;
+      padding: 15px;
+      border-radius: 4px;
     }
     label {
       display: block;
-      font-size: 1.1em;
+      font-weight: bold;
       margin-bottom: 5px;
     }
     input, textarea {
@@ -103,46 +57,33 @@
     button:hover {
       background-color: #01579b;
     }
-
-    /* Radio Buttons maiores e centralizados */
     .radio-group {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 8px;
       margin-bottom: 15px;
     }
     .radio-option {
       display: flex;
       align-items: center;
-      margin: 8px 0;
-      font-size: 1.2em;
+      font-size: 1em;
     }
     .radio-option input[type="radio"] {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
     }
-
-    /* Produtos (sem imagem ou usando placeholder) */
-    .product {
-      display: flex;
-      align-items: center;
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    .product-table th,
+    .product-table td {
+      padding: 8px;
+      text-align: left;
       border-bottom: 1px solid #ccc;
-      padding: 10px 0;
     }
-    .product-details {
-      flex: 1;
-    }
-    .product-controls {
-      text-align: right;
-    }
-    .product-controls input[type="number"] {
-      width: 60px;
-      padding: 5px;
-      margin-right: 5px;
-    }
-
-    /* Resumo do pedido */
     .order-summary ul {
       list-style: none;
       padding: 0;
@@ -151,320 +92,317 @@
     .order-summary li {
       margin-bottom: 5px;
     }
-
-    /* Seções de entrega e pagamento */
-    #deliverySection, #paymentSection {
-      margin: 20px 0;
-      background: #f1f8e9;
-      padding: 10px;
-      border-radius: 4px;
-    }
-
-    /* Contador e Fidelidade */
-    #clientCounter {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    /* Seção de confirmação do pedido (exibida antes de abrir o e-mail) */
-    #confirmationSection {
+    #changeSection {
       display: none;
-      margin-top: 20px;
-      background: #fff8e1;
-      border: 1px solid #ffecb3;
-      padding: 15px;
-      border-radius: 4px;
+      margin-top: 10px;
     }
-    #confirmationSection h3 {
-      margin-bottom: 10px;
+    #changeValueContainer {
+      display: none;
+      margin-top: 5px;
+    }
+    .info-text {
+      font-size: 0.9em;
+      color: #555;
       text-align: center;
-      color: #ff6f00;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Botão flutuante de WhatsApp (ícone oficial) -->
-  <a class="floating-whatsapp" href="https://wa.me/5511999999999" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
-    Zap!
-  </a>
-
-  <!-- Hero (topo da página) -->
-  <div id="heroSection" class="hero">
+  <div class="container">
     <h1>Água Já – Itupeva</h1>
-    <p>Disk água mineral com fidelidade!</p>
-  </div>
+    <h2>Disk água mineral</h2>
 
-  <!-- Seção de Cadastro -->
-  <div id="registrationSection" class="container">
-    <h2>Cadastro do Cliente</h2>
-    <form id="registrationForm">
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required />
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="celular">Celular:</label>
-        <input type="tel" id="celular" name="celular" required />
-      </div>
-      <div class="form-group">
-        <label for="endereco">Endereço:</label>
-        <textarea id="endereco" name="endereco" rows="3" required></textarea>
-      </div>
-      <button type="submit">Cadastrar</button>
-    </form>
-    <!-- Link de contato direto no cadastro -->
-    <p style="text-align:center; margin-top:15px;">
-      <a href="https://wa.me/5511999999999" target="_blank" style="color:#0277bd; font-weight:bold;">
-        Entre em contato pelo WhatsApp
-      </a>
-    </p>
-  </div>
+    <!-- Seleção de produtos com UM botão final para adicionar -->
+    <div class="section">
+      <h3>Selecione os Produtos</h3>
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th style="width: 80px;">Qtd</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Água Mineral 500ml</td>
+            <td>R$2,50</td>
+            <td><input type="number" id="qty1" min="0" max="20" value="0" /></td>
+          </tr>
+          <tr>
+            <td>Água Mineral 1L</td>
+            <td>R$4,50</td>
+            <td><input type="number" id="qty2" min="0" max="20" value="0" /></td>
+          </tr>
+          <tr>
+            <td>Água Mineral 2L</td>
+            <td>R$7,50</td>
+            <td><input type="number" id="qty3" min="0" max="20" value="0" /></td>
+          </tr>
+          <tr>
+            <td>Galão de 20L</td>
+            <td>R$15,00</td>
+            <td><input type="number" id="qty4" min="0" max="20" value="0" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="addProductsToOrder()">Adicionar ao Pedido</button>
 
-  <!-- Seção de Vendas (inicialmente oculta) -->
-  <div id="salesSection" class="container" style="display:none;">
-    <h2>Faça Seu Pedido</h2>
+      <hr />
+      <h3>Seu Pedido</h3>
+      <div class="order-summary">
+        <ul id="orderList"></ul>
+      </div>
+    </div>
 
-    <!-- Seção de Entrega ou Retirada -->
-    <div id="deliverySection">
+    <!-- Entrega ou Retirada -->
+    <div class="section">
       <h3>Entrega ou Retirada?</h3>
-      <div class="radio-group">
+      <div class="radio-group" id="deliveryGroup">
         <div class="radio-option">
-          <input type="radio" name="deliveryMethod" value="Entrega" required />
+          <input type="radio" name="deliveryMethod" value="Entrega" />
           <label>Entrega (sem desconto)</label>
         </div>
         <div class="radio-option">
-          <input type="radio" name="deliveryMethod" value="Retirada" required />
+          <input type="radio" name="deliveryMethod" value="Retirada" />
           <label>Retirada (15% de desconto)</label>
         </div>
       </div>
     </div>
 
-    <!-- Lista de Produtos (sem imagem ou com placeholder repetida) -->
-    <h3>Selecione os Produtos</h3>
-    <div id="productCatalog">
-      <!-- Produto 1 -->
-      <div class="product">
-        <div class="product-details">
-          <p><strong>Água Mineral 500ml</strong></p>
-          <p>Preço: R$2,50</p>
-        </div>
-        <div class="product-controls">
-          <input type="number" id="qty1" min="0" max="20" value="0" />
-          <button
-            type="button"
-            onclick="addToOrder('Água Mineral 500ml', 2.50, document.getElementById('qty1').value)"
-          >
-            Adicionar
-          </button>
-        </div>
-      </div>
-
-      <!-- Produto 2 -->
-      <div class="product">
-        <div class="product-details">
-          <p><strong>Água Mineral 1L</strong></p>
-          <p>Preço: R$4,50</p>
-        </div>
-        <div class="product-controls">
-          <input type="number" id="qty2" min="0" max="20" value="0" />
-          <button
-            type="button"
-            onclick="addToOrder('Água Mineral 1L', 4.50, document.getElementById('qty2').value)"
-          >
-            Adicionar
-          </button>
-        </div>
-      </div>
-
-      <!-- Produto 3 -->
-      <div class="product">
-        <div class="product-details">
-          <p><strong>Água Mineral 2L</strong></p>
-          <p>Preço: R$7,50</p>
-        </div>
-        <div class="product-controls">
-          <input type="number" id="qty3" min="0" max="20" value="0" />
-          <button
-            type="button"
-            onclick="addToOrder('Água Mineral 2L', 7.50, document.getElementById('qty3').value)"
-          >
-            Adicionar
-          </button>
-        </div>
-      </div>
-
-      <!-- Produto 4 -->
-      <div class="product">
-        <div class="product-details">
-          <p><strong>Galão de 20L</strong></p>
-          <p>Preço: R$15,00</p>
-        </div>
-        <div class="product-controls">
-          <input type="number" id="qty4" min="0" max="20" value="0" />
-          <button
-            type="button"
-            onclick="addToOrder('Galão de 20L', 15.00, document.getElementById('qty4').value)"
-          >
-            Adicionar
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <hr />
-
-    <!-- Resumo do Pedido -->
-    <h3>Seu Pedido</h3>
-    <div class="order-summary">
-      <ul id="orderList"></ul>
-    </div>
-
-    <!-- Seção de Pagamento -->
-    <div id="paymentSection">
-      <h3>Opções de Pagamento</h3>
-      <div class="radio-group">
+    <!-- Forma de pagamento -->
+    <div class="section">
+      <h3>Forma de Pagamento</h3>
+      <div class="radio-group" id="paymentGroup">
         <div class="radio-option">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="Cartão de crédito (na hora da entrega)"
-            required
-          />
+          <input type="radio" name="paymentMethod" value="Cartão de crédito (na hora da entrega)" />
           <label>Cartão de crédito (na hora da entrega)</label>
         </div>
         <div class="radio-option">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="Pix (CNPJ: 41823685000153)"
-            required
-          />
-          <label>Pix (CNPJ: 41823685000153)</label>
+          <input type="radio" name="paymentMethod" value="Pix (enviar comprovante por WhatsApp)" />
+          <label>Pix (enviar comprovante por WhatsApp)</label>
         </div>
         <div class="radio-option">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="Dinheiro (precisa de troco)"
-            required
-          />
-          <label>Dinheiro (precisa de troco)</label>
+          <input type="radio" name="paymentMethod" value="Dinheiro" />
+          <label>Dinheiro</label>
+        </div>
+      </div>
+      <!-- Troco (se dinheiro) -->
+      <div id="changeSection">
+        <label>Precisa de troco?</label>
+        <div class="radio-group" style="flex-direction: row; gap:15px;">
+          <div class="radio-option">
+            <input type="radio" name="changeNeeded" value="Sim" onclick="handleChangeOption()" />
+            <label>Sim</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="changeNeeded" value="Não" onclick="handleChangeOption()" />
+            <label>Não</label>
+          </div>
+        </div>
+        <div id="changeValueContainer">
+          <label for="changeValue">Valor do Troco:</label>
+          <input type="number" id="changeValue" min="0" step="1" value="0" />
         </div>
       </div>
     </div>
 
-    <!-- Botão de Confirmação do Pedido -->
-    <button id="confirmOrder" onclick="showConfirmation()" disabled>
-      Confirmar Pedido
-    </button>
-
-    <!-- Seção de Confirmação (exibida antes de abrir o e-mail) -->
-    <div id="confirmationSection">
-      <h3>Confirme Seu Pedido</h3>
-      <p id="confirmationText"></p>
-      <button style="background: #4caf50;" onclick="sendOrderEmail()">
-        Enviar Pedido por E-mail
-      </button>
-      <button style="background: #f44336;" onclick="hideConfirmation()">
-        Cancelar
-      </button>
+    <!-- Precisa de comprovante e Observação -->
+    <div class="section">
+      <h3>Detalhes Extras</h3>
+      <label>Precisa de comprovante?</label>
+      <div class="radio-group" style="flex-direction: row; gap:15px;">
+        <div class="radio-option">
+          <input type="radio" name="comprovanteNeeded" value="Sim" />
+          <label>Sim</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="comprovanteNeeded" value="Não" />
+          <label>Não</label>
+        </div>
+      </div>
+      <label for="obs">Observação (opcional):</label>
+      <textarea id="obs" rows="3" placeholder="Algum detalhe extra?"></textarea>
     </div>
 
-    <!-- Contador de Fidelidade -->
-    <div id="clientCounter"></div>
+    <!-- Dados do Cliente -->
+    <div class="section">
+      <h3>Seus Dados</h3>
+      <div class="form-group">
+        <label for="clientName">Nome:</label>
+        <input type="text" id="clientName" />
+      </div>
+      <div class="form-group">
+        <label for="clientPhone">Celular:</label>
+        <input type="tel" id="clientPhone" />
+      </div>
+      <div class="form-group">
+        <label for="clientAddress">Endereço:</label>
+        <textarea id="clientAddress" rows="2"></textarea>
+      </div>
+    </div>
+
+    <!-- Botão único para confirmar (enviar) -->
+    <button id="btnConfirm" onclick="confirmOrder()">
+      Confirme seu pedido
+    </button>
+    <p class="info-text">
+      Ao clicar em “Confirme seu pedido”, seu pedido será enviado via WhatsApp. 
+      <br />
+      Só após essa confirmação seu pedido será efetivado.
+    </p>
   </div>
 
   <script>
     let order = [];
-    let clientData = {};
 
-    // Ao submeter o cadastro, exibe a tela de vendas
-    document.getElementById("registrationForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      clientData.nome = document.getElementById("nome").value;
-      clientData.email = document.getElementById("email").value;
-      clientData.celular = document.getElementById("celular").value;
-      clientData.endereco = document.getElementById("endereco").value;
+    // Adiciona produtos ao pedido (um único botão ao final da lista)
+    function addProductsToOrder() {
+      // Lê as quantidades de cada produto
+      const qty1 = parseInt(document.getElementById("qty1").value);
+      const qty2 = parseInt(document.getElementById("qty2").value);
+      const qty3 = parseInt(document.getElementById("qty3").value);
+      const qty4 = parseInt(document.getElementById("qty4").value);
 
-      // Inicializa contador de fidelidade (se não existir)
-      if (!localStorage.getItem("clientCounter_" + clientData.email)) {
-        localStorage.setItem("clientCounter_" + clientData.email, "0");
+      // Reseta o array para evitar duplicar
+      order = [];
+
+      if (qty1 > 0) {
+        order.push({ product: "Água Mineral 500ml", price: 2.50, quantity: qty1 });
+      }
+      if (qty2 > 0) {
+        order.push({ product: "Água Mineral 1L", price: 4.50, quantity: qty2 });
+      }
+      if (qty3 > 0) {
+        order.push({ product: "Água Mineral 2L", price: 7.50, quantity: qty3 });
+      }
+      if (qty4 > 0) {
+        order.push({ product: "Galão de 20L", price: 15.00, quantity: qty4 });
       }
 
-      alert("Cadastro realizado com sucesso!");
-      // Oculta a parte de cadastro e mostra a de vendas
-      document.getElementById("registrationSection").style.display = "none";
-      document.getElementById("heroSection").style.display = "none";
-      document.getElementById("salesSection").style.display = "block";
-
-      updateClientCounter();
-    });
-
-    // Adiciona produto ao pedido
-    function addToOrder(product, price, quantity) {
-      quantity = parseInt(quantity);
-      if (quantity >= 1 && quantity <= 20) {
-        order.push({ product, price, quantity });
-        updateOrderSummary();
-      } else {
-        alert("Por favor, insira uma quantidade válida entre 1 e 20.");
-      }
+      updateOrderSummary();
+      alert("Produtos adicionados ao pedido!");
     }
 
-    // Atualiza resumo do pedido
+    // Atualiza o resumo do pedido
     function updateOrderSummary() {
-      let orderList = document.getElementById("orderList");
+      const orderList = document.getElementById("orderList");
       orderList.innerHTML = "";
       order.forEach((item) => {
-        let li = document.createElement("li");
-        let subtotal = (item.price * item.quantity).toFixed(2);
+        const li = document.createElement("li");
+        const subtotal = (item.price * item.quantity).toFixed(2);
         li.textContent = `${item.quantity} x ${item.product} - R$${subtotal}`;
         orderList.appendChild(li);
       });
-      document.getElementById("confirmOrder").disabled = order.length === 0;
     }
 
-    // Mostra a seção de confirmação
-    function showConfirmation() {
-      // Verifica entrega/retirada e pagamento
-      let deliveryMethodElement = document.querySelector('input[name="deliveryMethod"]:checked');
-      let paymentMethodElement = document.querySelector('input[name="paymentMethod"]:checked');
-      if (!deliveryMethodElement || !paymentMethodElement) {
-        alert("Por favor, selecione Entrega/Retirada e o Método de Pagamento.");
+    // Exibe/oculta campo de troco se pagamento = dinheiro
+    document.getElementById("paymentGroup").addEventListener("change", function() {
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+      const changeSection = document.getElementById("changeSection");
+      if (paymentMethod === "Dinheiro") {
+        changeSection.style.display = "block";
+      } else {
+        changeSection.style.display = "none";
+      }
+    });
+
+    // Exibe/oculta valor de troco se “Sim”
+    function handleChangeOption() {
+      const changeNeeded = document.querySelector('input[name="changeNeeded"]:checked')?.value;
+      const container = document.getElementById("changeValueContainer");
+      if (changeNeeded === "Sim") {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+      }
+    }
+
+    // Ao clicar em "Confirme seu pedido"
+    function confirmOrder() {
+      // 1. Verifica se há produtos no pedido
+      if (order.length === 0) {
+        alert("Por favor, selecione a quantidade de produtos e clique em 'Adicionar ao Pedido'.");
         return;
       }
 
-      let deliveryMethod = deliveryMethodElement.value;
-      let paymentMethod = paymentMethodElement.value;
+      // 2. Verifica entrega ou retirada
+      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked')?.value;
+      if (!deliveryMethod) {
+        alert("Por favor, selecione Entrega ou Retirada.");
+        return;
+      }
 
-      // Calcula o total
+      // 3. Verifica forma de pagamento
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+      if (!paymentMethod) {
+        alert("Por favor, selecione a forma de pagamento.");
+        return;
+      }
+
+      // 4. Se pagamento = Dinheiro, verifica troco
+      let trocoNeeded = "";
+      let trocoValue = "";
+      if (paymentMethod === "Dinheiro") {
+        const changeNeeded = document.querySelector('input[name="changeNeeded"]:checked')?.value;
+        if (!changeNeeded) {
+          alert("Por favor, informe se precisa de troco (Sim ou Não).");
+          return;
+        }
+        trocoNeeded = changeNeeded;
+        if (trocoNeeded === "Sim") {
+          trocoValue = document.getElementById("changeValue").value;
+        }
+      }
+
+      // 5. Precisa de comprovante?
+      const comprovanteOption = document.querySelector('input[name="comprovanteNeeded"]:checked')?.value;
+      const comprovanteText = comprovanteOption ? comprovanteOption : "Não especificado";
+
+      // 6. Observação
+      const obsText = document.getElementById("obs").value.trim();
+
+      // 7. Dados do cliente
+      const clientName = document.getElementById("clientName").value.trim();
+      const clientPhone = document.getElementById("clientPhone").value.trim();
+      const clientAddress = document.getElementById("clientAddress").value.trim();
+
+      if (!clientName || !clientPhone || !clientAddress) {
+        alert("Por favor, preencha Nome, Celular e Endereço.");
+        return;
+      }
+
+      // 8. Calcula total
       let total = 0;
       order.forEach((item) => {
         total += item.price * item.quantity;
       });
 
-      let message = `Nome: ${clientData.nome}\n`;
-      message += `Celular: ${clientData.celular}\n`;
-      message += `Endereço: ${clientData.endereco}\n\n`;
+      // 9. Monta mensagem
+      let message = `Nome: ${clientName}\n`;
+      message += `Celular: ${clientPhone}\n`;
+      message += `Endereço: ${clientAddress}\n\n`;
       message += `Entrega/Retirada: ${deliveryMethod}\n`;
-      message += `Forma de Pagamento: ${paymentMethod}\n\n`;
+      message += `Forma de Pagamento: ${paymentMethod}\n`;
+      if (paymentMethod === "Dinheiro") {
+        message += `Precisa de troco? ${trocoNeeded}\n`;
+        if (trocoNeeded === "Sim") {
+          message += `Valor do Troco: R$${trocoValue}\n`;
+        }
+      }
+      message += `Precisa de comprovante? ${comprovanteText}\n\n`;
       message += `Produtos:\n`;
-
       order.forEach((item) => {
-        let subtotal = item.price * item.quantity;
+        const subtotal = item.price * item.quantity;
         message += `${item.quantity} x ${item.product} - R$${subtotal.toFixed(2)}\n`;
       });
 
-      // Aplica desconto se for retirada
+      // Desconto se retirada
       if (deliveryMethod === "Retirada") {
-        let discount = total * 0.15;
-        let discountedTotal = total - discount;
+        const discount = total * 0.15;
+        const discountedTotal = total - discount;
         message += `\nTotal sem desconto: R$${total.toFixed(2)}\n`;
         message += `Desconto (15%): -R$${discount.toFixed(2)}\n`;
         message += `Total a Pagar: R$${discountedTotal.toFixed(2)}\n`;
@@ -472,57 +410,17 @@
         message += `\nTotal a Pagar: R$${total.toFixed(2)}\n`;
       }
 
-      // Exibe na seção de confirmação
-      document.getElementById("confirmationText").innerText = message;
-      document.getElementById("confirmationSection").style.display = "block";
-    }
-
-    // Esconde a seção de confirmação
-    function hideConfirmation() {
-      document.getElementById("confirmationSection").style.display = "none";
-    }
-
-    // Envia e-mail para o dono confirmar a compra
-    function sendOrderEmail() {
-      // Lê a mensagem de confirmação exibida
-      let confirmationMsg = document.getElementById("confirmationText").innerText;
-      // Monta o corpo do e-mail com a pergunta de confirmação
-      let emailBody = encodeURIComponent(
-        confirmationMsg + "\n\n" +
-        "Você confirma a compra de tantos galões desse cliente? Responda SIM ou NÃO."
-      );
-
-      // Abre o mailto
-      let mailtoLink = `mailto:rafabechelli@hotmail.com?subject=Confirmar%20Compra%20-%20${encodeURIComponent(clientData.nome)}&body=${emailBody}`;
-      window.open(mailtoLink, "_blank");
-
-      // A fidelidade NÃO é incrementada automaticamente.
-      // Você (dono) confirmará via e-mail e depois atualizará manualmente.
-      
-      // Limpa o pedido atual (opcional)
-      order = [];
-      updateOrderSummary();
-      hideConfirmation();
-
-      alert("Pedido enviado por e-mail para confirmação do pagamento!");
-    }
-
-    // Atualiza o contador de fidelidade (apenas exibindo, sem incrementá-lo)
-    function updateClientCounter() {
-      if (!clientData.email) return;
-      let counterKey = "clientCounter_" + clientData.email;
-      let counter = parseInt(localStorage.getItem(counterKey)) || 0;
-
-      if (counter < 10) {
-        let missing = 10 - counter;
-        document.getElementById("clientCounter").innerHTML =
-          `<strong>Total de Galões Acumulados: ${counter}</strong><br/>` +
-          `Faltam ${missing} galões para ganhar 1 brinde!`;
-      } else {
-        document.getElementById("clientCounter").innerHTML =
-          `<strong>Total de Galões Acumulados: ${counter}</strong>` +
-          `<br/>Você já pode ganhar seu brinde (aguarde confirmação)!`;
+      if (obsText) {
+        message += `\nObservação: ${obsText}\n`;
       }
+
+      // 10. Abre WhatsApp
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappNumber = "5511999999999"; // Seu número no formato internacional
+      const url = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
+      window.open(url, "_blank");
+
+      alert("Seu pedido foi enviado via WhatsApp!");
     }
   </script>
 </body>
