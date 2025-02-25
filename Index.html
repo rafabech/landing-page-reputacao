@@ -17,12 +17,11 @@
 
     <main class="p-6 flex justify-center">
         <div class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
-            <!-- Login do Cliente -->
             <div id="loginSection">
                 <h2 class="text-xl font-semibold text-center mb-4">Login do Cliente</h2>
                 <form id="loginForm" class="mb-6">
-                    <label for="telefoneLogin" class="block text-sm font-medium text-gray-700">Telefone:</label>
-                    <input type="tel" id="telefoneLogin" name="telefoneLogin" class="mt-1 p-2 w-full border rounded" required>
+                    <label for="telefoneLogin" class="block text-sm font-medium text-gray-700">Telefone (Digite com DDD, sem traços ou espaços. Exemplo: 17991255999)</label>
+                    <input type="tel" id="telefoneLogin" name="telefoneLogin" class="mt-1 p-2 w-full border rounded" placeholder="17991255999" pattern="\d{11}" required>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Entrar</button>
                 </form>
                 <p class="text-center mt-2">
@@ -30,7 +29,6 @@
                 </p>
             </div>
 
-            <!-- Cadastro do Cliente -->
             <div id="cadastroSection" class="hidden">
                 <h2 class="text-xl font-semibold text-center mb-4">Cadastro do Cliente</h2>
                 <form id="cadastroForm" class="mb-6">
@@ -40,8 +38,8 @@
                             <input type="text" id="nome" name="nome" class="mt-1 p-2 w-full border rounded" required>
                         </div>
                         <div>
-                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone:</label>
-                            <input type="tel" id="telefone" name="telefone" class="mt-1 p-2 w-full border rounded" required>
+                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone (Exemplo: 17991255999)</label>
+                            <input type="tel" id="telefone" name="telefone" class="mt-1 p-2 w-full border rounded" placeholder="17991255999" pattern="\d{11}" required>
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">E-mail:</label>
@@ -56,15 +54,13 @@
                 </form>
             </div>
 
-            <!-- Página de Compras -->
             <div id="compraSection" class="hidden">
-                <h2 class="text-xl font-semibold text-center mb-4">Escolha seus galões</h2>
-
+                <h2 class="text-xl font-semibold text-center mb-4">Escolha seus produtos</h2>
                 <div class="mt-4">
                     <h4 class="font-semibold">Entrega ou Retirada?</h4>
                     <div class="mt-2">
-                        <label><input type="radio" name="retirada" value="entrega" checked onchange="atualizarDesconto()"> Entrega</label><br>
-                        <label><input type="radio" name="retirada" value="retirada" onchange="atualizarDesconto()"> Retirada (Desconto de 15%)</label>
+                        <label><input type="radio" name="retirada" value="entrega" checked> Entrega</label><br>
+                        <label><input type="radio" name="retirada" value="retirada"> Retirada (Desconto de 15%)</label>
                     </div>
                 </div>
 
@@ -81,12 +77,22 @@
                             <tr>
                                 <td class="px-4 py-2">Galão Ibirá - 20L</td>
                                 <td class="px-4 py-2">R$ 15,00</td>
-                                <td class="px-4 py-2"><input type="number" id="ibiraQty" value="0" min="0" class="w-16 border rounded" onchange="atualizarDesconto()"></td>
+                                <td class="px-4 py-2"><input type="number" id="ibiraQty" value="0" min="0" class="w-16 border rounded"></td>
                             </tr>
                             <tr>
                                 <td class="px-4 py-2">Galão Água Minagem - 20L</td>
                                 <td class="px-4 py-2">R$ 18,00</td>
-                                <td class="px-4 py-2"><input type="number" id="minagemQty" value="0" min="0" class="w-16 border rounded" onchange="atualizarDesconto()"></td>
+                                <td class="px-4 py-2"><input type="number" id="minagemQty" value="0" min="0" class="w-16 border rounded"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">Coca-Cola 2L</td>
+                                <td class="px-4 py-2">R$ 22,00</td>
+                                <td class="px-4 py-2"><input type="number" id="coca2lQty" value="0" min="0" class="w-16 border rounded"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">Coca-Cola Lata</td>
+                                <td class="px-4 py-2">R$ 8,00</td>
+                                <td class="px-4 py-2"><input type="number" id="cocaLataQty" value="0" min="0" class="w-16 border rounded"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -96,14 +102,14 @@
                     <button onclick="fecharPedido()" class="bg-blue-500 text-white px-6 py-2 rounded">Fechar Pedido</button>
                 </div>
 
-                <!-- Resumo do Pedido -->
                 <div id="resumoPedido" class="mt-6 hidden bg-white p-4 rounded-lg shadow">
                     <h3 class="text-lg font-bold mb-2">Resumo do Pedido</h3>
                     <p id="resumoTexto" class="text-gray-700"></p>
+                    <h4 class="font-semibold mt-2">Precisa de troco?</h4>
+                    <input type="text" id="troco" placeholder="Troco para quanto?" class="w-full p-2 border rounded mb-4">
                     <h4 class="font-semibold mt-2">Forma de Pagamento</h4>
                     <div class="mt-2">
                         <label><input type="radio" name="pagamento" value="pix"> Pix (CNPJ: 41823685000153)</label><br>
-                        <a href="https://wa.me/5517991255999?text=Envie%20o%20comprovante%20de%20pagamento%20para%20este%20n%C3%BAmero." target="_blank" class="text-blue-500 underline">Enviar comprovante pelo WhatsApp</a><br>
                         <label><input type="radio" name="pagamento" value="dinheiro"> Dinheiro</label><br>
                         <label><input type="radio" name="pagamento" value="cartao"> Cartão na entrega</label>
                     </div>
@@ -119,106 +125,66 @@
     </footer>
 
     <script>
-        let clientes = JSON.parse(localStorage.getItem('clientes')) || {};
-        let clienteAtual = null;
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const telefone = document.getElementById('telefoneLogin').value;
-            if (clientes[telefone]) {
-                clienteAtual = clientes[telefone];
-                mostrarBoasVindas(clienteAtual.nome);
-                mostrarCompra();
-            } else {
-                alert('Cliente não cadastrado. Faça o cadastro.');
-                document.getElementById('loginSection').classList.add('hidden');
-                document.getElementById('cadastroSection').classList.remove('hidden');
-                document.getElementById('telefone').value = telefone;
-            }
-        });
-
-        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const email = document.getElementById('email').value;
-            const endereco = document.getElementById('endereco').value;
-
-            clientes[telefone] = { nome, telefone, email, endereco, compras: 0 };
-            localStorage.setItem('clientes', JSON.stringify(clientes));
-            clienteAtual = clientes[telefone];
-
-            mostrarBoasVindas(nome);
-            mostrarCompra();
-        });
-
-        function esqueceuSenha() {
-            const telefone = prompt('Digite seu telefone cadastrado:');
-            if (clientes[telefone]) {
-                const email = clientes[telefone].email;
-                const novaSenha = Math.random().toString(36).slice(-8);
-                alert(`Uma nova senha foi enviada para o e-mail cadastrado: ${email}\nSua nova senha é: ${novaSenha}`);
-            } else {
-                alert('Telefone não cadastrado.');
-            }
-        }
-
-        function mostrarBoasVindas(nome) {
-            document.getElementById('boasVindas').innerText = `Bem-vindo, ${nome}!`;
-        }
-
-        function mostrarCompra() {
-            document.getElementById('loginSection').classList.add('hidden');
-            document.getElementById('cadastroSection').classList.add('hidden');
-            document.getElementById('compraSection').classList.remove('hidden');
-        }
-
-        function atualizarDesconto() {
-            const retirada = document.querySelector('input[name="retirada"]:checked').value;
-            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
-            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
-
-            let total = (ibiraQty * 15) + (minagemQty * 18);
-
-            if (retirada === 'retirada') {
-                total *= 0.85;
-            }
-
-            document.getElementById('resumoTexto').innerText = `Galão Ibirá: ${ibiraQty} x R$ 15,00 = R$ ${(ibiraQty * 15).toFixed(2)}\nGalão Minagem: ${minagemQty} x R$ 18,00 = R$ ${(minagemQty * 18).toFixed(2)}\nTotal: R$ ${total.toFixed(2)}`;
-        }
-
         function fecharPedido() {
             const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
             const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
+            const coca2lQty = parseInt(document.getElementById('coca2lQty').value) || 0;
+            const cocaLataQty = parseInt(document.getElementById('cocaLataQty').value) || 0;
 
-            if (!clienteAtual) {
-                alert('Por favor, faça login ou cadastro antes de fechar o pedido.');
+            const itens = [];
+            let total = 0;
+
+            if (ibiraQty > 0) {
+                itens.push(`Galão Ibirá 20L: ${ibiraQty} x R$ 15,00`);
+                total += ibiraQty * 15;
+            }
+            if (minagemQty > 0) {
+                itens.push(`Galão Água Minagem 20L: ${minagemQty} x R$ 18,00`);
+                total += minagemQty * 18;
+            }
+            if (coca2lQty > 0) {
+                itens.push(`Coca-Cola 2L: ${coca2lQty} x R$ 22,00`);
+                total += coca2lQty * 22;
+            }
+            if (cocaLataQty > 0) {
+                itens.push(`Coca-Cola Lata: ${cocaLataQty} x R$ 8,00`);
+                total += cocaLataQty * 8;
+            }
+
+            if (total < 15) {
+                alert('O valor mínimo do pedido é de R$ 15,00. Por favor, adicione mais itens.');
                 return;
             }
 
-            clienteAtual.compras += ibiraQty + minagemQty;
-            if (clienteAtual.compras >= 10) {
-                alert('Parabéns! Você ganhou 1 galão grátis!');
-                clienteAtual.compras -= 10;
-            }
-
-            localStorage.setItem('clientes', JSON.stringify(clientes));
+            const resumo = itens.join('\n') + `\nTotal: R$ ${total.toFixed(2)}`;
+            document.getElementById('resumoTexto').innerText = resumo;
             document.getElementById('resumoPedido').classList.remove('hidden');
-            atualizarDesconto();
+        }
+
+        function enviarEmailConfirmacao(resumo) {
+            const email = "rafabechelli@hotmail.com";
+            const assunto = "Confirmação de Pedido - Água Já Itupeva";
+            const corpo = `Novo pedido:\n${resumo}\nDeseja adicionar na fidelidade?`;
+            const simLink = `mailto:${email}?subject=Confirmar%20Fidelidade&body=Aprovado%20-%20${encodeURIComponent(resumo)}`;
+            const naoLink = `mailto:${email}?subject=Negar%20Fidelidade&body=Negado%20-%20${encodeURIComponent(resumo)}`;
+
+            const html = `
+                <p>${corpo}</p>
+                <p><a href="${simLink}" style="margin-right:10px;">Sim</a>
+                <a href="${naoLink}">Não</a></p>
+            `;
+
+            const link = `mailto:${email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+            window.open(link, '_blank');
         }
 
         function finalizarPedido() {
-            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
-            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
-            const retirada = document.querySelector('input[name="retirada"]:checked').value;
-            const total = document.getElementById('resumoTexto').innerText;
+            const troco = document.getElementById('troco').value;
+            const resumo = document.getElementById('resumoTexto').innerText;
+            const mensagem = `${resumo}\nTroco: ${troco ? 'Sim, para ' + troco : 'Não precisa'}`;
 
-            const mensagem = `Pedido de ${clienteAtual.nome} - Telefone: ${clienteAtual.telefone}\nEndereço: ${clienteAtual.endereco}\n\n${total}\nForma de Retirada: ${retirada}\nPagamento: ${document.querySelector('input[name="pagamento"]:checked').value}`;
-
-            const url = `https://wa.me/5517991255999?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-
-            alert('Pedido finalizado e enviado para o WhatsApp!');
+            enviarEmailConfirmacao(mensagem);
+            alert('Pedido realizado! Um e-mail de confirmação foi enviado.');
         }
     </script>
 </body>
