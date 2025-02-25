@@ -1,191 +1,529 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Água Já Itupeva - Pensou, chegou</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Água Já – Itupeva – Disk água mineral</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa; /* Fundo azul clarinho */
+    }
+
+    /* Botão flutuante de WhatsApp com ícone oficial */
+    .floating-whatsapp {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: #25d366;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 50px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
+    .floating-whatsapp img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    /* Hero (topo da página) */
+    .hero {
+      background: linear-gradient(135deg, #0277bd, #81d4fa);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Container principal */
+    .container {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #0277bd; /* Azul que remete à água */
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    /* Formulários e campos */
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #0277bd;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #01579b;
+    }
+
+    /* Radio Buttons maiores e centralizados */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      font-size: 1.2em;
+    }
+    .radio-option input[type="radio"] {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    /* Produtos (sem imagem ou usando placeholder) */
+    .product {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product-controls {
+      text-align: right;
+    }
+    .product-controls input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 5px;
+    }
+
+    /* Resumo do pedido */
+    .order-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .order-summary li {
+      margin-bottom: 5px;
+    }
+
+    /* Seções de entrega e pagamento */
+    #deliverySection, #paymentSection {
+      margin: 20px 0;
+      background: #f1f8e9;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    /* Contador e Fidelidade */
+    #clientCounter {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Seção de confirmação do pedido (exibida antes de abrir o e-mail) */
+    #confirmationSection {
+      display: none;
+      margin-top: 20px;
+      background: #fff8e1;
+      border: 1px solid #ffecb3;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    #confirmationSection h3 {
+      margin-bottom: 10px;
+      text-align: center;
+      color: #ff6f00;
+    }
+  </style>
 </head>
-<body class="bg-blue-100 font-sans">
-    <header class="bg-blue-600 text-white text-center p-4">
-        <div class="flex items-center justify-center">
-            <img src="https://toptotal.com.br/media/com_jbusinessdirectory/pictures/categories/disk_agua-1592488087.png" alt="Logo Água Já Itupeva" class="h-20 mr-3">
-            <h1 class="text-2xl font-bold">Água Já Itupeva</h1>
+<body>
+
+  <!-- Botão flutuante de WhatsApp (ícone oficial) -->
+  <a class="floating-whatsapp" href="https://wa.me/5511999999999" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+    Zap!
+  </a>
+
+  <!-- Hero (topo da página) -->
+  <div id="heroSection" class="hero">
+    <h1>Água Já – Itupeva</h1>
+    <p>Disk água mineral com fidelidade!</p>
+  </div>
+
+  <!-- Seção de Cadastro -->
+  <div id="registrationSection" class="container">
+    <h2>Cadastro do Cliente</h2>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular" name="celular" required />
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <textarea id="endereco" name="endereco" rows="3" required></textarea>
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+    <!-- Link de contato direto no cadastro -->
+    <p style="text-align:center; margin-top:15px;">
+      <a href="https://wa.me/5511999999999" target="_blank" style="color:#0277bd; font-weight:bold;">
+        Entre em contato pelo WhatsApp
+      </a>
+    </p>
+  </div>
+
+  <!-- Seção de Vendas (inicialmente oculta) -->
+  <div id="salesSection" class="container" style="display:none;">
+    <h2>Faça Seu Pedido</h2>
+
+    <!-- Seção de Entrega ou Retirada -->
+    <div id="deliverySection">
+      <h3>Entrega ou Retirada?</h3>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="deliveryMethod" value="Entrega" required />
+          <label>Entrega (sem desconto)</label>
         </div>
-        <p id="boasVindas" class="text-sm"></p>
-    </header>
-
-    <main class="p-6 flex justify-center">
-        <div class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
-            <div id="loginSection">
-                <h2 class="text-xl font-semibold text-center mb-4">Login do Cliente</h2>
-                <form id="loginForm" class="mb-6">
-                    <label for="telefoneLogin" class="block text-sm font-medium text-gray-700">Telefone (Digite com DDD, sem traços ou espaços. Exemplo: 17991255999)</label>
-                    <input type="tel" id="telefoneLogin" name="telefoneLogin" class="mt-1 p-2 w-full border rounded" placeholder="17991255999" pattern="\d{11}" required>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Entrar</button>
-                </form>
-                <p class="text-center mt-2">
-                    <a href="#" onclick="esqueceuSenha()" class="text-blue-500 underline">Esqueceu a senha?</a>
-                </p>
-            </div>
-
-            <div id="cadastroSection" class="hidden">
-                <h2 class="text-xl font-semibold text-center mb-4">Cadastro do Cliente</h2>
-                <form id="cadastroForm" class="mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="nome" class="block text-sm font-medium text-gray-700">Nome:</label>
-                            <input type="text" id="nome" name="nome" class="mt-1 p-2 w-full border rounded" required>
-                        </div>
-                        <div>
-                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone (Exemplo: 17991255999)</label>
-                            <input type="tel" id="telefone" name="telefone" class="mt-1 p-2 w-full border rounded" placeholder="17991255999" pattern="\d{11}" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">E-mail:</label>
-                            <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded" required>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <label for="endereco" class="block text-sm font-medium text-gray-700">Endereço:</label>
-                        <input type="text" id="endereco" name="endereco" class="mt-1 p-2 w-full border rounded" required>
-                    </div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Salvar Cadastro</button>
-                </form>
-            </div>
-
-            <div id="compraSection" class="hidden">
-                <h2 class="text-xl font-semibold text-center mb-4">Escolha seus produtos</h2>
-                <div class="mt-4">
-                    <h4 class="font-semibold">Entrega ou Retirada?</h4>
-                    <div class="mt-2">
-                        <label><input type="radio" name="retirada" value="entrega" checked> Entrega</label><br>
-                        <label><input type="radio" name="retirada" value="retirada"> Retirada (Desconto de 15%)</label>
-                    </div>
-                </div>
-
-                <div class="overflow-x-auto mt-4">
-                    <table class="table-auto w-full bg-white rounded-lg shadow">
-                        <thead>
-                            <tr>
-                                <th class="px-4 py-2">Produto</th>
-                                <th class="px-4 py-2">Preço Unitário</th>
-                                <th class="px-4 py-2">Quantidade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="px-4 py-2">Galão Ibirá - 20L</td>
-                                <td class="px-4 py-2">R$ 15,00</td>
-                                <td class="px-4 py-2"><input type="number" id="ibiraQty" value="0" min="0" class="w-16 border rounded"></td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2">Galão Água Minagem - 20L</td>
-                                <td class="px-4 py-2">R$ 18,00</td>
-                                <td class="px-4 py-2"><input type="number" id="minagemQty" value="0" min="0" class="w-16 border rounded"></td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2">Coca-Cola 2L</td>
-                                <td class="px-4 py-2">R$ 22,00</td>
-                                <td class="px-4 py-2"><input type="number" id="coca2lQty" value="0" min="0" class="w-16 border rounded"></td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2">Coca-Cola Lata</td>
-                                <td class="px-4 py-2">R$ 8,00</td>
-                                <td class="px-4 py-2"><input type="number" id="cocaLataQty" value="0" min="0" class="w-16 border rounded"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <button onclick="fecharPedido()" class="bg-blue-500 text-white px-6 py-2 rounded">Fechar Pedido</button>
-                </div>
-
-                <div id="resumoPedido" class="mt-6 hidden bg-white p-4 rounded-lg shadow">
-                    <h3 class="text-lg font-bold mb-2">Resumo do Pedido</h3>
-                    <p id="resumoTexto" class="text-gray-700"></p>
-                    <h4 class="font-semibold mt-2">Precisa de troco?</h4>
-                    <input type="text" id="troco" placeholder="Troco para quanto?" class="w-full p-2 border rounded mb-4">
-                    <h4 class="font-semibold mt-2">Forma de Pagamento</h4>
-                    <div class="mt-2">
-                        <label><input type="radio" name="pagamento" value="pix"> Pix (CNPJ: 41823685000153)</label><br>
-                        <label><input type="radio" name="pagamento" value="dinheiro"> Dinheiro</label><br>
-                        <label><input type="radio" name="pagamento" value="cartao"> Cartão na entrega</label>
-                    </div>
-
-                    <button onclick="finalizarPedido()" class="bg-green-500 text-white px-4 py-2 rounded mt-4">Finalizar Pedido</button>
-                </div>
-            </div>
+        <div class="radio-option">
+          <input type="radio" name="deliveryMethod" value="Retirada" required />
+          <label>Retirada (15% de desconto)</label>
         </div>
-    </main>
+      </div>
+    </div>
 
-    <footer class="bg-blue-600 text-white text-center p-4 mt-6">
-        <p>&copy; 2025 Água Já Itupeva. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Lista de Produtos (sem imagem ou com placeholder repetida) -->
+    <h3>Selecione os Produtos</h3>
+    <div id="productCatalog">
+      <!-- Produto 1 -->
+      <div class="product">
+        <div class="product-details">
+          <p><strong>Água Mineral 500ml</strong></p>
+          <p>Preço: R$2,50</p>
+        </div>
+        <div class="product-controls">
+          <input type="number" id="qty1" min="0" max="20" value="0" />
+          <button
+            type="button"
+            onclick="addToOrder('Água Mineral 500ml', 2.50, document.getElementById('qty1').value)"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
 
-    <script>
-        function fecharPedido() {
-            const ibiraQty = parseInt(document.getElementById('ibiraQty').value) || 0;
-            const minagemQty = parseInt(document.getElementById('minagemQty').value) || 0;
-            const coca2lQty = parseInt(document.getElementById('coca2lQty').value) || 0;
-            const cocaLataQty = parseInt(document.getElementById('cocaLataQty').value) || 0;
+      <!-- Produto 2 -->
+      <div class="product">
+        <div class="product-details">
+          <p><strong>Água Mineral 1L</strong></p>
+          <p>Preço: R$4,50</p>
+        </div>
+        <div class="product-controls">
+          <input type="number" id="qty2" min="0" max="20" value="0" />
+          <button
+            type="button"
+            onclick="addToOrder('Água Mineral 1L', 4.50, document.getElementById('qty2').value)"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
 
-            const itens = [];
-            let total = 0;
+      <!-- Produto 3 -->
+      <div class="product">
+        <div class="product-details">
+          <p><strong>Água Mineral 2L</strong></p>
+          <p>Preço: R$7,50</p>
+        </div>
+        <div class="product-controls">
+          <input type="number" id="qty3" min="0" max="20" value="0" />
+          <button
+            type="button"
+            onclick="addToOrder('Água Mineral 2L', 7.50, document.getElementById('qty3').value)"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
 
-            if (ibiraQty > 0) {
-                itens.push(`Galão Ibirá 20L: ${ibiraQty} x R$ 15,00`);
-                total += ibiraQty * 15;
-            }
-            if (minagemQty > 0) {
-                itens.push(`Galão Água Minagem 20L: ${minagemQty} x R$ 18,00`);
-                total += minagemQty * 18;
-            }
-            if (coca2lQty > 0) {
-                itens.push(`Coca-Cola 2L: ${coca2lQty} x R$ 22,00`);
-                total += coca2lQty * 22;
-            }
-            if (cocaLataQty > 0) {
-                itens.push(`Coca-Cola Lata: ${cocaLataQty} x R$ 8,00`);
-                total += cocaLataQty * 8;
-            }
+      <!-- Produto 4 -->
+      <div class="product">
+        <div class="product-details">
+          <p><strong>Galão de 20L</strong></p>
+          <p>Preço: R$15,00</p>
+        </div>
+        <div class="product-controls">
+          <input type="number" id="qty4" min="0" max="20" value="0" />
+          <button
+            type="button"
+            onclick="addToOrder('Galão de 20L', 15.00, document.getElementById('qty4').value)"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+    </div>
 
-            if (total < 15) {
-                alert('O valor mínimo do pedido é de R$ 15,00. Por favor, adicione mais itens.');
-                return;
-            }
+    <hr />
 
-            const resumo = itens.join('\n') + `\nTotal: R$ ${total.toFixed(2)}`;
-            document.getElementById('resumoTexto').innerText = resumo;
-            document.getElementById('resumoPedido').classList.remove('hidden');
-        }
+    <!-- Resumo do Pedido -->
+    <h3>Seu Pedido</h3>
+    <div class="order-summary">
+      <ul id="orderList"></ul>
+    </div>
 
-        function enviarEmailConfirmacao(resumo) {
-            const email = "rafabechelli@hotmail.com";
-            const assunto = "Confirmação de Pedido - Água Já Itupeva";
-            const corpo = `Novo pedido:\n${resumo}\nDeseja adicionar na fidelidade?`;
-            const simLink = `mailto:${email}?subject=Confirmar%20Fidelidade&body=Aprovado%20-%20${encodeURIComponent(resumo)}`;
-            const naoLink = `mailto:${email}?subject=Negar%20Fidelidade&body=Negado%20-%20${encodeURIComponent(resumo)}`;
+    <!-- Seção de Pagamento -->
+    <div id="paymentSection">
+      <h3>Opções de Pagamento</h3>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="Cartão de crédito (na hora da entrega)"
+            required
+          />
+          <label>Cartão de crédito (na hora da entrega)</label>
+        </div>
+        <div class="radio-option">
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="Pix (CNPJ: 41823685000153)"
+            required
+          />
+          <label>Pix (CNPJ: 41823685000153)</label>
+        </div>
+        <div class="radio-option">
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="Dinheiro (precisa de troco)"
+            required
+          />
+          <label>Dinheiro (precisa de troco)</label>
+        </div>
+      </div>
+    </div>
 
-            const html = `
-                <p>${corpo}</p>
-                <p><a href="${simLink}" style="margin-right:10px;">Sim</a>
-                <a href="${naoLink}">Não</a></p>
-            `;
+    <!-- Botão de Confirmação do Pedido -->
+    <button id="confirmOrder" onclick="showConfirmation()" disabled>
+      Confirmar Pedido
+    </button>
 
-            const link = `mailto:${email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-            window.open(link, '_blank');
-        }
+    <!-- Seção de Confirmação (exibida antes de abrir o e-mail) -->
+    <div id="confirmationSection">
+      <h3>Confirme Seu Pedido</h3>
+      <p id="confirmationText"></p>
+      <button style="background: #4caf50;" onclick="sendOrderEmail()">
+        Enviar Pedido por E-mail
+      </button>
+      <button style="background: #f44336;" onclick="hideConfirmation()">
+        Cancelar
+      </button>
+    </div>
 
-        function finalizarPedido() {
-            const troco = document.getElementById('troco').value;
-            const resumo = document.getElementById('resumoTexto').innerText;
-            const mensagem = `${resumo}\nTroco: ${troco ? 'Sim, para ' + troco : 'Não precisa'}`;
+    <!-- Contador de Fidelidade -->
+    <div id="clientCounter"></div>
+  </div>
 
-            enviarEmailConfirmacao(mensagem);
-            alert('Pedido realizado! Um e-mail de confirmação foi enviado.');
-        }
-    </script>
+  <script>
+    let order = [];
+    let clientData = {};
+
+    // Ao submeter o cadastro, exibe a tela de vendas
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      clientData.nome = document.getElementById("nome").value;
+      clientData.email = document.getElementById("email").value;
+      clientData.celular = document.getElementById("celular").value;
+      clientData.endereco = document.getElementById("endereco").value;
+
+      // Inicializa contador de fidelidade (se não existir)
+      if (!localStorage.getItem("clientCounter_" + clientData.email)) {
+        localStorage.setItem("clientCounter_" + clientData.email, "0");
+      }
+
+      alert("Cadastro realizado com sucesso!");
+      // Oculta a parte de cadastro e mostra a de vendas
+      document.getElementById("registrationSection").style.display = "none";
+      document.getElementById("heroSection").style.display = "none";
+      document.getElementById("salesSection").style.display = "block";
+
+      updateClientCounter();
+    });
+
+    // Adiciona produto ao pedido
+    function addToOrder(product, price, quantity) {
+      quantity = parseInt(quantity);
+      if (quantity >= 1 && quantity <= 20) {
+        order.push({ product, price, quantity });
+        updateOrderSummary();
+      } else {
+        alert("Por favor, insira uma quantidade válida entre 1 e 20.");
+      }
+    }
+
+    // Atualiza resumo do pedido
+    function updateOrderSummary() {
+      let orderList = document.getElementById("orderList");
+      orderList.innerHTML = "";
+      order.forEach((item) => {
+        let li = document.createElement("li");
+        let subtotal = (item.price * item.quantity).toFixed(2);
+        li.textContent = `${item.quantity} x ${item.product} - R$${subtotal}`;
+        orderList.appendChild(li);
+      });
+      document.getElementById("confirmOrder").disabled = order.length === 0;
+    }
+
+    // Mostra a seção de confirmação
+    function showConfirmation() {
+      // Verifica entrega/retirada e pagamento
+      let deliveryMethodElement = document.querySelector('input[name="deliveryMethod"]:checked');
+      let paymentMethodElement = document.querySelector('input[name="paymentMethod"]:checked');
+      if (!deliveryMethodElement || !paymentMethodElement) {
+        alert("Por favor, selecione Entrega/Retirada e o Método de Pagamento.");
+        return;
+      }
+
+      let deliveryMethod = deliveryMethodElement.value;
+      let paymentMethod = paymentMethodElement.value;
+
+      // Calcula o total
+      let total = 0;
+      order.forEach((item) => {
+        total += item.price * item.quantity;
+      });
+
+      let message = `Nome: ${clientData.nome}\n`;
+      message += `Celular: ${clientData.celular}\n`;
+      message += `Endereço: ${clientData.endereco}\n\n`;
+      message += `Entrega/Retirada: ${deliveryMethod}\n`;
+      message += `Forma de Pagamento: ${paymentMethod}\n\n`;
+      message += `Produtos:\n`;
+
+      order.forEach((item) => {
+        let subtotal = item.price * item.quantity;
+        message += `${item.quantity} x ${item.product} - R$${subtotal.toFixed(2)}\n`;
+      });
+
+      // Aplica desconto se for retirada
+      if (deliveryMethod === "Retirada") {
+        let discount = total * 0.15;
+        let discountedTotal = total - discount;
+        message += `\nTotal sem desconto: R$${total.toFixed(2)}\n`;
+        message += `Desconto (15%): -R$${discount.toFixed(2)}\n`;
+        message += `Total a Pagar: R$${discountedTotal.toFixed(2)}\n`;
+      } else {
+        message += `\nTotal a Pagar: R$${total.toFixed(2)}\n`;
+      }
+
+      // Exibe na seção de confirmação
+      document.getElementById("confirmationText").innerText = message;
+      document.getElementById("confirmationSection").style.display = "block";
+    }
+
+    // Esconde a seção de confirmação
+    function hideConfirmation() {
+      document.getElementById("confirmationSection").style.display = "none";
+    }
+
+    // Envia e-mail para o dono confirmar a compra
+    function sendOrderEmail() {
+      // Lê a mensagem de confirmação exibida
+      let confirmationMsg = document.getElementById("confirmationText").innerText;
+      // Monta o corpo do e-mail com a pergunta de confirmação
+      let emailBody = encodeURIComponent(
+        confirmationMsg + "\n\n" +
+        "Você confirma a compra de tantos galões desse cliente? Responda SIM ou NÃO."
+      );
+
+      // Abre o mailto
+      let mailtoLink = `mailto:rafabechelli@hotmail.com?subject=Confirmar%20Compra%20-%20${encodeURIComponent(clientData.nome)}&body=${emailBody}`;
+      window.open(mailtoLink, "_blank");
+
+      // A fidelidade NÃO é incrementada automaticamente.
+      // Você (dono) confirmará via e-mail e depois atualizará manualmente.
+      
+      // Limpa o pedido atual (opcional)
+      order = [];
+      updateOrderSummary();
+      hideConfirmation();
+
+      alert("Pedido enviado por e-mail para confirmação do pagamento!");
+    }
+
+    // Atualiza o contador de fidelidade (apenas exibindo, sem incrementá-lo)
+    function updateClientCounter() {
+      if (!clientData.email) return;
+      let counterKey = "clientCounter_" + clientData.email;
+      let counter = parseInt(localStorage.getItem(counterKey)) || 0;
+
+      if (counter < 10) {
+        let missing = 10 - counter;
+        document.getElementById("clientCounter").innerHTML =
+          `<strong>Total de Galões Acumulados: ${counter}</strong><br/>` +
+          `Faltam ${missing} galões para ganhar 1 brinde!`;
+      } else {
+        document.getElementById("clientCounter").innerHTML =
+          `<strong>Total de Galões Acumulados: ${counter}</strong>` +
+          `<br/>Você já pode ganhar seu brinde (aguarde confirmação)!`;
+      }
+    }
+  </script>
 </body>
 </html>
