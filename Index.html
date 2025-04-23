@@ -1,506 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Água Já – Itupeva – Disk água mineral</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distribuidora Água Já – Monte Aprazível/SP | Disk Água Mineral</title>
+  <meta name="description" content="Distribuidora de água mineral em Monte Aprazível/SP. Entrega rápida de galões 20L das marcas Levity, Talismã, Rárida e Minajen. Peça agora pelo WhatsApp!">
+  <meta name="keywords" content="Água mineral Monte Aprazível, Disk água Monte Aprazível, Distribuidora de água Monte Aprazível, Água Levity, Talismã, Rárida, Minajen">
   <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+    body { color:#333; line-height:1.5; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; height:auto; display:block; margin:0 auto; }
+
+    header {
+      background:#005fae; padding:1rem;
+      display:flex; align-items:center; justify-content:space-between;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e0f7fa; /* Fundo azul clarinho */
+    header img { height:50px; }
+    .btn-whatsapp {
+      background:#25D366; color:#fff; padding:.6rem 1rem; border-radius:4px;
+      font-weight:bold;
     }
 
-    /* Container principal para o formulário */
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .hero {
+      background:linear-gradient(135deg, #005fae 0%, #007bff 100%);
+      color:#fff; text-align:center; padding:4rem 1rem;
     }
-    h1, h2, h3 {
-      text-align: center;
-      color: #0277bd; /* Azul que remete à água */
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-size:2rem; margin-bottom:1rem; }
+    .hero p { font-size:1.1rem; margin-bottom:2rem; }
 
-    .section {
-      margin-bottom: 20px;
-      background: #f1f8e9;
-      padding: 15px;
-      border-radius: 4px;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+    .section { padding:3rem 1rem; max-width:1000px; margin:0 auto; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; }
+    .card { background:#f9f9f9; padding:1.5rem; border-radius:6px; text-align:center; }
+    .card h3 { margin-top:.5rem; color:#005fae; font-size:1rem; }
+    .card p { font-size:.9rem; margin-top:.5rem; }
 
-    /* Estilo de erro: borda vermelha */
-    .error {
-      border: 2px solid red !important;
-    }
-    .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-    .radio-option {
-      display: flex;
-      align-items: center;
-      font-size: 1em;
-    }
-    .radio-option input[type="radio"] {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-    }
-    .product {
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .product-details {
-      flex: 1;
-    }
-    .product-controls {
-      text-align: right;
-    }
-    .product-controls input[type="number"] {
-      width: 60px;
-      padding: 5px;
-      margin-right: 5px;
-    }
-    .order-summary ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .order-summary li {
-      margin-bottom: 5px;
-    }
-    button {
-      background-color: #0277bd;
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 1.1em;
-      border-radius: 4px;
-      width: 100%;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #01579b;
-    }
+    .testimonials .card { text-align:left; }
+    .testimonials blockquote { font-style:italic; margin-bottom:.5rem; }
+    .testimonials cite { font-weight:bold; font-size:.9rem; }
 
-    #trocoSection, #trocoValueContainer {
-      display: none;
-    }
-    #summarySection {
-      margin-top: 20px;
-      background: #fff8e1;
-      border: 1px solid #ffe082;
-      padding: 10px;
-      border-radius: 4px;
-      display: none; /* Mostra após clicar "Adicionar Itens" */
-    }
-    #finalText {
-      text-align: center;
-      font-style: italic;
-      margin-top: 15px;
-      color: #d32f2f; /* Vermelho para destaque */
-    }
+    .faq dt { font-weight:bold; margin-top:1rem; }
+    .faq dd { margin-left:1rem; margin-bottom:1rem; font-size:.9rem; }
 
-    /* Seção de como chegar */
-    #mapSection iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 4px;
+    footer {
+      background:#005fae; color:#fff; text-align:center; padding:2rem 1rem;
+      font-size:.9rem;
     }
+    .whatsapp-float {
+      position:fixed; bottom:20px; right:20px;
+      background:#25D366; border-radius:50%; width:60px; height:60px;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
+      z-index:1000;
+    }
+    .whatsapp-float img { width:32px; }
   </style>
 </head>
 <body>
 
-  <!-- Conteúdo principal -->
-  <div class="container">
-    <h1>Disk água mineral</h1>
+  <!-- HEADER -->
+  <header>
+    <img src="https://i.ibb.co/PsxMZy9D/logo-agua-ja.png" alt="Logo Água Já">
+    <a href="https://wa.me/5517996592731?text=Ol%C3%A1%2C+quero+pedir+%C3%A1gua" class="btn-whatsapp">
+      WhatsApp
+    </a>
+  </header>
 
-    <!-- Seção Entrega ou Retirada -->
-    <h2>Entrega ou Retirada?</h2>
-    <div class="section" id="deliverySection">
-      <div class="radio-group" id="deliveryGroup">
-        <div class="radio-option">
-          <input type="radio" name="deliveryMethod" value="Entrega" />
-          <label>Entrega (sem desconto)</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="deliveryMethod" value="Retirada" />
-          <label>Retirada (15% de desconto)</label>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Tá sem água aí?</h1>
+    <p>Entrega rápida de água mineral em Monte Aprazível/SP</p>
+    <a href="https://wa.me/5517996592731?text=Ol%C3%A1%2C+quero+pedir+%C3%A1gua" class="btn-whatsapp">
+      Peça pelo WhatsApp
+    </a>
+  </section>
+
+  <!-- POR QUE ESCOLHER -->
+  <section class="section">
+    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Por que escolher a Água Já?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🚚 Entrega Ágil</h3>
+        <p>Motoboy dedicado e rota otimizada para chegar rápido.</p>
+      </div>
+      <div class="card">
+        <h3>💧 Qualidade Premium</h3>
+        <p>Galões 20L das marcas Levity, Talismã, Rárida e Minajen.</p>
+      </div>
+      <div class="card">
+        <h3>📍 Cobertura Local</h3>
+        <p>Atuação exclusiva em Monte Aprazível/SP.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Atendimento Fácil</h3>
+        <p>Peça pelo WhatsApp em segundos, sem burocracia.</p>
       </div>
     </div>
+  </section>
 
-    <!-- Lista de Produtos (quantidades) -->
-    <h3>Selecione os Produtos</h3>
-    <div class="section">
-      <div id="productCatalog">
-        <div class="product">
-          <div class="product-details">
-            <p><strong>Água Mineral 500ml</strong> – R$2,50</p>
-          </div>
-          <div class="product-controls">
-            <input type="number" id="qty1" min="0" max="20" value="0" />
-          </div>
-        </div>
-        <div class="product">
-          <div class="product-details">
-            <p><strong>Água Mineral 1L</strong> – R$4,50</p>
-          </div>
-          <div class="product-controls">
-            <input type="number" id="qty2" min="0" max="20" value="0" />
-          </div>
-        </div>
-        <div class="product">
-          <div class="product-details">
-            <p><strong>Água Mineral 2L</strong> – R$7,50</p>
-          </div>
-          <div class="product-controls">
-            <input type="number" id="qty3" min="0" max="20" value="0" />
-          </div>
-        </div>
-        <div class="product">
-          <div class="product-details">
-            <p><strong>Galão de 20L</strong> – R$15,00</p>
-          </div>
-          <div class="product-controls">
-            <input type="number" id="qty4" min="0" max="20" value="0" />
-          </div>
-        </div>
+  <!-- NOSSOS PRODUTOS -->
+  <section class="section" style="background:#f0f8ff;">
+    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Nossos Produtos</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.ibb.co/67VKkr0H" alt="Água Talismã 20 litros">
+        <h3>Água Talismã 20L</h3>
       </div>
-      <!-- Botão para adicionar os itens ao resumo -->
-      <button onclick="addAllItems()">Adicionar Itens</button>
-    </div>
-
-    <!-- Seção de Pagamento -->
-    <h3>Forma de Pagamento</h3>
-    <div class="section" id="paymentSection">
-      <div class="radio-group" id="paymentGroup">
-        <div class="radio-option">
-          <input type="radio" name="paymentMethod" value="Cartão de crédito (na hora da entrega)" />
-          <label>Cartão de crédito (na hora da entrega)</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="paymentMethod" value="Pix (enviar comprovante por WhatsApp)" />
-          <label>Pix (enviar comprovante por WhatsApp)</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="paymentMethod" value="Dinheiro" />
-          <label>Dinheiro</label>
-        </div>
+      <div class="card">
+        <img src="https://i.ibb.co/ymPHtk6Q" alt="Água Rárida 20 litros">
+        <h3>Água Rárida 20L</h3>
       </div>
-      <!-- Pergunta sobre troco (apenas se escolher Dinheiro) -->
-      <div id="trocoSection">
-        <label>Precisa de troco?</label>
-        <div class="radio-group" style="flex-direction: row; gap:15px;">
-          <div class="radio-option">
-            <input type="radio" name="changeNeeded" value="Sim" onclick="handleChangeOption()" />
-            <label>Sim</label>
-          </div>
-          <div class="radio-option">
-            <input type="radio" name="changeNeeded" value="Não" onclick="handleChangeOption()" />
-            <label>Não</label>
-          </div>
-        </div>
-        <div id="trocoValueContainer">
-          <label for="changeValue">Valor do Troco:</label>
-          <input type="number" id="changeValue" min="0" step="1" value="0" />
-        </div>
+      <div class="card">
+        <img src="https://i.ibb.co/n8jpfvVk" alt="Água Minajen 20 litros">
+        <h3>Água Minajen 20L</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/CKMB2Yc3" alt="Água Levity 20 litros">
+        <h3>Água Levity 20L</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/q3P0zXzG" alt="Água Minajen sem gás 510ml (12 un)">
+        <h3>Água Minajen sem gás 510ml (12 un.)</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/MDYXMr56" alt="Água Minajen com gás 510ml (12 un)">
+        <h3>Água Minajen com gás 510ml (12 un.)</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/ds0JWTyq" alt="Água Rárida com gás 510ml (12 un)">
+        <h3>Água Rárida com gás 510ml (12 un.)</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/NnHZYSGp" alt="Água Rárida sem gás 510ml (12 un)">
+        <h3>Água Rárida sem gás 510ml (12 un.)</h3>
       </div>
     </div>
+  </section>
 
-    <!-- Precisa de Comprovante? -->
-    <h3>Precisa de Comprovante?</h3>
-    <div class="section" id="comprovanteSection">
-      <div class="radio-group" id="comprovanteGroup">
-        <div class="radio-option">
-          <input type="radio" name="comprovanteNeeded" value="Sim" />
-          <label>Sim</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="comprovanteNeeded" value="Não" />
-          <label>Não</label>
-        </div>
+  <!-- DEPOIMENTOS -->
+  <section class="section testimonials">
+    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">O que dizem nossos clientes</h2>
+    <div class="cards">
+      <div class="card">
+        <blockquote>"Entrega super rápida e sem complicação!"</blockquote>
+        <cite>– Ana, Centro</cite>
+      </div>
+      <div class="card">
+        <blockquote>"Água fresca, atendimento nota 10."</blockquote>
+        <cite>– Carlos, Vila Recreio</cite>
+      </div>
+      <div class="card">
+        <blockquote>"Já virei cliente fiel! Recomendo."</blockquote>
+        <cite>– Maria, Jardim Primavera</cite>
       </div>
     </div>
+  </section>
 
-    <!-- Observação -->
-    <h3>Observação</h3>
-    <div class="section">
-      <label for="obs">Se desejar, escreva algo:</label>
-      <textarea id="obs" rows="3" placeholder="Algum detalhe extra?"></textarea>
-    </div>
-
-    <!-- Dados do Cliente -->
-    <h3>Seus Dados</h3>
-    <div class="section">
-      <div>
-        <label for="clientName">Nome:</label>
-        <input type="text" id="clientName" />
+  <!-- COMO FUNCIONA -->
+  <section class="section">
+    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Como funciona</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>1. Peça no WhatsApp</h3>
+        <p>Envie sua mensagem em segundos.</p>
       </div>
-      <div>
-        <label for="clientPhone">Celular:</label>
-        <input type="tel" id="clientPhone" />
+      <div class="card">
+        <h3>2. Processamos o pedido</h3>
+        <p>Preparamos seu galão com todo cuidado.</p>
       </div>
-      <div>
-        <label for="clientAddress">Endereço:</label>
-        <textarea id="clientAddress" rows="2"></textarea>
+      <div class="card">
+        <h3>3. Entrega na sua porta</h3>
+        <p>Receba rápido e sem sair de casa.</p>
       </div>
     </div>
+  </section>
 
-    <!-- Resumo do Pedido -->
-    <div id="summarySection">
-      <h3>Resumo do Pedido</h3>
-      <div class="order-summary">
-        <ul id="orderList"></ul>
-      </div>
-    </div>
+  <!-- FAQ -->
+  <section class="section faq" style="background:#f0f8ff;">
+    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Perguntas Frequentes</h2>
+    <dl>
+      <dt>❓ Aceitam Pix?</dt>
+      <dd>Sim! Basta informar na hora do pedido.</dd>
+      <dt>❓ Entregam em todos os bairros?</dt>
+      <dd>Cobrimos 100% de Monte Aprazível/SP.</dd>
+      <dt>❓ Qual o prazo de entrega?</dt>
+      <dd>Geralmente em até 2 horas úteis.</dd>
+      <dt>❓ Horário de atendimento?</dt>
+      <dd>Seg–Sex: 8h–18h | Sáb: 8h–12h</dd>
+    </dl>
+  </section>
 
-    <!-- Botão Final -->
-    <button onclick="confirmarPedido()">Confirmar seu pedido</button>
-    <p id="finalText">
-      Só após essa confirmação seu pedido será enviado pelo WhatsApp.
-    </p>
-  </div>
+  <!-- RODAPÉ -->
+  <footer>
+    <p>Distribuidora Água Já – Monte Aprazível/SP</p>
+    <p>Endereço: Av. Santos Dumont, 175</p>
+    <p>WhatsApp: <a href="https://wa.me/5517996592731?text=Ol%C3%A1%2C+quero+pedir+%C3%A1gua" style="color:#fff;font-weight:bold;">(17) 99659-2731</a></p>
+    <p>&copy; 2025 Água Já. Todos os direitos reservados.</p>
+  </footer>
 
-  <!-- Seção de Como Chegar (Google Maps) -->
-  <div class="container" id="mapSection">
-    <h3>Como chegar até nós</h3>
-    <p>Retire seu pedido em: Avenida Santos Dumont, 175,<br/>
-       Monte Aprazível - SP, 15.150-000
-    </p>
-    <iframe
-      src=https://www.google.com/maps/place/avenida+santos+dumont+175+monte+apraz%C3%ADvel/@-20.7670721,-49.7095821,3a,75y,282.41h,90t/data=!3m4!1e1!3m2!1sYeZUPCKOES9Ig0JsNM1AtA!2e0!4m2!3m1!1s0x94bd9fe84e0c491f:0x4384943539a7b02?sa=X&ved=1t:3780&ictx=111"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5517996592731?text=Ol%C3%A1%2C+quero+pedir+%C3%A1gua" class="whatsapp-float" target="_blank">
+    <img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp">
+  </a>
 
-  <script>
-    let order = [];
-
-    // Adiciona todos os itens (quantidades > 0) ao array "order"
-    function addAllItems() {
-      order = []; // limpa antes de adicionar
-      const products = [
-        { name: 'Água Mineral sem gás 510ml Fardo com 12', price: 16.00, qtyId: 'qty1' },
-        { name: 'Água Mineral com gás 510 ml Fardo com 12', price: 20.00, qtyId: 'qty2' },
-        { name: 'Água Mineral Rárida 20L', price: 15.00, qtyId: 'qty3' },
-        { name: 'Água Mineral Minajen 20L', price: 15.00, qtyId: 'qty4' },
-        { name: 'Água Mineral Talismã 20L', price: 12.00, qtyId: 'qty4' },
-        { name: 'Água Mineral Levity 20L', price: 16.00, qtyId: 'qty4' },
-      ];
-      products.forEach((prod) => {
-        const quantity = parseInt(document.getElementById(prod.qtyId).value) || 0;
-        if (quantity > 0) {
-          order.push({
-            product: prod.name,
-            price: prod.price,
-            quantity: quantity
-          });
-        }
-      });
-      updateOrderSummary();
-    }
-
-    // Exibe o resumo do pedido
-    function updateOrderSummary() {
-      const orderList = document.getElementById("orderList");
-      orderList.innerHTML = "";
-      if (order.length > 0) {
-        document.getElementById("summarySection").style.display = "block";
-        order.forEach((item) => {
-          const li = document.createElement("li");
-          const subtotal = (item.price * item.quantity).toFixed(2);
-          li.textContent = `${item.quantity} x ${item.product} - R$${subtotal}`;
-          orderList.appendChild(li);
-        });
-      } else {
-        document.getElementById("summarySection").style.display = "none";
-      }
-    }
-
-    // Observa mudanças no pagamento para exibir troco
-    document.getElementById("paymentGroup").addEventListener("change", function() {
-      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
-      if (paymentMethod === "Dinheiro") {
-        document.getElementById("trocoSection").style.display = "block";
-      } else {
-        document.getElementById("trocoSection").style.display = "none";
-      }
-    });
-
-    // Se "Sim" troco, exibe campo do valor
-    function handleChangeOption() {
-      const changeNeeded = document.querySelector('input[name="changeNeeded"]:checked')?.value;
-      if (changeNeeded === "Sim") {
-        document.getElementById("trocoValueContainer").style.display = "block";
-      } else {
-        document.getElementById("trocoValueContainer").style.display = "none";
-      }
-    }
-
-    // Verifica campos obrigatórios e, se ok, envia via WhatsApp
-    function confirmarPedido() {
-      // 1) Verificar se existe algum item no order
-      if (order.length === 0) {
-        alert("Nenhum produto foi adicionado. Selecione as quantidades e clique em 'Adicionar Itens'.");
-        return;
-      }
-
-      // 2) Validar Entrega/Retirada
-      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
-      highlightError(document.getElementById("deliveryGroup"), !deliveryMethod);
-
-      // 3) Validar Forma de Pagamento
-      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-      highlightError(document.getElementById("paymentGroup"), !paymentMethod);
-
-      // Se pagamento = Dinheiro, validar troco
-      let trocoNeeded = "";
-      let trocoValue = "";
-      if (paymentMethod && paymentMethod.value === "Dinheiro") {
-        const trocoNeededElement = document.querySelector('input[name="changeNeeded"]:checked');
-        highlightError(document.getElementById("trocoSection"), !trocoNeededElement);
-        if (trocoNeededElement && trocoNeededElement.value === "Sim") {
-          const trocoVal = document.getElementById("changeValue").value;
-          highlightError(document.getElementById("changeValue"), !trocoVal || parseInt(trocoVal) < 1);
-          trocoNeeded = trocoNeededElement.value;
-          trocoValue = trocoVal;
-          if (!trocoVal || parseInt(trocoVal) < 1) {
-            alert("Informe um valor de troco válido.");
-            return;
-          }
-        } else if (!trocoNeededElement) {
-          alert("Selecione se precisa de troco ou não.");
-          return;
-        } else {
-          trocoNeeded = trocoNeededElement.value;
-        }
-      }
-
-      // 4) Precisa de Comprovante
-      const comprovante = document.querySelector('input[name="comprovanteNeeded"]:checked');
-      highlightError(document.getElementById("comprovanteSection"), !comprovante);
-
-      // 5) Dados do Cliente
-      const clientName = document.getElementById("clientName");
-      const clientPhone = document.getElementById("clientPhone");
-      const clientAddress = document.getElementById("clientAddress");
-
-      highlightError(clientName, !clientName.value.trim());
-      highlightError(clientPhone, !clientPhone.value.trim());
-      highlightError(clientAddress, !clientAddress.value.trim());
-
-      // Se algum campo obrigatório estiver vazio, interrompe
-      if (
-        !deliveryMethod ||
-        !paymentMethod ||
-        !comprovante ||
-        !clientName.value.trim() ||
-        !clientPhone.value.trim() ||
-        !clientAddress.value.trim()
-      ) {
-        alert("Por favor, preencha todos os campos obrigatórios (destacados em vermelho).");
-        return;
-      }
-
-      // 6) Observação
-      const obsText = document.getElementById("obs").value.trim();
-
-      // 7) Calcula o total
-      let total = 0;
-      order.forEach((item) => {
-        total += item.price * item.quantity;
-      });
-
-      // 8) Monta a mensagem final
-      let message = `Nome: ${clientName.value}\n`;
-      message += `Celular: ${clientPhone.value}\n`;
-      message += `Endereço: ${clientAddress.value}\n\n`;
-      message += `Entrega/Retirada: ${deliveryMethod.value}\n`;
-      message += `Forma de Pagamento: ${paymentMethod.value}\n`;
-
-      // Se for dinheiro, troco
-      if (paymentMethod.value === "Dinheiro") {
-        message += `Precisa de troco? ${trocoNeeded}\n`;
-        if (trocoNeeded === "Sim") {
-          message += `Valor do Troco: R$${trocoValue}\n`;
-        }
-      }
-
-      message += `Precisa de Comprovante? ${comprovante.value}\n\n`;
-      message += `Produtos:\n`;
-      order.forEach((item) => {
-        const subtotal = item.price * item.quantity;
-        message += `${item.quantity} x ${item.product} - R$${subtotal.toFixed(2)}\n`;
-      });
-
-      // Desconto se for retirada
-      if (deliveryMethod.value === "Retirada") {
-        const discount = total * 0.15;
-        const discountedTotal = total - discount;
-        message += `\nTotal sem desconto: R$${total.toFixed(2)}\n`;
-        message += `Desconto (15%): -R$${discount.toFixed(2)}\n`;
-        message += `Total a Pagar: R$${discountedTotal.toFixed(2)}\n`;
-      } else {
-        message += `\nTotal a Pagar: R$${total.toFixed(2)}\n`;
-      }
-
-      if (obsText) {
-        message += `\nObservação: ${obsText}\n`;
-      }
-
-      // 9) Envia via WhatsApp (17) 99125-5999
-      const encodedMsg = encodeURIComponent(message);
-      const whatsappNumber = "5517996592731"; // Ajuste se necessário
-      const url = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
-      window.open(url, "_blank");
-
-      // 10) Limpa a lista e campos, se quiser
-      order = [];
-      updateOrderSummary();
-      alert("Pedido enviado via WhatsApp com sucesso!");
-    }
-
-    // Função para aplicar/remover classe de erro em elementos
-    function highlightError(element, condition) {
-      if (!element) return;
-      if (condition) {
-        element.classList.add("error");
-      } else {
-        element.classList.remove("error");
-      }
-    }
-  </script>
 </body>
 </html>
