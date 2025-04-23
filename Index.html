@@ -294,11 +294,11 @@
   <!-- Seção de Como Chegar (Google Maps) -->
   <div class="container" id="mapSection">
     <h3>Como chegar até nós</h3>
-    <p>Retire seu pedido em: Avenida Italia, 636, Sala A - Jardim São Vicente,<br/>
-       Itupeva - SP, 13.295-114
+    <p>Retire seu pedido em: Avenida Santos Dumont, 175,<br/>
+       Monte Aprazível - SP, 15.150-000
     </p>
     <iframe
-      src="https://www.google.com/maps?q=Avenida+Italia+636+Jardim+Sao+Vicente+Itupeva+SP+13295-114&output=embed"
+      src=https://www.google.com/maps/place/avenida+santos+dumont+175+monte+apraz%C3%ADvel/@-20.7670721,-49.7095821,3a,75y,282.41h,90t/data=!3m4!1e1!3m2!1sYeZUPCKOES9Ig0JsNM1AtA!2e0!4m2!3m1!1s0x94bd9fe84e0c491f:0x4384943539a7b02?sa=X&ved=1t:3780&ictx=111"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
       allowfullscreen>
@@ -312,10 +312,12 @@
     function addAllItems() {
       order = []; // limpa antes de adicionar
       const products = [
-        { name: 'Água Mineral 500ml', price: 2.50, qtyId: 'qty1' },
-        { name: 'Água Mineral 1L',    price: 4.50, qtyId: 'qty2' },
-        { name: 'Água Mineral 2L',    price: 7.50, qtyId: 'qty3' },
-        { name: 'Galão de 20L',       price: 15.00, qtyId: 'qty4' },
+        { name: 'Água Mineral sem gás 510ml Fardo com 12', price: 16.00, qtyId: 'qty1' },
+        { name: 'Água Mineral com gás 510 ml Fardo com 12', price: 20.00, qtyId: 'qty2' },
+        { name: 'Água Mineral Rárida 20L', price: 15.00, qtyId: 'qty3' },
+        { name: 'Água Mineral Minajen 20L', price: 15.00, qtyId: 'qty4' },
+        { name: 'Água Mineral Talismã 20L', price: 12.00, qtyId: 'qty4' },
+        { name: 'Água Mineral Levity 20L', price: 16.00, qtyId: 'qty4' },
       ];
       products.forEach((prod) => {
         const quantity = parseInt(document.getElementById(prod.qtyId).value) || 0;
@@ -480,7 +482,7 @@
 
       // 9) Envia via WhatsApp (17) 99125-5999
       const encodedMsg = encodeURIComponent(message);
-      const whatsappNumber = "5517991255999"; // Ajuste se necessário
+      const whatsappNumber = "5517996592731"; // Ajuste se necessário
       const url = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
       window.open(url, "_blank");
 
