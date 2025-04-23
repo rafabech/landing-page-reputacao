@@ -5,93 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Distribuidora Água Já – Monte Aprazível/SP | Disk Água Mineral</title>
   <!-- Meta tags para SEO Google -->
-  <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega rápida de água mineral (galões 20L e 510 ml), sem burocracia pelo WhatsApp.">
-  <meta name="keywords" content="Água mineral, Monte Aprazível, entrega de água, galão 20 litros, água 510 ml, disk água, Água Já">
+  <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega rápida de água mineral (galões 20 L e 510 ml), disk água, finais de semana, sem burocracia pelo WhatsApp.">
+  <meta name="keywords" content="Água mineral, Monte Aprazível, entrega de água, galão 20 litros, água 510 ml, disk água, finais de semana, Água Já">
   <style>
-    /* PAPEL DE PAREDE SUAVE */
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    html, body { height:100%; font-family: Arial, sans-serif; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; height:auto; display:block; }
+
+    /* FUNDO MARCAD’ÁGUA */
     html, body {
-      margin: 0; padding: 0; height: 100%;
-      background: url('https://i.ibb.co/PsxMZy9D/logo-agua-ja.png') center center / 50% auto no-repeat fixed;
-      font-family: Arial, sans-serif;
+      background: url('https://i.ibb.co/PsxMZy9D/logo-agua-ja.png') center/50% auto no-repeat fixed;
       position: relative;
     }
     body::before {
-      content: "";
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: inherit; opacity: .0225;
-      z-index: -1; pointer-events: none;
+      content:""; position:absolute; top:0; left:0;
+      width:100%; height:100%;
+      background:inherit; opacity:.0225; z-index:-1; pointer-events:none;
     }
-    /* RESET */
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width:100%; height:auto; }
 
     /* HEADER */
     header {
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
       background: rgba(255,255,255,0.7);
-      padding: 1rem;
-      z-index: 1;
+      display:flex; justify-content:flex-end; align-items:center;
+      padding:1rem; position:relative; z-index:1;
     }
     .brand-text {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2.5rem;
-      color: #005fae;
-      font-weight: bold;
+      position:absolute; left:50%; transform:translateX(-50%);
+      font-size:2.5rem; color:#005fae; font-weight:bold;
     }
-    .contact-info {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-right: 1rem;
-      font-size: 1rem;
-      color: #005fae;
-    }
-    .contact-info a {
-      color: #005fae;
-      font-weight: bold;
-    }
+    .contact-info { margin-right:1rem; color:#005fae; }
+    .contact-info a { font-weight:bold; }
     .btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-      padding: .6rem 1rem;
-      border-radius: 4px;
-      font-weight: bold;
+      background:#25D366; color:#fff;
+      padding:.6rem 1rem; border-radius:4px; font-weight:bold;
     }
 
     /* HERO */
     .hero {
-      background: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 3rem 1rem;
-      position: relative; z-index:1;
+      background:rgba(255,255,255,0.7); text-align:center;
+      padding:3rem 1rem; position:relative; z-index:1;
     }
-    .hero h1 { font-size: 2rem; color: red; margin-bottom:1rem; }
+    .hero h1 { font-size:2rem; color:red; margin-bottom:1rem; }
     .hero p  { font-size:1.1rem; color:#333; margin-bottom:2rem; }
 
     /* PRODUTOS */
     .section {
-      padding:3rem 1rem; max-width:1000px; margin:0 auto; position:relative; z-index:1;
+      padding:3rem 1rem; max-width:1000px; margin:0 auto;
+      position:relative; z-index:1;
     }
     .cards {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
       gap:1.5rem;
     }
     .card {
-      background:#f9f9f9; padding:1rem; border-radius:6px; text-align:center; position:relative; overflow:hidden;
+      background:#f9f9f9; padding:1rem; border-radius:6px;
+      text-align:center; position:relative;
     }
     .card-image {
-      position:relative; width:100%; padding-top:100%;
+      margin:1rem 0;
+      display:flex; justify-content:center; align-items:center;
     }
     .card-image img {
-      position:absolute; top:10%; left:10%; width:80%; height:80%; object-fit:contain;
+      width:70%;       /* reduz 30% */
+      height:auto;
+      object-fit:contain;
     }
     .price-badge {
       position:absolute; top:8px; left:8px;
@@ -99,11 +79,11 @@
       padding:4px 8px; border-radius:4px;
       font-weight:bold; font-size:.9rem;
     }
-    .card h3 {
-      margin:.5rem 0; color:#005fae; font-size:1rem;
-    }
+    .card h3 { margin:.5rem 0; color:#005fae; font-size:1rem; }
+    .unit-desc { font-size:.9rem; color:#333; margin-bottom:.5rem; }
     .purchase {
-      display:flex; justify-content:center; align-items:center; gap:.5rem; margin-top:.5rem;
+      display:flex; justify-content:center; align-items:center;
+      gap:.5rem; margin-top:.5rem;
     }
     .purchase input {
       width:3rem; padding:.3rem; text-align:center;
@@ -125,20 +105,15 @@
 
     /* RODAPÉ */
     footer {
-      background:rgba(255,255,255,0.7);
-      color:#005fae; text-align:center;
-      padding:2rem 1rem; font-size:.9rem;
+      background:rgba(255,255,255,0.7); color:#005fae;
+      text-align:center; padding:2rem 1rem;
       position:relative; z-index:1;
     }
     footer address {
       font-style:normal; line-height:1.4; margin-bottom:.5rem;
     }
-    .social-links {
-      margin:1rem 0;
-    }
-    .social-links a {
-      margin:0 .5rem; color:#005fae; font-weight:bold;
-    }
+    .social-links { margin:1rem 0; }
+    .social-links a { margin:0 .5rem; color:#005fae; font-weight:bold; }
 
     /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
@@ -146,8 +121,7 @@
       background:#25D366; width:60px; height:60px;
       border-radius:50%; display:flex;
       align-items:center; justify-content:center;
-      box-shadow:0 2px 6px rgba(0,0,0,0.3);
-      z-index:2;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3); z-index:2;
     }
     .whatsapp-float img { width:32px; }
   </style>
@@ -157,9 +131,7 @@
   <!-- HEADER -->
   <header>
     <div class="brand-text">Água Já Monte Aprazível</div>
-    <div class="contact-info">
-      <span>📞 <a href="tel:+5517996592731">(17) 99659-2731</a></span>
-    </div>
+    <div class="contact-info">📞 <a href="tel:+5517996592731">(17) 99659-2731</a></div>
     <a href="https://wa.me/5517996592731" class="btn-whatsapp">WhatsApp</a>
   </header>
 
@@ -174,52 +146,52 @@
   <section class="section" style="background:#f0f8ff;">
     <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Nossos Produtos</h2>
     <div class="cards">
-      <!-- 1) Talismã 20L -->
+      <!-- 1) Talismã 20 L -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/67VKkr0H/talisma20litrosnova.png" alt="Água Talismã 20L">
+          <img src="https://i.ibb.co/67VKkr0H/talisma20litrosnova.png" alt="Água Talismã 20 L">
           <div class="price-badge">R$12</div>
         </div>
-        <h3>Água Talismã 20L</h3>
+        <h3>Água Talismã 20 L</h3>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Talismã 20L',12,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Talismã 20 L',12,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
-      <!-- 2) Rárida 20L -->
+      <!-- 2) Rárida 20 L -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/ymPHtk6Q/rarida20.png" alt="Água Rárida 20L">
+          <img src="https://i.ibb.co/ymPHtk6Q/rarida20.png" alt="Água Rárida 20 L">
           <div class="price-badge">R$15</div>
         </div>
-        <h3>Água Rárida 20L</h3>
+        <h3>Água Rárida 20 L</h3>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Rárida 20L',15,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Rárida 20 L',15,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
-      <!-- 3) Minajen 20L -->
+      <!-- 3) Minajen 20 L -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/n8jpfvVk/minajen20.png" alt="Água Minajen 20L">
+          <img src="https://i.ibb.co/n8jpfvVk/minajen20.png" alt="Água Minajen 20 L">
           <div class="price-badge">R$13</div>
         </div>
-        <h3>Água Minajen 20L</h3>
+        <h3>Água Minajen 20 L</h3>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Minajen 20L',13,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Minajen 20 L',13,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
-      <!-- 4) Levity 20L -->
+      <!-- 4) Levity 20 L -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/CKMB2Yc3/Levity-20.png" alt="Água Levity 20L">
+          <img src="https://i.ibb.co/CKMB2Yc3/Levity-20.png" alt="Água Levity 20 L">
           <div class="price-badge">R$16,00</div>
         </div>
-        <h3>Água Levity 20L</h3>
+        <h3>Água Levity 20 L</h3>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Levity 20L',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Levity 20 L',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
       <!-- 5) Rárida c/ gás 510 ml -->
@@ -229,9 +201,10 @@
           <div class="price-badge">R$20</div>
         </div>
         <h3>Água Rárida c/ gás 510 ml</h3>
+        <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Rárida c/ gás 510ml',20,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Rárida c/ gás 510 ml',20,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
       <!-- 6) Rárida sem gás 510 ml -->
@@ -241,9 +214,10 @@
           <div class="price-badge">R$16</div>
         </div>
         <h3>Água Rárida sem gás 510 ml</h3>
+        <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Rárida sem gás 510ml',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Rárida sem gás 510 ml',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
       <!-- 7) Minajen c/ gás 510 ml -->
@@ -253,9 +227,10 @@
           <div class="price-badge">R$18</div>
         </div>
         <h3>Água Minajen c/ gás 510 ml</h3>
+        <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Minajen c/ gás 510ml',18,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Minajen c/ gás 510 ml',18,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
       <!-- 8) Minajen sem gás 510 ml -->
@@ -265,9 +240,10 @@
           <div class="price-badge">R$16</div>
         </div>
         <h3>Água Minajen sem gás 510 ml</h3>
+        <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <input type="number" min="1" value="1">
-          <button onclick="addToCart('Água Minajen sem gás 510ml',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
+          <button onclick="addToCart('Água Minajen sem gás 510 ml',16,parseInt(this.parentElement.querySelector('input').value))">🛒 Comprar</button>
         </div>
       </div>
     </div>
@@ -278,9 +254,9 @@
   <footer>
     <address>
       Distribuidora Água Já – Monte Aprazível/SP<br>
-      Av. Santos Dumont, 175 – CEP 15160-000<br>
-      Horário: Seg–Sex 08h–18h | Sáb–Dom plantão via WhatsApp<br>
-      Email: contato@aguajamonteaprazivel.com.br
+      Av. Santos Dumont, 175 – CEP 15150-000<br>
+      Horário de atendimento: Segunda-feira a Sexta-feira, das 08h00 às 18h00<br>
+      Plantão WhatsApp: Sábado e Domingo
     </address>
     <div class="social-links">
       Siga-nos:
@@ -301,14 +277,11 @@
       if (!cart[name]) cart[name] = { price, qty: 0 };
       cart[name].qty += qty;
       document.getElementById('cart-count').innerText =
-        Object.values(cart).reduce((sum, i) => sum + i.qty, 0);
+        Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
       alert(qty + 'x ' + name + ' adicionado(s)');
     }
     function checkout() {
-      if (!Object.keys(cart).length) {
-        alert('Carrinho vazio!');
-        return;
-      }
+      if (!Object.keys(cart).length) { alert('Carrinho vazio!'); return; }
       let msg = 'Olá, gostaria de pedir:%0A';
       for (let name in cart) {
         msg += `${cart[name].qty}x ${name} - R$${(cart[name].price * cart[name].qty).toFixed(2)}%0A`;
