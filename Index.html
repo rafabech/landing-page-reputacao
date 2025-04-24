@@ -4,30 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Distribuidora Água Já – Monte Aprazível/SP | Disk Água Mineral</title>
-  <!-- Meta tags para SEO Google -->
   <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega rápida de água mineral (galões 20 L e 510 ml), disk água, finais de semana, sem burocracia pelo WhatsApp.">
   <meta name="keywords" content="Água mineral, Monte Aprazível, entrega de água, galão 20 litros, água 510 ml, disk água, finais de semana, Água Já">
   <style>
     /* RESET */
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     html, body { height:100%; font-family:Arial, sans-serif; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; height:auto; display:block; }
 
+    /* BANNER WATERMARK */
+    .banner { position:relative; }
+    .banner::before {
+      content:"";
+      position:absolute; top:-200px; left:50%;
+      transform:translateX(-50%);
+      width:1200px; height:1200px;
+      background:url('https://i.ibb.co/8DBgcR2p/logo-agua-ja-white-bg.png') center/contain no-repeat;
+      opacity:0.5; pointer-events:none; z-index:0;
+    }
+
     /* HEADER */
     header {
+      position:relative; z-index:1;
       background:rgba(255,255,255,0.8);
-      position:relative;
       display:flex; justify-content:flex-end; align-items:center;
-      padding:1rem; z-index:1;
-    }
-    .logo {
-      position:absolute;
-      left:50%; transform:translateX(-50%);
-    }
-    .logo img {
-      height:75px; /* 150% de 50px */
-      width:auto;
+      padding:1rem;
     }
     .contact-info { margin-right:1rem; color:#005fae; }
     .contact-info a { font-weight:bold; }
@@ -38,16 +40,22 @@
 
     /* HERO */
     .hero {
-      background:rgba(255,255,255,0.8); text-align:center;
-      padding:3rem 1rem; z-index:1;
+      position:relative; z-index:1;
+      background:rgba(255,255,255,0.8);
+      text-align:center; padding:3rem 1rem;
     }
-    .hero h1 { font-size:2rem; color:red; margin-bottom:1rem; }
-    .hero p  { font-size:1.1rem; color:#333; margin-bottom:2rem; }
+    .hero h1 {
+      font-size:2.5rem; color:#003366; font-weight:bold;
+      margin-bottom:1rem;
+    }
+    .hero p {
+      font-size:1.1rem; color:#333; margin-bottom:2rem;
+    }
 
     /* PRODUTOS */
     .section {
+      position:relative; z-index:1;
       padding:3rem 1rem; max-width:1000px; margin:0 auto;
-      z-index:1;
     }
     .cards {
       display:grid;
@@ -62,9 +70,7 @@
       height:180px;
       display:flex; justify-content:center; align-items:center;
     }
-    .card-image img {
-      max-height:150px; width:auto; object-fit:contain;
-    }
+    .card-image img { max-height:150px; object-fit:contain; }
     .price-badge {
       position:absolute; top:8px; left:8px;
       background:rgba(0,0,0,0.6); color:#fff;
@@ -74,20 +80,18 @@
     .card h3 { margin:.5rem 0; color:#005fae; font-size:1rem; }
     .unit-desc { font-size:.9rem; color:#333; margin-bottom:.5rem; }
 
-    /* CONTROLES DE QUANTIDADE */
+    /* QUANTITY & BUY */
     .purchase {
       display:flex; justify-content:center; align-items:center;
       gap:.5rem; margin-top:.5rem;
     }
     .qty-btn {
       background:#005fae; color:#fff; border:none;
-      padding:.3rem .6rem; font-size:1rem; border-radius:4px;
-      cursor:pointer;
+      padding:.3rem .6rem; font-size:1rem; border-radius:4px; cursor:pointer;
     }
     .qty-input {
       width:2rem; text-align:center; border:1px solid #ccc;
-      border-radius:4px; padding:.2rem; font-size:1rem;
-      background:#fff;
+      border-radius:4px; padding:.2rem; font-size:1rem; background:#fff;
     }
     .buy-btn {
       background:#005fae; color:#fff; border:none;
@@ -95,7 +99,7 @@
       font-size:.9rem; cursor:pointer;
     }
 
-    /* BOTÃO FINALIZAR */
+    /* FINALIZAR */
     #checkout-btn {
       display:block; margin:2rem auto;
       background:#ff6600; color:#fff; border:none;
@@ -105,59 +109,57 @@
 
     /* RODAPÉ */
     footer {
+      position:relative; z-index:1;
       background:rgba(255,255,255,0.8); color:#005fae;
-      text-align:center; padding:2rem 1rem; z-index:1;
+      text-align:center; padding:2rem 1rem;
     }
     footer address { font-style:normal; line-height:1.4; margin-bottom:.5rem; }
-    .social-title {
-      font-size:1rem; color:#005fae; margin-bottom:.5rem;
-      text-align:center;
-    }
-    .social-links {
-      display:flex; justify-content:center; gap:1rem; margin-bottom:1rem;
-    }
-    .social-links a.facebook img { width:32.93px; }   /* Facebook 2% menor */
-    .social-links a.instagram img { width:34.272px; } /* Instagram +2% */
-    .social-links a img { height:auto; transition:transform .2s; }
+    .social-title { font-size:1rem; color:#005fae; margin-bottom:.5rem; }
+    .social-links { display:flex; justify-content:center; gap:1rem; margin-bottom:1rem; }
+    .social-links a.facebook img { width:32.93px; }
+    .social-links a.instagram img { width:35.3px; }
     .social-links a img:hover { transform:scale(1.1); }
 
-    /* WHATSAPP FLUTUANTE */
+    /* WHATSAPP FLUTUANTE COM TELEFONE */
     .whatsapp-float {
       position:fixed; bottom:20px; right:20px;
+      display:flex; flex-direction:column; align-items:center; z-index:2;
+    }
+    .whatsapp-float a {
       background:#25D366; width:60px; height:60px;
       border-radius:50%; display:flex;
       align-items:center; justify-content:center;
-      box-shadow:0 2px 6px rgba(0,0,0,0.3); z-index:2;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
     }
     .whatsapp-float img { width:32px; }
+    .whatsapp-float .float-phone {
+      margin-top:.3rem; font-size:.9rem; color:#005fae; font-weight:bold;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <a href="/">
-        <img src="https://i.ibb.co/PsxMZy9D/logo-agua-ja.png" alt="Água Já Monte Aprazível">
-      </a>
-    </div>
-    <div class="contact-info">📞 <a href="tel:+5517996592731">(17) 99659-2731</a></div>
-    <a href="https://wa.me/5517996592731" class="btn-whatsapp">WhatsApp</a>
-  </header>
+  <div class="banner">
+    <!-- HEADER -->
+    <header>
+      <div class="contact-info">📞 <a href="tel:+5517996592731">(17) 99659-2731</a></div>
+      <a href="https://wa.me/5517996592731" class="btn-whatsapp">WhatsApp</a>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Tá sem água aí?</h1>
-    <p>Entrega rápida de água mineral em Monte Aprazível/SP</p>
-    <a href="https://wa.me/5517996592731" class="btn-whatsapp">Peça pelo WhatsApp</a>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Água Já</h1>
+      <p>Entrega rápida de água mineral em Monte Aprazível/SP</p>
+      <a href="https://wa.me/5517996592731" class="btn-whatsapp">Peça pelo WhatsApp</a>
+    </section>
+  </div>
 
   <!-- PRODUTOS -->
   <section class="section">
     <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Nossos Produtos</h2>
     <div class="cards">
 
-      <!-- Talismã 20 L -->
+      <!-- 1) Talismã 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Rk274VL7/talisma20litrosnova.png" alt="Água Talismã 20 L">
@@ -172,7 +174,7 @@
         </div>
       </div>
 
-      <!-- Rárida 20 L -->
+      <!-- 2) Rárida 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/r9mCx4s/rarida20.png" alt="Água Rárida 20 L">
@@ -187,7 +189,7 @@
         </div>
       </div>
 
-      <!-- Minajen 20 L -->
+      <!-- 3) Minajen 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/mCQVymcY/minajen20.png" alt="Água Minajen 20 L">
@@ -202,7 +204,7 @@
         </div>
       </div>
 
-      <!-- Levity 20 L -->
+      <!-- 4) Levity 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/KjBgWK1Z/Levity-20.png" alt="Água Levity 20 L">
@@ -217,10 +219,10 @@
         </div>
       </div>
 
-      <!-- Rárida c/ gás 510 ml -->
+      <!-- 5) Rárida c/ gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/vxBPP6rZ/r-rida-gas510ml.png" alt="Água Rárida c/ gás 510 ml">
+          <img src="https://i.ibb.co/vxBPP6rZ/r-rida-gas510ml.png" alt="Água Rárida com gás 510 ml">
           <div class="price-badge">R$20</div>
         </div>
         <h3>Água Rárida c/ gás 510 ml</h3>
@@ -233,7 +235,7 @@
         </div>
       </div>
 
-      <!-- Rárida sem gás 510 ml -->
+      <!-- 6) Rárida sem gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Gvms61rb/r-rida-semgas510ml.png" alt="Água Rárida sem gás 510 ml">
@@ -249,10 +251,10 @@
         </div>
       </div>
 
-      <!-- Minajen c/ gás 510 ml -->
+      <!-- 7) Minajen c/ gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/kTBPsgY/minajen510comg.png" alt="Água Minajen c/ gás 510 ml">
+          <img src="https://i.ibb.co/kTBPsgY/minajen510comg.png" alt="Água Minajen com gás 510 ml">
           <div class="price-badge">R$18</div>
         </div>
         <h3>Água Minajen c/ gás 510 ml</h3>
@@ -265,7 +267,7 @@
         </div>
       </div>
 
-      <!-- Minajen sem gás 510 ml -->
+      <!-- 8) Minajen sem gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Pv67V9Mb/minajen510semg.png" alt="Água Minajen sem gás 510 ml">
@@ -285,6 +287,14 @@
     <button id="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
   </section>
 
+  <!-- WHATSAPP FLUTUANTE -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5517996592731" target="_blank">
+      <img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp">
+    </a>
+    <div class="float-phone">(17) 99659-2731</div>
+  </div>
+
   <!-- RODAPÉ -->
   <footer>
     <address>
@@ -302,16 +312,10 @@
         <img src="https://i.ibb.co/zWyBKCzv/logo-insta.png" alt="Instagram">
       </a>
     </div>
-    <p>WhatsApp: <a href="https://wa.me/5517996592731" style="font-weight:bold;">(17) 99659-2731</a></p>
   </footer>
 
-  <!-- WHATSAPP FLUTUANTE -->
-  <a href="https://wa.me/5517996592731" class="whatsapp-float" target="_blank">
-    <img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp">
-  </a>
-
   <script>
-    // Quantity controls
+    // quantity controls
     document.querySelectorAll('.purchase').forEach(p => {
       const dec = p.querySelector('.qty-decrement');
       const inc = p.querySelector('.qty-increment');
@@ -325,8 +329,7 @@
         input.value = v + 1;
       });
     });
-
-    // Cart functions
+    // cart & checkout
     const cart = {};
     function addToCart(name, price, qty) {
       if (!cart[name]) cart[name] = { price, qty: 0 };
@@ -334,15 +337,10 @@
       alert(qty + 'x ' + name + ' adicionado(s)');
     }
     function checkout() {
-      if (!Object.keys(cart).length) {
-        alert('Carrinho vazio!');
-        return;
-      }
+      if (!Object.keys(cart).length) { alert('Carrinho vazio!'); return; }
       let msg = 'Olá, gostaria de pedir:%0A';
-      for (let name in cart) {
-        msg += `${cart[name].qty}x ${name} - R$${(cart[name].price * cart[name].qty).toFixed(2)}%0A`;
-      }
-      window.open('https://wa.me/5517996592731?text=' + msg, '_blank');
+      for (let n in cart) msg += `${cart[n].qty}x ${n} - R$${(cart[n].price*cart[n].qty).toFixed(2)}%0A`;
+      window.open('https://wa.me/5517996592731?text='+msg, '_blank');
     }
   </script>
 
