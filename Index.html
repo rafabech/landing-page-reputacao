@@ -4,162 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Distribuidora Água Já – Monte Aprazível/SP | Disk Água Mineral</title>
-  <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega rápida de água mineral (galões 20 L e 510 ml), disk água, finais de semana, sem burocracia pelo WhatsApp.">
-  <meta name="keywords" content="Água mineral, Monte Aprazível, entrega de água, galão 20 litros, água 510 ml, disk água, finais de semana, Água Já">
+  <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega de água mineral, plantão de fim de semana pelo WhatsApp.">
+  <meta name="keywords" content="Água mineral, Monte Aprazível, galão 20 L, 510 ml, disk água, WhatsApp">
   <style>
     /* RESET */
-    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-    html, body { height:100%; font-family:Arial, sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    html, body { height:100%; font-family:Arial, sans-serif; background:#fff; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; height:auto; display:block; }
 
-    /* BANNER WATERMARK */
-    .banner { position:relative; }
-    .banner::before {
-      content:"";
-      position:absolute; top:-200px; left:50%;
-      transform:translateX(-50%);
-      width:1200px; height:1200px;
-      background:url('https://i.ibb.co/8DBgcR2p/logo-agua-ja-white-bg.png') center/contain no-repeat;
-      opacity:0.5; pointer-events:none; z-index:0;
-    }
-
     /* HEADER */
     header {
-      position:relative; z-index:1;
-      background:rgba(255,255,255,0.8);
-      display:flex; justify-content:flex-end; align-items:center;
-      padding:1rem;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
-    .contact-info { margin-right:1rem; color:#005fae; }
-    .contact-info a { font-weight:bold; }
+    .contact-info {
+      color: #005fae;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .header-logo img {
+      height: 50px;
+      object-fit: contain;
+    }
     .btn-whatsapp {
-      background:#25D366; color:#fff;
-      padding:.6rem 1rem; border-radius:4px; font-weight:bold;
-    }
-
-    /* HERO */
-    .hero {
-      position:relative; z-index:1;
-      background:rgba(255,255,255,0.8);
-      text-align:center; padding:3rem 1rem;
-    }
-    .hero h1 {
-      font-size:2.5rem; color:#003366; font-weight:bold;
-      margin-bottom:1rem;
-    }
-    .hero p {
-      font-size:1.1rem; color:#333; margin-bottom:2rem;
+      background: #25D366;
+      color: #fff;
+      padding: .6rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
     /* PRODUTOS */
     .section {
-      position:relative; z-index:1;
-      padding:3rem 1rem; max-width:1000px; margin:0 auto;
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .products-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+    }
+    .products-header img {
+      height: 360px; /* 3× do original */
+      object-fit: contain;
+    }
+    .products-header h2 {
+      color: #005fae;
+      font-size: 1.8rem;
+      margin: 0;
     }
     .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.5rem;
     }
     .card {
-      background:#f9f9f9; padding:1rem; border-radius:6px;
-      text-align:center; position:relative;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      position: relative;
     }
     .card-image {
-      height:180px;
-      display:flex; justify-content:center; align-items:center;
+      height: 180px;
+      display: flex; justify-content: center; align-items: center;
     }
-    .card-image img { max-height:150px; object-fit:contain; }
+    .card-image img { max-height: 150px; object-fit: contain; }
     .price-badge {
-      position:absolute; top:8px; left:8px;
-      background:rgba(0,0,0,0.6); color:#fff;
-      padding:4px 8px; border-radius:4px;
-      font-weight:bold; font-size:.9rem;
+      position: absolute; top: 8px; left: 8px;
+      background: rgba(0,0,0,0.6); color: #fff;
+      padding: 4px 8px; border-radius: 4px;
+      font-weight: bold; font-size: .9rem;
     }
-    .card h3 { margin:.5rem 0; color:#005fae; font-size:1rem; }
-    .unit-desc { font-size:.9rem; color:#333; margin-bottom:.5rem; }
+    .card h3 { margin: .5rem 0; color: #005fae; font-size: 1rem; }
+    .unit-desc { font-size: .9rem; color: #333; margin-bottom: .5rem; }
 
-    /* QUANTITY & BUY */
+    /* COMPRAR */
     .purchase {
-      display:flex; justify-content:center; align-items:center;
-      gap:.5rem; margin-top:.5rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: .5rem; margin-top: .5rem;
     }
     .qty-btn {
-      background:#005fae; color:#fff; border:none;
-      padding:.3rem .6rem; font-size:1rem; border-radius:4px; cursor:pointer;
+      background: #005fae; color: #fff; border: none;
+      padding: .3rem .6rem; font-size: 1rem; border-radius: 4px; cursor: pointer;
     }
     .qty-input {
-      width:2rem; text-align:center; border:1px solid #ccc;
-      border-radius:4px; padding:.2rem; font-size:1rem; background:#fff;
+      width: 2rem; text-align: center;
+      border: 1px solid #ccc; border-radius: 4px;
+      padding: .2rem; font-size: 1rem; background: #fff;
     }
     .buy-btn {
-      background:#005fae; color:#fff; border:none;
-      padding:.5rem 1rem; border-radius:4px;
-      font-size:.9rem; cursor:pointer;
+      background: #005fae; color: #fff; border: none;
+      padding: .5rem 1rem; border-radius: 4px;
+      font-size: .9rem; cursor: pointer;
     }
 
-    /* FINALIZAR */
+    /* BOTÃO FINALIZAR */
     #checkout-btn {
-      display:block; margin:2rem auto;
-      background:#ff6600; color:#fff; border:none;
-      padding:.8rem 2rem; border-radius:4px;
-      font-size:1rem; cursor:pointer;
+      display: block; margin: 2rem auto;
+      background: #ff6600; color: #fff; border: none;
+      padding: .8rem 2rem; border-radius: 4px;
+      font-size: 1rem; cursor: pointer;
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .testimonials h2 {
+      text-align: center;
+      color: #005fae;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+    .testimonial {
+      background: #f0f8ff;
+      border-left: 4px solid #005fae;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: .5rem;
+    }
+    .testimonial .author {
+      text-align: right;
+      font-weight: bold;
+      color: #333;
     }
 
     /* RODAPÉ */
     footer {
-      position:relative; z-index:1;
-      background:rgba(255,255,255,0.8); color:#005fae;
-      text-align:center; padding:2rem 1rem;
+      background: rgba(255,255,255,0.9);
+      color: #005fae; text-align: center;
+      padding: 2rem 1rem; margin-top: 3rem;
     }
-    footer address { font-style:normal; line-height:1.4; margin-bottom:.5rem; }
-    .social-title { font-size:1rem; color:#005fae; margin-bottom:.5rem; }
-    .social-links { display:flex; justify-content:center; gap:1rem; margin-bottom:1rem; }
-    .social-links a.facebook img { width:32.93px; }
-    .social-links a.instagram img { width:35.3px; }
-    .social-links a img:hover { transform:scale(1.1); }
+    footer address { font-style: normal; line-height: 1.4; margin-bottom: .5rem; }
+    .social-title { font-size: 1rem; color: #005fae; margin-bottom: .5rem; }
+    .social-links { display: flex; justify-content: center; gap: 1rem; }
+    .social-links img { width: 32px; transition: transform .2s; }
+    .social-links img:hover { transform: scale(1.1); }
 
-    /* WHATSAPP FLUTUANTE COM TELEFONE */
+    /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
-      position:fixed; bottom:20px; right:20px;
-      display:flex; flex-direction:column; align-items:center; z-index:2;
+      position: fixed; bottom: 20px; right: 20px;
+      display: flex; flex-direction: column; align-items: center;
+      z-index: 10;
     }
     .whatsapp-float a {
-      background:#25D366; width:60px; height:60px;
-      border-radius:50%; display:flex;
-      align-items:center; justify-content:center;
-      box-shadow:0 2px 6px rgba(0,0,0,0.3);
+      background: #25D366; width: 60px; height: 60px;
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
-    .whatsapp-float img { width:32px; }
+    .whatsapp-float img { width: 32px; }
     .whatsapp-float .float-phone {
-      margin-top:.3rem; font-size:.9rem; color:#005fae; font-weight:bold;
+      margin-top: .3rem; font-size: .9rem;
+      color: #005fae; font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="banner">
-    <!-- HEADER -->
-    <header>
-      <div class="contact-info">📞 <a href="tel:+5517996592731">(17) 99659-2731</a></div>
-      <a href="https://wa.me/5517996592731" class="btn-whatsapp">WhatsApp</a>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Água Já</h1>
-      <p>Entrega rápida de água mineral em Monte Aprazível/SP</p>
-      <a href="https://wa.me/5517996592731" class="btn-whatsapp">Peça pelo WhatsApp</a>
-    </section>
-  </div>
+  <!-- HEADER -->
+  <header>
+    <div class="contact-info">📞 (17) 99659-2731</div>
+    <div class="header-logo">
+      <img src="https://i.ibb.co/8DBgcR2p/logo-agua-ja-white-bg.png" alt="Logo Água Já">
+    </div>
+    <a href="https://wa.me/5517996592731" class="btn-whatsapp" target="_blank">WhatsApp</a>
+  </header>
 
   <!-- PRODUTOS -->
   <section class="section">
-    <h2 style="text-align:center; color:#005fae; margin-bottom:2rem;">Nossos Produtos</h2>
+    <div class="products-header">
+      <img src="https://i.ibb.co/8DBgcR2p/logo-agua-ja-white-bg.png" alt="Logo Água Já">
+      <h2>Nossos Produtos</h2>
+    </div>
     <div class="cards">
-
-      <!-- 1) Talismã 20 L -->
+      <!-- 1) Água Talismã 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Rk274VL7/talisma20litrosnova.png" alt="Água Talismã 20 L">
@@ -168,13 +207,12 @@
         <h3>Água Talismã 20 L</h3>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Talismã 20 L',12,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 2) Rárida 20 L -->
+      <!-- 2) Água Rárida 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/r9mCx4s/rarida20.png" alt="Água Rárida 20 L">
@@ -183,13 +221,12 @@
         <h3>Água Rárida 20 L</h3>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Rárida 20 L',15,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 3) Minajen 20 L -->
+      <!-- 3) Água Minajen 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/mCQVymcY/minajen20.png" alt="Água Minajen 20 L">
@@ -198,44 +235,41 @@
         <h3>Água Minajen 20 L</h3>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Minajen 20 L',13,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 4) Levity 20 L -->
+      <!-- 4) Água Levity 20 L -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/KjBgWK1Z/Levity-20.png" alt="Água Levity 20 L">
-          <div class="price-badge">R$16,00</div>
+          <div class="price-badge">R$16</div>
         </div>
         <h3>Água Levity 20 L</h3>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Levity 20 L',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 5) Rárida c/ gás 510 ml (12 un.) -->
+      <!-- 5) Água Rárida c/ gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/vxBPP6rZ/r-rida-gas510ml.png" alt="Água Rárida com gás 510 ml">
+          <img src="https://i.ibb.co/vxBPP6rZ/r-rida-gas510ml.png" alt="Água Rárida c/ gás 510 ml">
           <div class="price-badge">R$20</div>
         </div>
         <h3>Água Rárida c/ gás 510 ml</h3>
         <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Rárida c/ gás 510 ml',20,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 6) Rárida sem gás 510 ml (12 un.) -->
+      <!-- 6) Água Rárida sem gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Gvms61rb/r-rida-semgas510ml.png" alt="Água Rárida sem gás 510 ml">
@@ -245,29 +279,27 @@
         <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Rárida sem gás 510 ml',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 7) Minajen c/ gás 510 ml (12 un.) -->
+      <!-- 7) Água Minajen c/ gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
-          <img src="https://i.ibb.co/kTBPsgY/minajen510comg.png" alt="Água Minajen com gás 510 ml">
+          <img src="https://i.ibb.co/kTBPsgY/minajen510comg.png" alt="Água Minajen c/ gás 510 ml">
           <div class="price-badge">R$18</div>
         </div>
         <h3>Água Minajen c/ gás 510 ml</h3>
         <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Minajen c/ gás 510 ml',18,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
-      <!-- 8) Minajen sem gás 510 ml (12 un.) -->
+      <!-- 8) Água Minajen sem gás 510 ml (12 un.) -->
       <div class="card">
         <div class="card-image">
           <img src="https://i.ibb.co/Pv67V9Mb/minajen510semg.png" alt="Água Minajen sem gás 510 ml">
@@ -277,14 +309,34 @@
         <p class="unit-desc">12 unidades</p>
         <div class="purchase">
           <button class="qty-btn qty-decrement">−</button>
-          <input type="text" class="qty-input" value="1" readonly>
+          <input class="qty-input" type="text" value="1" readonly>
           <button class="qty-btn qty-increment">+</button>
           <button class="buy-btn" onclick="addToCart('Água Minajen sem gás 510 ml',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
         </div>
       </div>
-
     </div>
     <button id="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="testimonial">
+      <p>"Ótima entrega, sempre pontual e a água é de excelente qualidade!"</p>
+      <div class="author">— Maria S.</div>
+    </div>
+    <div class="testimonial">
+      <p>"Comprei o bloquinho de 10 e ganhei o 11º, super vantagem!"</p>
+      <div class="author">— Paulo R.</div>
+    </div>
+    <div class="testimonial">
+      <p>"Atendimento pelo WhatsApp rápido e eficiente. Recomendo!"</p>
+      <div class="author">— Ana L.</div>
+    </div>
+    <div class="testimonial">
+      <p>"Preço justo e entrega é muito rápida. Nota 10!"</p>
+      <div class="author">— Carlos M.</div>
+    </div>
   </section>
 
   <!-- WHATSAPP FLUTUANTE -->
@@ -300,36 +352,28 @@
     <address>
       Distribuidora Água Já – Monte Aprazível/SP<br>
       Av. Santos Dumont, 175 – CEP 15150-000<br>
-      Horário de atendimento: Segunda-feira a Sexta-feira, das 08h00 às 18h00<br>
+      Horário: Segunda a Sexta, 08h00 às 18h00<br>
       Plantão WhatsApp: Sábado e Domingo
     </address>
     <div class="social-title">Siga nossas redes sociais:</div>
     <div class="social-links">
-      <a class="facebook" href="https://www.facebook.com/profile.php?id=61575208282943" target="_blank">
+      <a href="https://www.facebook.com/profile.php?id=61575208282943" target="_blank">
         <img src="https://i.ibb.co/mFHY93C7/logo-face02.png" alt="Facebook">
       </a>
-      <a class="instagram" href="https://www.instagram.com/aguajamonteaprazivel" target="_blank">
+      <a href="https://www.instagram.com/aguajamonteaprazivel" target="_blank">
         <img src="https://i.ibb.co/zWyBKCzv/logo-insta.png" alt="Instagram">
       </a>
     </div>
   </footer>
 
   <script>
-    // quantity controls
     document.querySelectorAll('.purchase').forEach(p => {
-      const dec = p.querySelector('.qty-decrement');
-      const inc = p.querySelector('.qty-increment');
-      const input = p.querySelector('.qty-input');
-      dec.addEventListener('click', () => {
-        let v = parseInt(input.value);
-        if (v > 1) input.value = v - 1;
-      });
-      inc.addEventListener('click', () => {
-        let v = parseInt(input.value);
-        input.value = v + 1;
-      });
+      const dec = p.querySelector('.qty-decrement'),
+            inc = p.querySelector('.qty-increment'),
+            input = p.querySelector('.qty-input');
+      dec.addEventListener('click', () => { let v = parseInt(input.value); if (v > 1) input.value = v - 1; });
+      inc.addEventListener('click', () => { let v = parseInt(input.value); input.value = v + 1; });
     });
-    // cart & checkout
     const cart = {};
     function addToCart(name, price, qty) {
       if (!cart[name]) cart[name] = { price, qty: 0 };
@@ -339,10 +383,11 @@
     function checkout() {
       if (!Object.keys(cart).length) { alert('Carrinho vazio!'); return; }
       let msg = 'Olá, gostaria de pedir:%0A';
-      for (let n in cart) msg += `${cart[n].qty}x ${n} - R$${(cart[n].price*cart[n].qty).toFixed(2)}%0A`;
-      window.open('https://wa.me/5517996592731?text='+msg, '_blank');
+      for (let n in cart) {
+        msg += `${cart[n].qty}x ${n} – R$${(cart[n].price * cart[n].qty).toFixed(2)}%0A`;
+      }
+      window.open('https://wa.me/5517996592731?text=' + msg, '_blank');
     }
   </script>
-
 </body>
 </html>
