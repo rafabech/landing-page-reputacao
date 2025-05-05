@@ -315,7 +315,24 @@
         </div>
       </div>
     </div>
-    <button id="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
+    
+      <!-- 9) Água Levity c/ gás 510 ml (12 un.) -->
+      <div class="card">
+        <div class="card-image">
+          <img src="https://i.ibb.co/sdJ36yww/levity510mlcomg.png" alt="Água Levity c/ gás 510 ml">
+          <div class="price-badge">R$25</div>
+        </div>
+        <h3>Água Levity c/ gás 510 ml</h3>
+        <p class="unit-desc">12 unidades</p>
+        <div class="purchase">
+          <button class="qty-btn qty-decrement">−</button>
+          <input class="qty-input" type="text" value="1" readonly>
+          <button class="qty-btn qty-increment">+</button>
+          <button class="buy-btn" onclick="addToCart('Água Levity c/ gás 510 ml',25,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
+        </div>
+      </div>
+
+<button id="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
   </section>
 
   <!-- DEPOIMENTOS -->
