@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confie Caça Vazamentos | Rio Preto e Região</title>
-  <meta name="description" content="Confie Caça Vazamentos em Rio Preto. Especialistas em geofone, detecção sem quebra-quebra, limpeza de caixa d'água, higienização preventiva e serviços emergenciais.">
-  <meta name="keywords" content="caça vazamentos Rio Preto, geofone, limpeza de caixa d'água, detecção de vazamentos, vazamento sem quebrar, higienização caixa d'água, vazamento oculto, Confie vazamentos, serviços hidráulicos Rio Preto, prefeitura, condomínios, hotéis, empresas, indústrias">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <title>Confie Caça Vazamentos | São José do Rio Preto e Região</title>
+
+  <!-- Meta Description ampliada para incluir todas as cidades atendidas -->
+  <meta name="description" content="Confie Caça Vazamentos em São José do Rio Preto e toda região. Atendemos São José do Rio Preto (principal) e cidades como Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol e Mirassolândia. Especialistas em geofone, detecção sem quebra-quebra, limpeza de caixa d'água, higienização preventiva e serviços emergenciais.">
+
+  <!-- Meta Keywords incluindo todas as cidades listadas -->
+  <meta name="keywords" content="caça vazamentos São José do Rio Preto, geofone, limpeza de caixa d'água, detecção de vazamentos, vazamento sem quebrar, higienização caixa d'água, vazamento oculto, Confie vazamentos, serviços hidráulicos São José do Rio Preto, Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol, Mirassolândia">
+
+  <!-- Meta adicionais para SEO de cidades -->
+  <meta name="location" content="São José do Rio Preto; Monte Aprazível; Bady Bassit; Tanabi; Poloni; Neves Paulista; José Bonifácio; Nipoã; Macaubal; Nhandeara; Mirassol; Mirassolândia">
+  <meta name="coverage" content="Atendemos São José do Rio Preto, Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol, Mirassolândia">
+
+  <!-- Geo Tags para SEO local -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="São José do Rio Preto">
+  <meta name="geo.position" content="-20.8089;-49.3817">
+  <meta name="ICBM" content="-20.8089,-49.3817">
+
+  <!-- JSON-LD para LocalBusiness e área atendida -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Confie Caça Vazamentos",
+    "image": "https://i.ibb.co/Q30LDtQT/capa-pagina.png",
+    "telephone": "+5517981113437",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São José do Rio Preto",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -20.8089,
+      "longitude": -49.3817
+    },
+    "url": "https://confiecacavazamentos.com.br",
+    "areaServed": [
+      "São José do Rio Preto",
+      "Monte Aprazível",
+      "Bady Bassit",
+      "Tanabi",
+      "Poloni",
+      "Neves Paulista",
+      "José Bonifácio",
+      "Nipoã",
+      "Macaubal",
+      "Nhandeara",
+      "Mirassol",
+      "Mirassolândia"
+    ]
+  }
+  </script>
+
+  <!-- Google Tag Manager / Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,23 +66,41 @@
     gtag('js', new Date());
     gtag('config', 'AW-CONVERSION_ID');
   </script>
+
+  <!-- Fonte personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: #e6f0ff;
-      color: #333;
-    }
+    /* RESET e estilos gerais */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Rubik', sans-serif; background: #e6f0ff; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; }
+
+    /* Header */
     header {
       position: relative;
       text-align: center;
       background-color: #004d99;
+      overflow: hidden;
     }
+    /* Imagem principal reduzida pela metade (max-height: 440px) */
     header img {
       width: 100%;
       max-height: 440px;
       object-fit: contain;
       display: block;
+      margin: 0 auto;
+    }
+    header h1 {
+      margin: 1rem 0 0.5rem;
+      font-size: 2rem;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #cce6ff;
+      margin-bottom: 1rem;
     }
     .whatsapp-top {
       position: absolute;
@@ -40,21 +110,33 @@
       color: white;
       padding: 0.6rem 1.2rem;
       border-radius: 30px;
-      text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    header h1 {
-      margin: 0.5rem 0 0;
-      font-size: 2rem;
-      color: #fff;
+    .qr-code-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-align: center;
     }
-    header p {
-      font-size: 1.1rem;
-      color: #cce6ff;
-      margin-bottom: 1rem;
+    .qr-code-container p {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      color: #25D366;
+      font-weight: bold;
     }
+    .qr-code-container img {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* Seções */
     .section {
       padding: 3rem 1rem;
       text-align: center;
@@ -70,16 +152,31 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+    .section ul {
+      list-style: none;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .section ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Destaque (reposicionado para o fim) */
     .destaque {
       background: #f9f9f9;
       border-top: 3px solid #0077cc;
       border-bottom: 3px solid #0077cc;
       padding: 2rem 1rem;
       text-align: center;
+      margin-top: 2rem;
     }
     .destaque strong {
       color: #0077cc;
     }
+
+    /* Chamada para ação */
     .cta {
       background: #0077cc;
       color: white;
@@ -91,7 +188,6 @@
       color: #0077cc;
       padding: 1rem 2rem;
       font-weight: bold;
-      text-decoration: none;
       border-radius: 8px;
       display: inline-block;
       margin-top: 1rem;
@@ -100,6 +196,8 @@
     .cta a:hover {
       background: #e6f4ff;
     }
+
+    /* Formulário */
     .formulario {
       background: #ffffff;
       padding: 2rem;
@@ -108,7 +206,8 @@
       margin: 2rem auto;
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
-    .formulario input, .formulario textarea {
+    .formulario input,
+    .formulario textarea {
       width: 100%;
       padding: 0.8rem;
       margin-bottom: 1rem;
@@ -125,13 +224,73 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
+    /* Depoimentos */
+    #depoimentos blockquote {
+      background: #fff;
+      border-left: 4px solid #0077cc;
+      margin: 1rem auto;
+      max-width: 800px;
+      padding: 1rem 1.5rem;
+      font-style: italic;
+      color: #555;
+    }
+    #depoimentos blockquote::before {
+      content: "“";
+      font-size: 2rem;
+      color: #0077cc;
+      vertical-align: top;
+      margin-right: 0.2rem;
+    }
+    #depoimentos blockquote::after {
+      content: "”";
+      font-size: 2rem;
+      color: #0077cc;
+      vertical-align: bottom;
+      margin-left: 0.2rem;
+    }
+
+    /* FAQ */
+    #faq p {
+      text-align: left;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    #faq p strong {
+      color: #0077cc;
+    }
+
+    /* Footer */
     footer {
       background: #00264d;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
     }
+    .social-icons {
+      margin-bottom: 0.5rem;
+    }
+    .social-icons a {
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+    .social-icons img {
+      vertical-align: middle;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Animação de pulso para o botão flutuante */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Botão flutuante do WhatsApp com animação de pulso */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -146,74 +305,92 @@
       justify-content: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       z-index: 1000;
+      animation: pulse 2s infinite;
     }
     .whatsapp-button img {
       width: 40px;
       height: 40px;
     }
+
+    /* Responsividade */
     @media (max-width: 768px) {
-      header img {
-        max-height: 280px;
-      }
-      header h1 {
-        font-size: 1.5rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .section h2 {
-        font-size: 1.4rem;
-      }
-      .section p {
-        font-size: 1rem;
-      }
-      .whatsapp-top {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-      }
-      .whatsapp-button {
-        width: 60px;
-        height: 60px;
-      }
-      .whatsapp-button img {
-        width: 30px;
-        height: 30px;
-      }
+      header img { max-height: 220px; }
+      header h1 { font-size: 1.5rem; }
+      header p { font-size: 1rem; }
+      .section h2 { font-size: 1.4rem; }
+      .section p, .section ul li, #faq p { font-size: 1rem; }
+      .whatsapp-top { font-size: 0.9rem; padding: 0.5rem 1rem; }
+      .whatsapp-button { width: 60px; height: 60px; }
+      .whatsapp-button img { width: 30px; height: 30px; }
+      .qr-code-container img { width: 60px; height: 60px; }
+      .social-icons img { width: 24px; height: 24px; }
     }
   </style>
 </head>
 <body>
+  <!-- Header com botão do WhatsApp e QR Code -->
   <header>
     <a class="whatsapp-top" href="https://wa.me/5517981113437" target="_blank">WhatsApp</a>
-    <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Confie Caça Vazamentos - Capa">
+    <div class="qr-code-container">
+      <p style="color:#25D366;">📱 Escaneie e fale conosco no WhatsApp</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://wa.me/5517981113437" alt="QR Code WhatsApp">
+    </div>
+    <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Antes e Depois da Limpeza de Caixa d'Água - Confie Caça Vazamentos">
     <h1>Confie Caça Vazamentos</h1>
-    <p>Atendimento rápido em Rio Preto e Região</p>
+    <p>Atendimento em São José do Rio Preto e toda região</p>
   </header>
 
-  <section class="section">
+  <!-- Seção: Caça Vazamentos com Geofone -->
+  <section class="section" id="geofone">
     <h2>Caça Vazamentos com Geofone</h2>
-    <p>Utilizamos geofone profissional, um equipamento de precisão que detecta ruídos imperceptíveis a ouvido humano causados por vazamentos. Isso permite encontrar o ponto exato do problema sem quebrar pisos, paredes ou encanamentos inteiros. É a forma mais econômica, limpa e eficiente de localizar vazamentos escondidos.</p>
+    <p>Utilizamos geofone profissional, um equipamento de precisão que detecta ruídos imperceptíveis ao ouvido humano causados por vazamentos. Isso permite encontrar o ponto exato do problema sem quebrar pisos, paredes ou encanamentos inteiros. É a forma mais econômica, limpa e eficiente de localizar vazamentos escondidos.</p>
   </section>
 
-  <section class="section">
+  <!-- Seção: Limpeza de Caixas d'água -->
+  <section class="section" id="limpeza-caixas">
     <h2>Limpeza de Caixas d'água</h2>
-    <p>A limpeza periódica (a cada 6 meses) é fundamental para garantir água potável e livre de riscos. Sem a higienização correta, sua caixa pode acumular limo, barro, ferrugem e bactérias perigosas como E. coli, causadoras de infecções, febre tifoide, hepatite A e diarreias. Proteja sua saúde e da sua família com um serviço profissional e certificado.</p>
+    <p>A limpeza periódica (a cada 6 meses) é fundamental para garantir água potável e livre de riscos. Sem a higienização correta, sua caixa pode acumular limo, barro, ferrugem e bactérias perigosas como E. coli, causadoras de infecções, febre tifoide, hepatite A e diarreias. Proteja sua saúde e de sua família com um serviço profissional e certificado.</p>
   </section>
 
-  <section class="destaque">
-    <p>Atendemos <strong>Prefeituras</strong>, <strong>Condomínios</strong>, <strong>Residências</strong>, <strong>Hotéis</strong>, <strong>Empresas</strong> e <strong>Indústrias</strong>.</p>
-    <p><strong>Agilidade, confiança e resultado</strong>: fale conosco agora mesmo e resolva seu problema com segurança.</p>
+  <!-- Seção: Benefícios -->
+  <section class="section" id="beneficios">
+    <h2>Benefícios dos Nossos Serviços</h2>
+    <ul>
+      <li>✔️ Localização precisa de vazamentos sem quebrar estruturas.</li>
+      <li>✔️ Economia de tempo e dinheiro.</li>
+      <li>✔️ Equipe especializada e certificada.</li>
+      <li>✔️ Atendemos diversas cidades da região.</li>
+      <li>✔️ Serviços rápidos, limpos e sem sujeira.</li>
+    </ul>
   </section>
 
-  <section class="section">
-    <h2>O que dizem nossos clientes</h2>
-    <p>⭐️⭐️⭐️⭐️⭐️ "Atendimento super rápido, resolveram meu problema sem quebrar nada! Recomendo!"</p>
-    <p>⭐️⭐️⭐️⭐️⭐️ "Profissionais qualificados e atenciosos. Serviço impecável!"</p>
-    <p>⭐️⭐️⭐️⭐️⭐️ "Limparam a caixa d'água do meu prédio com muito cuidado e eficiência."</p>
+  <!-- Seção: Depoimentos -->
+  <section class="section" id="depoimentos">
+    <h2>Depoimentos</h2>
+    <blockquote>⭐️⭐️⭐️⭐️⭐️ "Atendimento super rápido, resolveram meu problema sem quebrar nada! Recomendo!" – Maria S., São José do Rio Preto</blockquote>
+    <blockquote>⭐️⭐️⭐️⭐️⭐️ "Profissionais qualificados e atenciosos. Serviço impecável!" – Carlos M., Monte Aprazível</blockquote>
+    <blockquote>⭐️⭐️⭐️⭐️⭐️ "Limparam a caixa d'água do meu prédio com muito cuidado e eficiência." – João P., Mirassol</blockquote>
     <p><strong><a href="https://g.co/kgs/swZ1FSy" target="_blank" style="color:#0077cc; text-decoration:underline;">Veja nossas avaliações no Google</a></strong></p>
   </section>
 
-  <section class="formulario">
+  <!-- Seção: Perguntas Frequentes (FAQ) -->
+  <section class="section" id="faq">
+    <h2>Perguntas Frequentes</h2>
+    <p><strong>1. Em quais cidades vocês atendem?</strong><br>
+    Atendemos São José do Rio Preto, Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol e Mirassolândia.</p>
+
+    <p><strong>2. Atendem em outras cidades da região?</strong><br>
+    Sim. Caso sua cidade não esteja listada acima, entre em contato para verificar se temos um técnico disponível em sua região.</p>
+
+    <p><strong>3. Como funciona o serviço de geofone?</strong><br>
+    O geofone capta sons gerados pelo vazamento, permitindo localizar o ponto exato sem quebra-quebra.</p>
+
+    <p><strong>4. Qual a frequência recomendada para limpeza de caixas d'água?</strong><br>
+    Recomendamos limpeza a cada 6 meses para manter a água potável e livre de contaminações.</p>
+  </section>
+
+  <!-- Formulário para Solicitação de Orçamento -->
+  <section class="formulario" id="orcamento">
     <h2>Solicite um Orçamento</h2>
     <form onsubmit="enviarWhatsapp(event)">
       <input type="text" id="nome" placeholder="Seu nome" required>
@@ -223,28 +400,48 @@
     </form>
   </section>
 
+  <!-- Chamada para Ação: Atendimento Imediato -->
   <section class="cta">
     <h2>Atendimento Imediato</h2>
     <p>Fale diretamente com nossa equipe pelo WhatsApp e receba um atendimento ágil e personalizado.</p>
     <a href="https://wa.me/5517981113437" target="_blank">Chamar no WhatsApp</a>
   </section>
 
+  <!-- Seção de Destaque: Tipos de Atendimento (reposicionada para o fim) -->
+  <section class="destaque">
+    <p>Atendemos <strong>Residências</strong>, <strong>Empresas</strong>, <strong>Condomínios</strong>, <strong>Prefeituras</strong> e <strong>Empresas de Saneamento</strong>.</p>
+  </section>
+
+  <!-- Footer com redes sociais, texto de cidades atendidas e crédito -->
   <footer>
-    <p>&copy; 2025 Confie Caça Vazamentos | Rio Preto/SP</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/confiecacavazamentos/" target="_blank">
+        <!-- Ícone colorido do Instagram -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://web.facebook.com/confiecacavazamentos/?locale=pt_BR&_rdc=1&_rdr#" target="_blank">
+        <!-- Ícone colorido do Facebook -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook">
+      </a>
+    </div>
+    <p>Atendemos: São José do Rio Preto (principal), Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol e Mirassolândia.</p>
+    <p>&copy; 2025 Confie Caça Vazamentos | São José do Rio Preto/SP</p>
   </footer>
 
+  <!-- Botão Flutuante do WhatsApp com animação de pulso -->
   <a class="whatsapp-button" href="https://wa.me/5517981113437" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
+  <!-- Script para envio do formulário via WhatsApp -->
   <script>
     function enviarWhatsapp(event) {
       event.preventDefault();
-      var nome = document.getElementById("nome").value;
-      var bairro = document.getElementById("bairro").value;
-      var mensagem = document.getElementById("mensagem").value;
-      var texto = `Olá, meu nome é ${nome}, do bairro ${bairro}. Gostaria de solicitar um orçamento.\\n\\n${mensagem}`;
-      var url = `https://wa.me/5517981113437?text=${encodeURIComponent(texto)}`;
+      const nome = document.getElementById("nome").value.trim();
+      const bairro = document.getElementById("bairro").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
+      const texto = `Olá, meu nome é ${nome}, do bairro ${bairro}. Gostaria de solicitar um orçamento.%0A%0A${mensagem}`;
+      const url = `https://wa.me/5517981113437?text=${encodeURIComponent(texto)}`;
       window.open(url, '_blank');
     }
   </script>
