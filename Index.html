@@ -2,502 +2,250 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Distribuidora Água Já – Monte Aprazível/SP | Disk Água Mineral</title>
-  <meta name="description" content="Distribuidora Água Já em Monte Aprazível/SP – Entrega de água mineral, plantão de fim de semana pelo WhatsApp.">
-  <meta name="keywords" content="Água mineral, Monte Aprazível, galão 20 L, 510 ml, disk água, WhatsApp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confie Caça Vazamentos | Rio Preto e Região</title>
+  <meta name="description" content="Confie Caça Vazamentos em Rio Preto. Especialistas em geofone, detecção sem quebra-quebra, limpeza de caixa d'água, higienização preventiva e serviços emergenciais.">
+  <meta name="keywords" content="caça vazamentos Rio Preto, geofone, limpeza de caixa d'água, detecção de vazamentos, vazamento sem quebrar, higienização caixa d'água, vazamento oculto, Confie vazamentos, serviços hidráulicos Rio Preto, prefeitura, condomínios, hotéis, empresas, indústrias">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-CONVERSION_ID');
+  </script>
   <style>
-    /* RESET */
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-    html, body { height:100%; font-family:Arial, sans-serif; background:#fff; }
-    a { text-decoration:none; color:inherit; }
-    img { max-width:100%; height:auto; display:block; }
-
-    /* HEADER */
-    header {
-      background: rgba(255,255,255,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    .contact-info {
-      color: #005fae;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .header-logo img {
-      height: 50px;
-      object-fit: contain;
-    }
-    .btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-      padding: .6rem 1rem;
-      border-radius: 4px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    /* PRODUTOS */
-    .section {
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .products-header {
-      text-align: center;
-      margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-    }
-    .products-header img {
-      height: 360px; /* 3× do original */
-      object-fit: contain;
-    }
-    .products-header h2 {
-      color: #005fae;
-      font-size: 1.8rem;
+    body {
       margin: 0;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 6px;
-      text-align: center;
-      position: relative;
-    }
-    .card-image {
-      height: 180px;
-      display: flex; justify-content: center; align-items: center;
-    }
-    .card-image img { max-height: 150px; object-fit: contain; }
-    .price-badge {
-      position: absolute; top: 8px; left: 8px;
-      background: rgba(0,0,0,0.6); color: #fff;
-      padding: 4px 8px; border-radius: 4px;
-      font-weight: bold; font-size: .9rem;
-    }
-    .card h3 { margin: .5rem 0; color: #005fae; font-size: 1rem; }
-    .unit-desc { font-size: .9rem; color: #333; margin-bottom: .5rem; }
-
-    /* COMPRAR */
-    .purchase {
-      display: flex; justify-content: center; align-items: center;
-      gap: .5rem; margin-top: .5rem;
-    }
-    .qty-btn {
-      background: #005fae; color: #fff; border: none;
-      padding: .3rem .6rem; font-size: 1rem; border-radius: 4px; cursor: pointer;
-    }
-    .qty-input {
-      width: 2rem; text-align: center;
-      border: 1px solid #ccc; border-radius: 4px;
-      padding: .2rem; font-size: 1rem; background: #fff;
-    }
-    .buy-btn {
-      background: #005fae; color: #fff; border: none;
-      padding: .5rem 1rem; border-radius: 4px;
-      font-size: .9rem; cursor: pointer;
-    }
-
-    /* BOTÃO FINALIZAR */
-    #checkout-btn {
-      display: block; margin: 2rem auto;
-      background: #ff6600; color: #fff; border: none;
-      padding: .8rem 2rem; border-radius: 4px;
-      font-size: 1rem; cursor: pointer;
-    }
-
-    /* DEPOIMENTOS */
-    .testimonials {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .testimonials h2 {
-      text-align: center;
-      color: #005fae;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-    .testimonial {
-      background: #f0f8ff;
-      border-left: 4px solid #005fae;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-    }
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: .5rem;
-    }
-    .testimonial .author {
-      text-align: right;
-      font-weight: bold;
+      font-family: 'Rubik', sans-serif;
+      background: #e6f0ff;
       color: #333;
     }
-
-    /* RODAPÉ */
+    header {
+      position: relative;
+      text-align: center;
+      background-color: #004d99;
+    }
+    header img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: contain;
+      display: block;
+    }
+    .whatsapp-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0.5rem 0 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #cce6ff;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 1rem;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #004d99;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .destaque {
+      background: #f9f9f9;
+      border-top: 3px solid #0077cc;
+      border-bottom: 3px solid #0077cc;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .destaque strong {
+      color: #0077cc;
+    }
+    .cta {
+      background: #0077cc;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .cta a {
+      background: white;
+      color: #0077cc;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background: #e6f4ff;
+    }
+    .formulario {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .formulario input, .formulario textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .formulario button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     footer {
-      background: rgba(255,255,255,0.9);
-      color: #005fae; text-align: center;
-      padding: 2rem 1rem; margin-top: 3rem;
+      background: #00264d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
-    footer address { font-style: normal; line-height: 1.4; margin-bottom: .5rem; }
-    .social-title { font-size: 1rem; color: #005fae; margin-bottom: .5rem; }
-    .social-links { display: flex; justify-content: center; gap: 1rem; }
-    .social-links img { width: 32px; transition: transform .2s; }
-    .social-links img:hover { transform: scale(1.1); }
-
-    /* WHATSAPP FLUTUANTE */
-    .whatsapp-float {
-      position: fixed; bottom: 20px; right: 20px;
-      display: flex; flex-direction: column; align-items: center;
-      z-index: 10;
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 75px;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
-    .whatsapp-float a {
-      background: #25D366; width: 60px; height: 60px;
-      border-radius: 50%; display: flex;
-      align-items: center; justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    .whatsapp-button img {
+      width: 40px;
+      height: 40px;
     }
-    .whatsapp-float img { width: 32px; }
-    .whatsapp-float .float-phone {
-      margin-top: .3rem; font-size: .9rem;
-      color: #005fae; font-weight: bold;
+    @media (max-width: 768px) {
+      header img {
+        max-height: 280px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .section h2 {
+        font-size: 1.4rem;
+      }
+      .section p {
+        font-size: 1rem;
+      }
+      .whatsapp-top {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+      .whatsapp-button {
+        width: 60px;
+        height: 60px;
+      }
+      .whatsapp-button img {
+        width: 30px;
+        height: 30px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <div class="contact-info">📞 (17) 99659-2731</div>
-    <div class="header-logo">
-      <img src="https://i.ibb.co/LzyM4vMC/banneraguajasite.png" alt="Logo Água Já">
-    </div>
-    <a href="https://wa.me/5517996592731" class="btn-whatsapp" target="_blank">WhatsApp</a>
+    <a class="whatsapp-top" href="https://wa.me/5517981113437" target="_blank">WhatsApp</a>
+    <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Confie Caça Vazamentos - Capa">
+    <h1>Confie Caça Vazamentos</h1>
+    <p>Atendimento rápido em Rio Preto e Região</p>
   </header>
 
-  <!-- PRODUTOS -->
   <section class="section">
-    <div class="products-header">
-      <img src="https://i.ibb.co/LzyM4vMC/banneraguajasite.png" alt="Logo Água Já">
-      <h2>Nossos Produtos</h2>
-    </div>
-    <div class="cards">
-      <!-- 1) Água Talismã 20 L -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/Rk274VL7/talisma20litrosnova.png" alt="Água Talismã 20 L">
-          <div class="price-badge">R$12</div>
-        </div>
-        <h3>Água Talismã 20 L</h3>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Talismã 20 L',12,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-<!-- 16) Galão Água BOA 20 Litros - PROMOÇÃO TOPO CENTRALIZADA -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/v6jT8PTq/agua-boa-20.png" alt="Galão Água BOA 20 Litros">
-    <div class="price-badge">R$11</div>
-    <div class="promo-badge">🔥Promoção!</div>
-  </div>
-  <h3>Galão Água BOA 20 Litros</h3>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Galão Água BOA 20 Litros',11,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-      <!-- 2) Água Rárida 20 L -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/r9mCx4s/rarida20.png" alt="Água Rárida 20 L">
-          <div class="price-badge">R$15</div>
-        </div>
-        <h3>Água Rárida 20 L</h3>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Rárida 20 L',15,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-      <!-- 3) Água Minajen 20 L -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/mCQVymcY/minajen20.png" alt="Água Minajen 20 L">
-          <div class="price-badge">R$13</div>
-        </div>
-        <h3>Água Minajen 20 L</h3>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Minajen 20 L',13,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-      <!-- 4) Água Levity 20 L -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/KjBgWK1Z/Levity-20.png" alt="Água Levity 20 L">
-          <div class="price-badge">R$14</div>
-        </div>
-        <h3>Água Levity 20 L</h3>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Levity 20 L',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-<!-- 10) Água BOA com gás 510 ml (12 un.) - PROMOÇÃO DESTACADA -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/mVnMM87P/agua-boa-com-gas510ml.png" alt="Água BOA com gás 510 ml">
-    <div class="price-badge">R$16</div>
-    <div class="promo-badge">🔥Promoção!</div>
-  </div>
-  <h3>Água BOA com gás 510 ml</h3>
-  <p class="unit-desc">12 unidades</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Água BOA com gás 510 ml',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-<!-- 11) Água BOA sem gás 510 ml (12 un.) - PROMOÇÃO DESTACADA -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/spFvD4gD/agua-boa-sem-gas510ml.png" alt="Água BOA sem gás 510 ml">
-    <div class="price-badge">R$12</div>
-    <div class="promo-badge">🔥Promoção!</div>
-  </div>
-  <h3>Água BOA sem gás 510 ml</h3>
-  <p class="unit-desc">12 unidades</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Água BOA sem gás 510 ml',12,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-      <!-- 5) Água Rárida c/ gás 510 ml (12 un.) -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/vxBPP6rZ/r-rida-gas510ml.png" alt="Água Rárida c/ gás 510 ml">
-          <div class="price-badge">R$20</div>
-        </div>
-        <h3>Água Rárida c/ gás 510 ml</h3>
-        <p class="unit-desc">12 unidades</p>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Rárida c/ gás 510 ml',20,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-      <!-- 6) Água Rárida sem gás 510 ml (12 un.) -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/Gvms61rb/r-rida-semgas510ml.png" alt="Água Rárida sem gás 510 ml">
-          <div class="price-badge">R$16</div>
-        </div>
-        <h3>Água Rárida sem gás 510 ml</h3>
-        <p class="unit-desc">12 unidades</p>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Rárida sem gás 510 ml',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-      <!-- 7) Água Minajen c/ gás 510 ml (12 un.) -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/kTBPsgY/minajen510comg.png" alt="Água Minajen c/ gás 510 ml">
-          <div class="price-badge">R$18</div>
-        </div>
-        <h3>Água Minajen c/ gás 510 ml</h3>
-        <p class="unit-desc">12 unidades</p>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Minajen c/ gás 510 ml',18,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-      <!-- 8) Água Minajen sem gás 510 ml (12 un.) -->
-      <div class="card">
-        <div class="card-image">
-          <img src="https://i.ibb.co/Pv67V9Mb/minajen510semg.png" alt="Água Minajen sem gás 510 ml">
-          <div class="price-badge">R$16</div>
-        </div>
-        <h3>Água Minajen sem gás 510 ml</h3>
-        <p class="unit-desc">12 unidades</p>
-        <div class="purchase">
-          <button class="qty-btn qty-decrement">−</button>
-          <input class="qty-input" type="text" value="1" readonly>
-          <button class="qty-btn qty-increment">+</button>
-          <button class="buy-btn" onclick="addToCart('Água Minajen sem gás 510 ml',16,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-        </div>
-      </div>
-    <!-- 12) Água Levity sem gás 510 ml (12 un.) -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/B2MNj6YH/levity-sem-gas.png" alt="Água Levity sem gás 510 ml">
-    <div class="price-badge">R$21</div>
-  </div>
-  <h3>Água Levity sem gás 510 ml</h3>
-  <p class="unit-desc">12 unidades</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Água Levity sem gás 510 ml',21,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-<!-- 13) Água Levity com gás 510 ml (12 un.) -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/LDX3Dn4S/levity510mlcomg.png" alt="Água Levity com gás 510 ml">
-    <div class="price-badge">R$25</div>
-  </div>
-  <h3>Água Levity com gás 510 ml</h3>
-  <p class="unit-desc">12 unidades</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Água Levity com gás 510 ml',25,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-<!-- 14) Caixa Copo Talismã 200 ml (48 un.) -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/3m8RKJnd/talism-copo.png" alt="Caixa Copo Talismã 200 ml">
-    <div class="price-badge">R$37</div>
-  </div>
-  <h3>Caixa Copo Talismã 200 ml</h3>
-  <p class="unit-desc">48 copos</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Caixa Copo Talismã 200 ml',37,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-<!-- 15) Caixa Copo BOA 200 ml (48 un.) - PROMOÇÃO TOPO CENTRALIZADA -->
-<div class="card">
-  <div class="card-image">
-    <img src="https://i.ibb.co/KxGHzPNS/boa-copo.png" alt="Caixa Copo BOA 200 ml">
-    <div class="price-badge">R$32</div>
-    <div class="promo-badge">🔥Promoção!</div>
-  </div>
-  <h3>Caixa Copo BOA 200 ml</h3>
-  <p class="unit-desc">48 copos</p>
-  <div class="purchase">
-    <button class="qty-btn qty-decrement">−</button>
-    <input class="qty-input" type="text" value="1" readonly>
-    <button class="qty-btn qty-increment">+</button>
-    <button class="buy-btn" onclick="addToCart('Caixa Copo BOA 200 ml',32,parseInt(this.parentElement.querySelector('.qty-input').value))">🛒 Comprar</button>
-  </div>
-</div>
-
-
-</div>
-     
-<button id="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
+    <h2>Caça Vazamentos com Geofone</h2>
+    <p>Utilizamos geofone profissional, um equipamento de precisão que detecta ruídos imperceptíveis a ouvido humano causados por vazamentos. Isso permite encontrar o ponto exato do problema sem quebrar pisos, paredes ou encanamentos inteiros. É a forma mais econômica, limpa e eficiente de localizar vazamentos escondidos.</p>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="testimonials">
-    <h2>O que nossos clientes dizem</h2>
-    <div class="testimonial">
-      <p>"Ótima entrega, sempre pontual e a água é de excelente qualidade!"</p>
-      <div class="author">— Maria S.</div>
-    </div>
-    <div class="testimonial">
-      <p>"Comprei o bloquinho de 10 e ganhei o 11º, super vantagem!"</p>
-      <div class="author">— Paulo R.</div>
-    </div>
-    <div class="testimonial">
-      <p>"Atendimento pelo WhatsApp rápido e eficiente. Recomendo!"</p>
-      <div class="author">— Ana L.</div>
-    </div>
-    <div class="testimonial">
-      <p>"Preço justo e entrega é muito rápida. Nota 10!"</p>
-      <div class="author">— Carlos M.</div>
-    </div>
+  <section class="section">
+    <h2>Limpeza de Caixas d'água</h2>
+    <p>A limpeza periódica (a cada 6 meses) é fundamental para garantir água potável e livre de riscos. Sem a higienização correta, sua caixa pode acumular limo, barro, ferrugem e bactérias perigosas como E. coli, causadoras de infecções, febre tifoide, hepatite A e diarreias. Proteja sua saúde e da sua família com um serviço profissional e certificado.</p>
   </section>
 
-  <!-- WHATSAPP FLUTUANTE -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/5517996592731" target="_blank">
-      <img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp">
-    </a>
-    <div class="float-phone">(17) 99659-2731</div>
-  </div>
+  <section class="destaque">
+    <p>Atendemos <strong>Prefeituras</strong>, <strong>Condomínios</strong>, <strong>Residências</strong>, <strong>Hotéis</strong>, <strong>Empresas</strong> e <strong>Indústrias</strong>.</p>
+    <p><strong>Agilidade, confiança e resultado</strong>: fale conosco agora mesmo e resolva seu problema com segurança.</p>
+  </section>
 
-  <!-- RODAPÉ -->
+  <section class="section">
+    <h2>O que dizem nossos clientes</h2>
+    <p>⭐️⭐️⭐️⭐️⭐️ "Atendimento super rápido, resolveram meu problema sem quebrar nada! Recomendo!"</p>
+    <p>⭐️⭐️⭐️⭐️⭐️ "Profissionais qualificados e atenciosos. Serviço impecável!"</p>
+    <p>⭐️⭐️⭐️⭐️⭐️ "Limparam a caixa d'água do meu prédio com muito cuidado e eficiência."</p>
+    <p><strong><a href="https://g.co/kgs/swZ1FSy" target="_blank" style="color:#0077cc; text-decoration:underline;">Veja nossas avaliações no Google</a></strong></p>
+  </section>
+
+  <section class="formulario">
+    <h2>Solicite um Orçamento</h2>
+    <form onsubmit="enviarWhatsapp(event)">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="text" id="bairro" placeholder="Bairro" required>
+      <textarea id="mensagem" placeholder="Descreva seu problema ou solicitação..." rows="4" required></textarea>
+      <button type="submit">Enviar pelo WhatsApp</button>
+    </form>
+  </section>
+
+  <section class="cta">
+    <h2>Atendimento Imediato</h2>
+    <p>Fale diretamente com nossa equipe pelo WhatsApp e receba um atendimento ágil e personalizado.</p>
+    <a href="https://wa.me/5517981113437" target="_blank">Chamar no WhatsApp</a>
+  </section>
+
   <footer>
-    <address>
-      Distribuidora Água Já – Monte Aprazível/SP<br>
-      Av. Santos Dumont, 175 – CEP 15150-000<br>
-      Horário: Segunda a Sexta, 08h00 às 18h00<br>
-      Plantão WhatsApp: Sábado e Domingo
-    </address>
-    <div class="social-title">Siga nossas redes sociais:</div>
-    <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61575208282943" target="_blank">
-        <img src="https://i.ibb.co/mFHY93C7/logo-face02.png" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/aguajamonteaprazivel" target="_blank">
-        <img src="https://i.ibb.co/zWyBKCzv/logo-insta.png" alt="Instagram">
-      </a>
-    </div>
+    <p>&copy; 2025 Confie Caça Vazamentos | Rio Preto/SP</p>
   </footer>
 
+  <a class="whatsapp-button" href="https://wa.me/5517981113437" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
   <script>
-    document.querySelectorAll('.purchase').forEach(p => {
-      const dec = p.querySelector('.qty-decrement'),
-            inc = p.querySelector('.qty-increment'),
-            input = p.querySelector('.qty-input');
-      dec.addEventListener('click', () => { let v = parseInt(input.value); if (v > 1) input.value = v - 1; });
-      inc.addEventListener('click', () => { let v = parseInt(input.value); input.value = v + 1; });
-    });
-    const cart = {};
-    function addToCart(name, price, qty) {
-      if (!cart[name]) cart[name] = { price, qty: 0 };
-      cart[name].qty += qty;
-      alert(qty + 'x ' + name + ' adicionado(s)');
-    }
-    function checkout() {
-      if (!Object.keys(cart).length) { alert('Carrinho vazio!'); return; }
-      let msg = 'Olá, gostaria de pedir:%0A';
-      for (let n in cart) {
-        msg += `${cart[n].qty}x ${n} – R$${(cart[n].price * cart[n].qty).toFixed(2)}%0A`;
-      }
-      window.open('https://wa.me/5517996592731?text=' + msg, '_blank');
+    function enviarWhatsapp(event) {
+      event.preventDefault();
+      var nome = document.getElementById("nome").value;
+      var bairro = document.getElementById("bairro").value;
+      var mensagem = document.getElementById("mensagem").value;
+      var texto = `Olá, meu nome é ${nome}, do bairro ${bairro}. Gostaria de solicitar um orçamento.\\n\\n${mensagem}`;
+      var url = `https://wa.me/5517981113437?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
