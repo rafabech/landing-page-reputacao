@@ -77,6 +77,19 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; }
 
+    /* Container para centralizar imagens e limitar tamanho */
+    .image-container {
+      margin: 1.5rem auto;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
     /* Header */
     header {
       position: relative;
@@ -113,27 +126,6 @@
       font-weight: bold;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 1000;
-    }
-    .qr-code-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: white;
-      padding: 0.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-      text-align: center;
-    }
-    .qr-code-container p {
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-      color: #25D366;
-      font-weight: bold;
-    }
-    .qr-code-container img {
-      width: 80px;
-      height: 80px;
     }
 
     /* Seções */
@@ -322,19 +314,13 @@
       .whatsapp-top { font-size: 0.9rem; padding: 0.5rem 1rem; }
       .whatsapp-button { width: 60px; height: 60px; }
       .whatsapp-button img { width: 30px; height: 30px; }
-      .qr-code-container img { width: 60px; height: 60px; }
-      .social-icons img { width: 24px; height: 24px; }
     }
   </style>
 </head>
 <body>
-  <!-- Header com botão do WhatsApp e QR Code -->
+  <!-- Header com botão do WhatsApp -->
   <header>
     <a class="whatsapp-top" href="https://wa.me/5517981113437" target="_blank">WhatsApp</a>
-    <div class="qr-code-container">
-      <p style="color:#25D366;">📱 Escaneie e fale conosco no WhatsApp</p>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://wa.me/5517981113437" alt="QR Code WhatsApp">
-    </div>
     <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Antes e Depois da Limpeza de Caixa d'Água - Confie Caça Vazamentos">
     <h1>Confie Caça Vazamentos</h1>
     <p>Atendimento em São José do Rio Preto e toda região</p>
@@ -344,12 +330,18 @@
   <section class="section" id="geofone">
     <h2>Caça Vazamentos com Geofone</h2>
     <p>Utilizamos geofone profissional, um equipamento de precisão que detecta ruídos imperceptíveis ao ouvido humano causados por vazamentos. Isso permite encontrar o ponto exato do problema sem quebrar pisos, paredes ou encanamentos inteiros. É a forma mais econômica, limpa e eficiente de localizar vazamentos escondidos.</p>
+    <div class="image-container">
+      <img src="https://i.ibb.co/8LGrBfTD/cacasite.png" alt="Exemplo de serviço de caça vazamentos no local">
+    </div>
   </section>
 
   <!-- Seção: Limpeza de Caixas d'água -->
   <section class="section" id="limpeza-caixas">
     <h2>Limpeza de Caixas d'água</h2>
     <p>A limpeza periódica (a cada 6 meses) é fundamental para garantir água potável e livre de riscos. Sem a higienização correta, sua caixa pode acumular limo, barro, ferrugem e bactérias perigosas como E. coli, causadoras de infecções, febre tifoide, hepatite A e diarreias. Proteja sua saúde e de sua família com um serviço profissional e certificado.</p>
+    <div class="image-container">
+      <img src="https://i.ibb.co/Y46NZgjC/antesdepoiscx.png" alt="Antes e depois da limpeza de caixa d'água">
+    </div>
   </section>
 
   <!-- Seção: Benefícios -->
