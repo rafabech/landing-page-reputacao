@@ -115,18 +115,6 @@
       color: #cce6ff;
       margin-bottom: 1rem;
     }
-    .whatsapp-top {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
 
     /* Seções */
     .section {
@@ -311,17 +299,15 @@
       header p { font-size: 1rem; }
       .section h2 { font-size: 1.4rem; }
       .section p, .section ul li, #faq p { font-size: 1rem; }
-      .whatsapp-top { font-size: 0.9rem; padding: 0.5rem 1rem; }
       .whatsapp-button { width: 60px; height: 60px; }
       .whatsapp-button img { width: 30px; height: 30px; }
     }
   </style>
 </head>
 <body>
-  <!-- Header com botão do WhatsApp -->
+  <!-- Header -->
   <header>
-    <a class="whatsapp-top" href="https://wa.me/5517981113437" target="_blank">WhatsApp</a>
-    <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Antes e Depois da Limpeza de Caixa d'Água - Confie Caça Vazamentos">
+    <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Antes e Depois da Limpeza de Caixa d'água - Confie Caça Vazamentos">
     <h1>Confie Caça Vazamentos</h1>
     <p>Atendimento em São José do Rio Preto e toda região</p>
   </header>
@@ -405,7 +391,7 @@
     <h2>Solicite um Orçamento</h2>
     <form onsubmit="enviarWhatsapp(event)">
       <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="text" id="bairro" placeholder="Bairro" required>
+      <input type="text" id="cidade" placeholder="Cidade" required>
       <textarea id="mensagem" placeholder="Descreva seu problema ou solicitação..." rows="4" required></textarea>
       <button type="submit">Enviar pelo WhatsApp</button>
     </form>
@@ -449,9 +435,9 @@
     function enviarWhatsapp(event) {
       event.preventDefault();
       const nome = document.getElementById("nome").value.trim();
-      const bairro = document.getElementById("bairro").value.trim();
+      const cidade = document.getElementById("cidade").value.trim();
       const mensagem = document.getElementById("mensagem").value.trim();
-      const texto = `Olá, meu nome é ${nome}, do bairro ${bairro}. Gostaria de solicitar um orçamento.%0A%0A${mensagem}`;
+      const texto = `Olá, meu nome é ${nome}, da cidade ${cidade}. Gostaria de solicitar um orçamento.%0A%0A${mensagem}`;
       const url = `https://wa.me/5517981113437?text=${encodeURIComponent(texto)}`;
       window.open(url, '_blank');
     }
