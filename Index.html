@@ -6,10 +6,10 @@
   <title>Confie Caça Vazamentos | São José do Rio Preto e Região</title>
 
   <!-- Meta Description ampliada para incluir todas as cidades atendidas -->
-  <meta name="description" content="Confie Caça Vazamentos em São José do Rio Preto e toda região. Atendemos São José do Rio Preto (principal) e cidades como Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol e Mirassolândia. Especialistas em geofone, detecção sem quebra-quebra, limpeza de caixa d'água, pequenos reparos hidráulicos, higienização preventiva e serviços emergenciais.">
+  <meta name="description" content="Confie Caça Vazamentos em São José do Rio Preto e toda região. Atendemos São José do Rio Preto (principal) e cidades como Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol e Mirassolândia. Especialistas em geofone, detecção sem quebra-quebra, limpeza de caixas d'água, pequenos reparos hidráulicos, higienização preventiva e serviços emergenciais.">
 
   <!-- Meta Keywords incluindo todas as cidades listadas -->
-  <meta name="keywords" content="caça vazamentos São José do Rio Preto, geofone, limpeza de caixa d'água, detecção de vazamentos, vazamento sem quebrar, higienização caixa d'água, pequenos reparos hidráulicos, troca de torneira, troca de registro, troca de válvula hydra, desentupimento, reparos hidráulicos, Confie vazamentos, serviços hidráulicos São José do Rio Preto, Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol, Mirassolândia">
+  <meta name="keywords" content="caça vazamentos São José do Rio Preto, geofone, limpeza de caixas d'água, detecção de vazamentos, vazamento sem quebrar, higienização caixas d'água, pequenos reparos hidráulicos, troca de torneira, troca de registro, troca de válvula hydra, Confie vazamentos, serviços hidráulicos São José do Rio Preto, Monte Aprazível, Bady Bassit, Tanabi, Poloni, Neves Paulista, José Bonifácio, Nipoã, Macaubal, Nhandeara, Mirassol, Mirassolândia">
 
   <!-- Meta adicionais para SEO de cidades -->
   <meta name="location" content="São José do Rio Preto; Monte Aprazível; Bady Bassit; Tanabi; Poloni; Neves Paulista; José Bonifácio; Nipoã; Macaubal; Nhandeara; Mirassol; Mirassolândia">
@@ -40,7 +40,7 @@
       "latitude": -20.8089,
       "longitude": -49.3817
     },
-    "url": "https://confiecacavazamentos.com.br",
+    "url": "https://confiecacavazamento.com.br",
     "areaServed": [
       "São José do Rio Preto",
       "Monte Aprazível",
@@ -92,28 +92,24 @@
 
     /* Header */
     header {
-      position: relative;
       text-align: center;
       background-color: #004d99;
-      overflow: hidden;
+      padding: 1rem 0;
     }
-    /* Imagem principal reduzida pela metade (max-height: 440px) */
     header img {
       width: 100%;
       max-height: 440px;
       object-fit: contain;
-      display: block;
-      margin: 0 auto;
+      margin-bottom: 1rem;
     }
     header h1 {
-      margin: 1rem 0 0.5rem;
-      font-size: 2rem;
       color: #fff;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.1rem;
       color: #cce6ff;
-      margin-bottom: 1rem;
+      font-size: 1.1rem;
     }
 
     /* Seções */
@@ -131,19 +127,30 @@
     .section p {
       font-size: 1.1rem;
       line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 1rem;
     }
     .section ul {
       list-style: none;
       text-align: left;
       margin: 0 auto;
       max-width: 800px;
+      padding-left: 1rem;
     }
     .section ul li {
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .section ul li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
-    /* Destaque (reposicionado para o fim) */
+    /* Destaque */
     .destaque {
       background: #f9f9f9;
       border-top: 3px solid #0077cc;
@@ -185,6 +192,7 @@
       max-width: 600px;
       margin: 2rem auto;
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      text-align: left;
     }
     .formulario input,
     .formulario textarea {
@@ -203,6 +211,7 @@
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
+      width: 100%;
     }
 
     /* Depoimentos */
@@ -263,20 +272,17 @@
       height: 32px;
     }
 
-    /* Animação de pulso para o botão flutuante */
+    /* Animação de pulso */
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
-
-    /* Botão flutuante do WhatsApp com animação de pulso */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25D366;
-      color: white;
       border-radius: 50%;
       width: 75px;
       height: 75px;
@@ -284,8 +290,8 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      z-index: 1000;
       animation: pulse 2s infinite;
+      z-index: 1000;
     }
     .whatsapp-button img {
       width: 40px;
@@ -310,6 +316,10 @@
     <img src="https://i.ibb.co/Q30LDtQT/capa-pagina.png" alt="Antes e Depois da Limpeza de Caixa d'água - Confie Caça Vazamentos">
     <h1>Confie Caça Vazamentos</h1>
     <p>Atendimento em São José do Rio Preto e toda região</p>
+    <p style="color: #cce6ff; font-size: 1.1rem; margin-top: 0.5rem;">
+  Telefone: (17) 98111-3437
+</p>
+
   </header>
 
   <!-- Seção: Caça Vazamentos com Geofone -->
@@ -333,7 +343,7 @@
   <!-- Seção: Pequenos Reparos Hidráulicos -->
   <section class="section" id="pequenos-reparos">
     <h2>Pequenos Reparos Hidráulicos</h2>
-    <p>Oferecemos serviços de manutenção e reparos rápidos para manter seu encanamento em perfeito estado. Evite transtornos e prolongue a vida útil de suas instalações com nosso atendimento especializado.</p>
+    <p>Nossa equipe é especialista em intervenções pontuais que mantêm seu sistema hidráulico sempre em dia. Atendemos reparos de torneiras, registros, válvulas Hydra e conexões, garantindo vedação perfeita e evitando vazamentos recorrentes. Realizamos também instalação de chuveiros, ajuste de canos aparentes e substituição de peças com agilidade e acabamento impecável.</p>
     <div class="image-container">
       <img src="https://i.ibb.co/svNSF9gj/peqsite.png" alt="Serviços de Pequenos Reparos Hidráulicos">
     </div>
@@ -367,7 +377,12 @@
     <blockquote>⭐️⭐️⭐️⭐️⭐️ "Atendimento super rápido, resolveram meu problema sem quebrar nada! Recomendo!" – Maria S., São José do Rio Preto</blockquote>
     <blockquote>⭐️⭐️⭐️⭐️⭐️ "Profissionais qualificados e atenciosos. Serviço impecável!" – Carlos M., Monte Aprazível</blockquote>
     <blockquote>⭐️⭐️⭐️⭐️⭐️ "Limparam a caixa d'água do meu prédio com muito cuidado e eficiência." – João P., Mirassol</blockquote>
-    <p><strong><a href="https://g.co/kgs/swZ1FSy" target="_blank" style="color:#0077cc; text-decoration:underline;">Veja nossas avaliações no Google</a></strong></p>
+<div style="margin-top: 2rem; text-align: center;">
+  <a href="https://g.co/kgs/YC5jtUz" target="_blank" style="text-decoration: none; display: inline-block;">
+    <img src="https://i.ibb.co/TZmHx01/logo-google5-estrelas.png" alt="Avaliações Google 5 estrelas" style="width: 320px; height: auto; display: block; margin: 0 auto 0.5rem;">
+    <p style="color: #0077cc; font-weight: bold; font-size: 1rem; margin: 0;">Clique aqui e veja mais avaliações no Google</p>
+  </a>
+</div>
   </section>
 
   <!-- Seção: Perguntas Frequentes (FAQ) -->
